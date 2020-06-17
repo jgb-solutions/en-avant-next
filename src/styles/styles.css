@@ -1,6 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 .section-container {
-	max-width: 1600px;
+	/* max-width: 1600px; */
 	margin: 0 auto;
 }
