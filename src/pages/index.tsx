@@ -11,22 +11,8 @@ import {
   Image
 } from 'react-bootstrap'
 import Colors from 'utils/colors'
-import { useEffect } from 'react'
 
 export default function Index() {
-  const listener = event => {
-    const bodyDimension = document.body.getBoundingClientRect()
-
-    console.log(bodyDimension.top)
-  }
-  useEffect(() => {
-    window.addEventListener("scroll", listener)
-
-    return () => {
-      window.removeEventListener("scroll", listener)
-    }
-  }, [])
-
   return (
     <>
       <SEO />
