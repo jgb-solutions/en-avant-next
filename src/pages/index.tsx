@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button'
-import { FaPaperPlane, FaEnvelope, FaPhone, FaMapMarker, FaFacebook, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa'
+import { FaPaperPlane, FaEnvelope, FaPhone, FaMapMarker, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa'
 
 import SEO from 'components/SEO'
 import { APP_NAME } from 'utils/constants'
@@ -11,36 +11,66 @@ import {
   Image
 } from 'react-bootstrap'
 import Colors from 'utils/colors'
+import { useEffect } from 'react'
 
 export default function Index() {
+  const listener = event => {
+    const bodyDimension = document.body.getBoundingClientRect()
+
+    console.log(bodyDimension.top)
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", listener)
+
+    return () => {
+      window.removeEventListener("scroll", listener)
+    }
+  }, [])
+
   return (
     <>
       <SEO />
-      <section className="section-container">
+      {/* <section className="section-container" style={{
+        position: "fixed",
+        width: '100%',
+        background: 'white'
+      }}>
         <Container>
-          {/* <NavBar /> */}
+          <NavBar style={{
+            color: Colors.white,
+            paddingLeft: 0,
+            paddingRight: 0,
+          }} />
         </Container>
-      </section>
+      </section> */}
 
       <section className="section-container" style={{
         backgroundImage: 'url(' + "/assets/images/home-header.jpg" + ')',
         backgroundSize: "cover",
         backgroundPosition: "center center",
         minHeight: 500,
+        paddingTop: 20
 
       }}>
         <Container>
+          <NavBar style={{
+            color: Colors.white,
+            paddingLeft: 0,
+            paddingRight: 0,
+          }} />
+
           <div style={{
             textAlign: 'center',
-            paddingTop: 150,
+            paddingTop: 50,
             paddingBottom: 200
           }}>
             <h1 style={{
-              fontSize: 55,
+              fontSize: 50,
+              fontWeight: 'bold',
               color: 'white',
               textTransform: "uppercase",
             }}>Mouvement pour changer <br />Haïti ensemble</h1>
-            <div style={{ marginBottom: 200 }}>
+            <div style={{ marginBottom: 220 }}>
               <Button style={{
                 borderRadius: 20,
                 backgroundColor: "#f46425",
@@ -94,12 +124,17 @@ export default function Index() {
               background: Colors.white
             }}>
               <h2 style={{
-                fontSize: 55,
-                color: Colors.blue,
+                fontSize: 40,
+                fontWeight: 'bold',
+                color: Colors.darkerBlueText,
                 textTransform: "uppercase",
               }}>Mouvement <br /> pour changer <br />Haïti ensemble</h2>
 
-              <p style={{ color: Colors.gray }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              <p style={{
+                color: Colors.gray,
+                fontSize: 12,
+                marginBottom: 30
+              }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 
               <div>
                 <Button style={{
@@ -138,8 +173,8 @@ export default function Index() {
           </div>
 
           <Row>
-            {[1, 2, 3].map(() => (
-              <Col md={4}>
+            {[1, 2, 3].map((number) => (
+              <Col md={4} key={number}>
 
                 <div style={{
                   boxShadow: "0px 1px 3px 0px rgba(0,0,0,0.35)"
