@@ -1,9 +1,10 @@
 import Button from 'react-bootstrap/Button'
-import { FaPaperPlane, FaEnvelope, FaPhone, FaMapMarker, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa'
+import { FaPaperPlane } from 'react-icons/fa'
 
 import SEO from 'components/SEO'
 import { APP_NAME } from 'utils/constants'
-import NavBar from 'components/NavBar'
+import TransParentNavBar from 'components/TransParentNavBar'
+import Footer from 'components/Footer'
 import {
   Container,
   Row,
@@ -11,25 +12,12 @@ import {
   Image
 } from 'react-bootstrap'
 import Colors from 'utils/colors'
+import TitleWithSubText from 'components/TitleWithSubText'
 
 export default function Index() {
   return (
     <>
       <SEO />
-      {/* <section className="section-container" style={{
-        position: "fixed",
-        width: '100%',
-        background: 'white'
-      }}>
-        <Container>
-          <NavBar style={{
-            color: Colors.white,
-            paddingLeft: 0,
-            paddingRight: 0,
-          }} />
-        </Container>
-      </section> */}
-
       <section className="section-container" style={{
         backgroundImage: 'url(' + "/assets/images/home-header.jpg" + ')',
         backgroundSize: "cover",
@@ -39,11 +27,7 @@ export default function Index() {
 
       }}>
         <Container>
-          <NavBar style={{
-            color: Colors.white,
-            paddingLeft: 0,
-            paddingRight: 0,
-          }} />
+          <TransParentNavBar />
 
           <div style={{
             textAlign: 'center',
@@ -145,18 +129,12 @@ export default function Index() {
             </Col>
           </Row>
 
-          <div style={{
-            textAlign: "center",
-            marginTop: 100,
-            marginBottom: 45
-          }}>
-            <h2 style={{
-              fontSize: 30,
-              color: Colors.orange,
-              textTransform: "uppercase",
-            }}>Actualités</h2>
-            <p style={{ color: Colors.gray }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <br /> incididunt ut labore et dolore magna aliqua. Ut enim ad. </p>
-          </div>
+          <TitleWithSubText
+            title="Actualités"
+            subText={`Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor <br /> incididunt ut labore et dolore magna aliqua.
+              Ut enim ad.`}
+          />
 
           <Row>
             {[1, 2, 3].map((number) => (
@@ -285,7 +263,7 @@ export default function Index() {
                     </span>
                     <span style={{
 
-                    }}>Notre Manifeste</span>
+                    }}>Nos Digigeants</span>
                   </h4>
                   <p style={{
                     fontSize: 12
@@ -310,7 +288,7 @@ export default function Index() {
                     </span>
                     <span style={{
 
-                    }}>Notre Manifeste</span>
+                    }}>Nos Combats</span>
                   </h4>
                   <p style={{
                     fontSize: 12
@@ -335,7 +313,7 @@ export default function Index() {
                     </span>
                     <span style={{
 
-                    }}>Notre Manifeste</span>
+                    }}>Notre Organigramme</span>
                   </h4>
                   <p style={{
                     fontSize: 12
@@ -349,134 +327,7 @@ export default function Index() {
 
         </Container>
       </section>
-      <section className="section-container" style={{
-        backgroundColor: Colors.darkerBlue,
-        paddingTop: 80,
-        paddingBottom: 80,
-      }}>
-        <Container>
-          <Row>
-            <Col md={4}>
-              <p style={{
-                fontSize: 10,
-                color: Colors.darkerGray,
-                marginBottom: 45
-              }}>
-                “ D'aucuns pensent que le déclin continu de notre pays est inévitable
-                et que le pire est à venir. Les fondateurs du mouvement <strong>« EN AVANT »</strong> osent
-                prétendre autrement. En effet, une prise en charge de la politique par un
-                leadership collectif et visionnaire peut conduire Haïti sur la voie du
-                progrès et du développement”.
-              </p>
-
-              <div>
-                <span style={{
-                  fontSize: 11,
-                  backgroundColor: Colors.facebook,
-                  color: Colors.white,
-                  padding: 12,
-                  borderRadius: '50%'
-                }}>
-                  <FaFacebookF />
-                </span>
-                &nbsp;
-                &nbsp;
-                <span style={{
-                  fontSize: 11,
-                  backgroundColor: Colors.twitter,
-                  color: Colors.white,
-                  padding: 12,
-                  borderRadius: '50%'
-                }}>
-                  <FaTwitter />
-                </span>
-                &nbsp;
-                &nbsp;
-                <span style={{
-                  fontSize: 11,
-                  backgroundColor: Colors.instagram,
-                  color: Colors.white,
-                  padding: 12,
-                  borderRadius: '50%'
-                }}>
-                  <FaInstagram />
-                </span>
-              </div>
-            </Col>
-            <Col md={8}>
-              <Row>
-                <Col md={4}>
-                  <h5 style={{
-                    color: Colors.white,
-                    fontSize: 12,
-                    lineHeight: 1.3
-                  }}>NOTRE MOUVEMENT <br /> EN PROVINCE</h5>
-                  <ul style={{
-                    listStyle: "none",
-                    padding: 0,
-                    color: Colors.evenDarkerGray,
-                    textTransform: 'uppercase',
-                    fontSize: 10
-                  }}>
-                    <li>ouest</li>
-                    <li>centre</li>
-                    <li>nord-est</li>
-                    <li>nord</li>
-                    <li>artibonite</li>
-                    <li>sud</li>
-                    <li>sud-est</li>
-                    <li>grande-anse</li>
-                  </ul>
-                </Col>
-                <Col md={4}>
-                  <h5 style={{
-                    color: Colors.white,
-                    fontSize: 12,
-                    lineHeight: 1.3,
-                    textTransform: "uppercase"
-                  }}>NOTRE MOUVEMENT A L’ÉTRANGER (la DIASPORA)</h5>
-                  <ul style={{
-                    listStyle: "none",
-                    padding: 0,
-                    color: Colors.evenDarkerGray,
-                    textTransform: 'uppercase',
-                    fontSize: 10
-                  }}>
-                    <li>ouest</li>
-                    <li>centre</li>
-                    <li>nord-est</li>
-                    <li>nord</li>
-                    <li>artibonite</li>
-                    <li>sud</li>
-                    <li>sud-est</li>
-                    <li>grande-anse</li>
-                  </ul>
-                </Col>
-                <Col md={4}>
-                  <h5 style={{
-                    color: Colors.white,
-                    fontSize: 12,
-                    lineHeight: 1.3,
-                    textTransform: "uppercase"
-                  }}>Contact</h5>
-                  <ul style={{
-                    listStyle: "none",
-                    padding: 0,
-                    color: Colors.evenDarkerGray,
-                    textTransform: 'uppercase',
-                    fontSize: 11,
-                    lineHeight: 2
-                  }}>
-                    <li><FaMapMarker /> Location</li>
-                    <li><FaPhone /> (XXX) xxxx xxx</li>
-                    <li><FaEnvelope /> info@enavant.ht</li>
-                  </ul>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <Footer />
     </>
   )
 }
