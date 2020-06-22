@@ -3,7 +3,7 @@ import { FaPaperPlane } from 'react-icons/fa'
 
 import SEO from 'components/SEO'
 import { APP_NAME } from 'utils/constants'
-import TransParentNavBar from 'components/TransParentNavBar'
+import TransparentNavBar from 'components/TransparentNavBar'
 import Footer from 'components/Footer'
 import {
   Container,
@@ -27,7 +27,7 @@ export default function Index() {
 
       }}>
         <Container>
-          <TransParentNavBar />
+          <TransparentNavBar />
 
           <div style={{
             textAlign: 'center',
