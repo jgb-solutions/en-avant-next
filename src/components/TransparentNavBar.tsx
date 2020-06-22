@@ -17,6 +17,7 @@ export default function TransparentNavBar({ style, ...props }: Props) {
       paddingRight: 0,
       ...style
     }}
+      transparent
       {...props}
     />
   )

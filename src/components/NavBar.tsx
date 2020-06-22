@@ -18,12 +18,11 @@ import Routes from 'utils/routers'
 interface Props {
   style?: CSSProperties,
   showButtons?: boolean,
-  containerStyle?: CSSProperties
+  containerStyle?: CSSProperties,
+  transparent?: boolean
 }
 
-export default function NavBar({ style, showButtons, containerStyle }: Props) {
-  const router = useRouter()
-
+export default function NavBar({ style, showButtons, containerStyle, transparent }: Props) {
   return (
     <div style={containerStyle}>
       {showButtons && (
@@ -33,8 +32,8 @@ export default function NavBar({ style, showButtons, containerStyle }: Props) {
           <Button
             title="adherer"
             style={{
-              backgroundColor: Colors.white,
-              color: Colors.blue,
+              backgroundColor: transparent ? Colors.white : Colors.blue,
+              color: transparent ? Colors.blue : Colors.white,
               fontWeight: 'bold',
             }}
           />
@@ -53,7 +52,7 @@ export default function NavBar({ style, showButtons, containerStyle }: Props) {
       )}
       <nav className="navbar navbar-expand-lg" style={style}>
         <Navbar.Brand href={Routes.home.url}>
-          <Image src="/assets/images/logo-white.png"
+          <Image src={`/assets/images/logo-${transparent ? 'white' : 'blue'}.png`}
             style={{
               width: 130
             }} />
@@ -61,29 +60,19 @@ export default function NavBar({ style, showButtons, containerStyle }: Props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href={Routes.home.url}>
-              {Routes.home.name}
-            </Nav.Link>
-            <Nav.Link href={Routes.about.url}>
-              {Routes.about.name}
-            </Nav.Link>
-            <Nav.Link href={Routes.chart.url}>
-              {Routes.chart.name}
-            </Nav.Link>
-            <Nav.Link href={Routes.fight.url}>
-              {Routes.fight.name}
-            </Nav.Link>
-            <Nav.Link href={Routes.leaders.url}>
-              {Routes.leaders.name}
-            </Nav.Link>
-            <Nav.Link href={Routes.manifest.url}>
-              {Routes.manifest.name}
-            </Nav.Link>
-            <Nav.Link href={Routes.home.url}>
-              {Routes.news.name}
-            </Nav.Link>
-            <Nav.Link href="#"><FaSearch /></Nav.Link>
-            <Nav.Link href="#"><FaUserAlt /></Nav.Link>
+            {Object.keys(Routes).map(key => (
+              <Nav.Link href={Routes[key].url} style={{
+                color: transparent ? Colors.white : Colors.orange
+              }}>
+                {Routes[key].name}
+              </Nav.Link>
+            ))}
+            <Nav.Link href="#" style={{
+              color: transparent ? Colors.white : Colors.orange
+            }}><FaSearch /></Nav.Link>
+            <Nav.Link href="#" style={{
+              color: transparent ? Colors.white : Colors.orange
+            }}><FaUserAlt /></Nav.Link>
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>

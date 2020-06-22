@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap'
 
 import Colors from 'utils/colors'
-import WhiteNavBar from './WhiteNavBar'
+import TransparentNavBar from './TransparentNavBar'
 
 export default function Footer() {
   return (
@@ -18,7 +18,7 @@ export default function Footer() {
       paddingBottom: 80,
     }}>
       <Container>
-        <WhiteNavBar style={{
+        <TransparentNavBar style={{
           marginBottom: 15
         }} />
 

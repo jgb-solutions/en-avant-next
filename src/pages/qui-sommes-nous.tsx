@@ -1,0 +1,192 @@
+import { Container, Row, Col, Image } from 'react-bootstrap'
+
+import SEO from 'components/SEO'
+import Colors from 'utils/colors'
+import Footer from 'components/Footer'
+import TitleWithSubText from 'components/TitleWithSubText'
+import NavBar from 'components/NavBar'
+import Logo from 'components/Logo'
+import Button from 'components/Button'
+
+const title = "Qui Sommes Nous?"
+
+export default function Index() {
+  return (
+    <>
+      <SEO title={title} />
+
+      <section className="section-container" style={{
+        paddingTop: 20,
+        paddingBottom: 15
+      }}>
+        <Container>
+          <NavBar style={{
+            // color: Colors.orange,
+            paddingLeft: 0,
+            paddingRight: 0,
+          }}
+            showButtons
+          />
+        </Container>
+      </section>
+      <section className="section-container" style={{
+        backgroundImage: 'url(' + "/assets/images/about-header-bg.png" + ')',
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+        minHeight: 220,
+        paddingTop: 20,
+        display: "flex",
+        alignItems: "center"
+
+      }}>
+        <Container>
+          <Row>
+            <Col md={5}>
+              <Logo
+                transparent
+                style={{
+                  width: 250
+                }}
+              />
+            </Col>
+
+            <Col md={7}>
+              <h1 style={{
+                fontSize: 40,
+                fontWeight: 'bold',
+                color: 'white',
+                textTransform: "uppercase",
+              }}>Mouvement pour changer <br />Haïti ensemble</h1>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="section-container" style={{
+        paddingBottom: 30
+      }}>
+        <Container style={{}}>
+          <TitleWithSubText title={title} />
+          <Row>
+            <Col md={{ span: 10, offset: 1 }}>
+              <div style={{
+                fontSize: 12,
+                color: Colors.gray,
+                textAlign: "justify"
+              }}>
+                <p>Haïti connaît aujourd’hui une crise multiforme qui affecte toutes les sphères de la société. Face à la gravité de cette crise, il faut désormais un sursaut national et un renouvellement de la classe dirigeante pour redresser la barque nationale. Le changement en Haïti passe par la prise du pouvoir par une nouvelle équipe prête à adopter les réformes, et imposer les politiques publiques adéquates pour RESTAURER L’AUTORITÉ DE L’ÉTAT. </p>
+
+                <p>L’heure est venue pour la couche saine et progressiste du pays de s’organiser véritablement à occuper les espaces des pouvoirs publics en vue de l’émergence d’une Haïti meilleure pour tous.</p>
+
+                <p>Quelles solutions ? D’abord une prise de conscience et ensuite un engagement ferme. Face à la dégradation des institutions et de la gouvernance, il faut un rassemblement des personnalités et des forces de progrès pour construire une offre politique alternative et inclusive. C’est ce qui a motivé un ensemble d’organisations sociales et citoyennes, de personnalités et des leaders de différents secteurs à se rassembler au sein du MOUVEMENT EN AVANT.</p>
+
+                <p>Nous sommes un mouvement centriste axé sur le progrès et la justice sociale. Nous ambitionnons de rassembler les citoyennes et citoyens quel que soit leur affinité idéologique (de gauche ou de droite). Autant de marché que possible mais autant d’état que nécessaire. LE MOUVEMENT prône le progrès par la création des richesses et la justice sociale. La pauvreté est la conséquence de nos choix de politiques publiques qui créent des fossés immenses entre les pauvres et les riches. Nous devons réduire ce fossé en créant un maximum de richesses, que l’État se doit de redistribuer pour améliorer les conditions de vie de la majorité de la population. </p>
+              </div>
+
+              <Row noGutters style={{
+                boxShadow: "0px 5px 7px 0px rgba(0,0,0,0.35)",
+                marginTop: 50,
+                marginBottom: 50
+              }}>
+                <Col md={6} style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  paddingLeft: 20,
+                  paddingRight: 20,
+                  background: Colors.white
+                }}>
+                  <h4 style={{
+                    fontSize: 14,
+                    fontWeight: 'bold',
+                    color: Colors.darkerBlueText,
+                  }}>Les actions du Mouvement en AVANT<br />
+sont guidées par les valeurs fondamentales de : </h4>
+
+                  <ul style={{
+                    color: Colors.gray,
+                    fontSize: 14,
+                    marginBottom: 30
+                  }}>
+                    <li>Justice pour tous</li>
+                    <li>Égalité des opportunités</li>
+                    <li>Solidarité entre les citoyennes et citoyens</li>
+                    <li>Patriotisme à la dimension de nos ancêtres</li>
+                    <li>Leadership collectif et responsable</li>
+                  </ul>
+
+                </Col>
+                <Col md={6} style={{
+                  backgroundImage: 'url(' + "/assets/images/about-flag-square.png" + ')',
+                  backgroundSize: "cover",
+                  backgroundPosition: "center center",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}>
+                  <div style={{
+                    padding: 50
+                  }}>
+                    <h2 style={{
+                      fontSize: 35,
+                      fontWeight: 'bold',
+                      color: Colors.white,
+                      textTransform: "uppercase",
+                      marginBottom: 30
+                    }}>Mouvement <br /> pour changer <br />Haïti ensemble</h2>
+
+                    <div style={{
+                      marginBottom: 50
+                    }}>
+                      <Button style={{
+                        borderRadius: 20,
+                        fontWeight: 'bold',
+                        backgroundColor: Colors.white,
+                        color: Colors.blue,
+                        textTransform: "uppercase",
+                        paddingLeft: 24,
+                        paddingRight: 24,
+                      }}
+                        title="Adherer"
+                      />
+
+                      &nbsp;
+                      &nbsp;
+                      &nbsp;
+
+                    <Button style={{
+                        borderRadius: 20,
+                        backgroundColor: Colors.orange,
+                        color: 'white',
+                        textTransform: "uppercase",
+                        paddingLeft: 24,
+                        paddingRight: 24,
+                      }}
+                        title="donner"
+                      />
+                    </div>
+
+                    <Logo transparent style={{ width: 200 }} />
+                  </div>
+                </Col>
+              </Row>
+
+              <div style={{
+                fontSize: 12,
+                color: Colors.gray,
+                textAlign: "justify"
+              }}>
+                <p>Nous sommes les héritiers(ères) d’un long combat. Il n'est pas d'ordre établi d'injustices et de misères qu'on ne puisse éradiquer. Cet idéal est celui des combattants de 1804, de 1844 ; de 1934 ; de 1946, de 1987. Plus de deux siècles après l’indépendance, notre résolution demeure intacte. Tant de gens aimeraient participer à une grande œuvre de construction nationale mais ne voient comment le faire. Tant de gens veulent rompre avec le fatalisme, la résignation, l’autoflagellation et les aveux d’impuissance.  Le MOUVEMENT EN AVANT entend offrir à cette majorité silencieuse un espace d’expression et de militance, une raison d’espérer, un moyen d’agir pour CHANGER positivement les choses.</p>
+
+                <p>Un grand désordre généralisé caractérise le fonctionnement de l’État. Il faut remettre de l’ordre ! De l’ordre dans notre système judiciaire, dans nos finances publiques, dans le fonctionnement de nos institutions, dans notre système éducatif, dans notre système financier, dans notre système de sécurité sociale, dans notre police nationale, dans notre diplomatie…. Remettre de l’ordre dans la République doit être un objectif majeur de la décennie qui s’ouvre. Mais, il ne peut y avoir de République sans la certitude pour tous de jouir des droits fondamentaux : se loger, se nourrir, travailler, se cultiver, se soigner, s’éduquer et vivre en sécurité.   Nous devons ensemble bâtir un pays à la hauteur des rêves de toutes les Haïtiennes et haïtiens. Un pays où plus de 90% de la population a un emploi, qui atteint l’autosuffisance alimentaire, entre autres. Mais cela exige une transformation profonde d’Haïti. Pour le MOUVEMENT EN AVANT, cela suppose un chantier organisé autour de PLUSIEURS piliers. Cela suppose une bataille globale incluant de nombreux combats sur des terrains et secteurs spécifiques.</p>
+              </div>
+            </Col>
+          </Row>
+
+
+        </Container>
+      </section>
+      <Footer />
+    </>
+  )
+}
