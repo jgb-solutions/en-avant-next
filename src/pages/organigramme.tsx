@@ -270,8 +270,8 @@ export default function Index() {
                     textTransform: "uppercase",
                     borderTopRightRadius: 30,
                     borderBottomRightRadius: 30,
-                    marginLeft: 20,
-                    paddingLeft: 90
+                    marginLeft: 50,
+                    paddingLeft: 60
                   }} dangerouslySetInnerHTML={{ __html: text }}
                   />
                 </div>
