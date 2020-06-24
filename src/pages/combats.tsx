@@ -198,9 +198,7 @@ export default function Index() {
             title={title}
             subText={`
               <p>Au sein du mouvement EN AVANT, nous sommes portés par le devoir de freiner la descente aux enfers d’Haïti. Face aux tensions de l’après pandémie coronavirus et aux mutations d’un monde troublé, face aux peurs et à l’ampleur de la tâche, nous voulons rassembler les bonnes consciences d’Haïti, sans exclusion, autour d’un idéal de justice au profit du plus grand nombre.</p>
-
               <p>Nous voulons être une force de propositions et des acteurs de premier rang. À terme, EN AVANT soutient l’idée de construire une grande alliance des forces de changement pour arriver à l’émergence d’une plateforme idéologique plus large. Nous sommes prêts à travailler avec tous les partis, toutes les forces vives et saines de la société civile, qui se retrouvent dans un projet de société basé sur (au moins) les piliers essentiels suivants.</p>
-
             `}
           />
 

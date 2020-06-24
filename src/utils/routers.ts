@@ -17,7 +17,7 @@ const Routes = {
 	},
 	chart: {
 		url: "/organigramme",
-		name: "Notre Organigramme?",
+		name: "Notre Organigramme",
 	},
 	manifest: {
 		url: "/manifeste",

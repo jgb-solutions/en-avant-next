@@ -61,7 +61,7 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             {Object.keys(Routes).map(key => (
-              <Nav.Link href={Routes[key].url} style={{
+              <Nav.Link href={Routes[key].url} key={key} style={{
                 color: transparent ? Colors.white : Colors.orange
               }}>
                 {Routes[key].name}

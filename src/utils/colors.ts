@@ -6,6 +6,7 @@ const Colors = {
 	veryDarkBlueText: "#1b2652",
 	white: "#ffffff",
 	gray: "#777777",
+	lightGray: "#e2e2e1",
 	darkerGray: "#d6d6d6",
 	evenDarkerGray: "#8e8e8e",
 	facebook: "#1877f2",

@@ -24,12 +24,16 @@ export default function TitleWithSubText({
         color: Colors.orange,
         textTransform: "uppercase",
         ...titleStyle
-      }}>{title}</h2>
-      {subText && (
+      }} dangerouslySetInnerHTML={{ __html: title }}
+      />
+      {!!subText && (
         <p style={{
           color: Colors.gray,
+          fontSize: 11,
           ...subTextStyle
-        }} dangerouslySetInnerHTML={{ __html: subText }} />
+        }}
+          dangerouslySetInnerHTML={{ __html: subText }}
+        />
       )}
     </div>
   )
