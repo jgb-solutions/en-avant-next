@@ -138,7 +138,7 @@ const TextBlock = ({ header, text }: TextBlockProps) => (
 
 const title = "Nos Combats"
 
-export default function Index() {
+export default function Combats() {
   return (
     <>
       <SEO title={title} />

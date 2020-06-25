@@ -14,7 +14,7 @@ import TitleWithSubText from 'components/TitleWithSubText'
 
 const title = "Nos Dirigeants"
 
-export default function Index() {
+export default function Dirigeants() {
   return (
     <>
       <SEO title={title} />

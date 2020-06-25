@@ -10,7 +10,7 @@ import Button from 'components/Button'
 
 const title = "Qui Sommes Nous?"
 
-export default function Index() {
+export default function QuiSommesNous() {
   return (
     <>
       <SEO title={title} />
