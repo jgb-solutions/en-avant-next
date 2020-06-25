@@ -1,10 +1,11 @@
 import Button from 'react-bootstrap/Button'
-import { FaPaperPlane } from 'react-icons/fa'
+import { FaPaperPlane, FaRegCalendarAlt } from 'react-icons/fa'
 
 import SEO from 'components/SEO'
 import { APP_NAME } from 'utils/constants'
 import TransparentNavBar from 'components/TransparentNavBar'
 import Footer from 'components/Footer'
+import ArticleCard from 'components/ArticleCard'
 import {
   Container,
   Row,
@@ -140,35 +141,7 @@ export default function Index() {
             {[1, 2, 3].map((number) => (
               <Col md={4} key={number}>
 
-                <div style={{
-                  boxShadow: "0px 1px 3px 0px rgba(0,0,0,0.35)"
-                }}>
-                  <Image style={{
-                    display: "block",
-                  }} src="/assets/images/actualite1.png"
-                    fluid />
-
-                  <div style={{
-                    paddingTop: 20,
-                    paddingBottom: 20,
-                    paddingLeft: 15,
-                    paddingRight: 15,
-                  }}>
-                    <h4 style={{ fontSize: 13, color: Colors.gray }}>Frantz Joseph</h4>
-                    <h3 style={{
-                      fontSize: 20,
-                      fontWeight: "bold",
-                      textTransform: "uppercase",
-                      color: Colors.blue,
-                      marginBottom: 12
-                    }}>Respect du mandat de Jovenel Moïse: Kelly Bastien </h3>
-                    <p style={{
-                      color: Colors.gray,
-                      fontSize: 12,
-                      lineHeight: 1.7
-                    }}>Moins de 24 heures avoir prôné le respect scrupuleux du mandat de cinq ans du président Jovenel Moïse, le professeur Rosny Desroches est déjà dans le collimateur des leaders  politiques</p>
-                  </div>
-                </div>
+                <ArticleCard />
               </Col>
             ))}
           </Row>

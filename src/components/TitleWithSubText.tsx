@@ -27,7 +27,7 @@ export default function TitleWithSubText({
       }} dangerouslySetInnerHTML={{ __html: title }}
       />
       {!!subText && (
-        <p style={{
+        <div style={{
           color: Colors.gray,
           fontSize: 11,
           ...subTextStyle
