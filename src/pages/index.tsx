@@ -10,7 +10,8 @@ import {
   Container,
   Row,
   Col,
-  Image
+  Image,
+  Carousel
 } from 'react-bootstrap'
 import Colors from 'utils/colors'
 import TitleWithSubText from 'components/TitleWithSubText'
@@ -121,12 +122,23 @@ export default function Index() {
               </div>
             </Col>
             <Col md={6} style={{
-              overflow: "hidden"
+              // overflow: "hidden"
             }} >
-              <img style={{
-                height: "100%",
-                objectFit: "cover"
-              }} src="/assets/images/jerry-home.jpg" />
+              <Carousel interval={3000}>
+                {[1, 2, 3, 4, 6].map((number) => (
+                  <Carousel.Item key={number}>
+                    <img
+                      className="d-block w-100"
+                      src={`/assets/images/home-slides/${number}.jpg`}
+                    // alt="First slide"
+                    />
+                    {/* <Carousel.Caption>
+                      <h3>First slide label</h3>
+                      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </Carousel.Caption> */}
+                  </Carousel.Item>
+                ))}
+              </Carousel>
             </Col>
           </Row>
 
