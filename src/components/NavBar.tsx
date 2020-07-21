@@ -30,18 +30,7 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
           textAlign: 'right'
         }}>
           <Button
-            title="adherer"
-            style={{
-              backgroundColor: transparent ? Colors.white : Colors.blue,
-              color: transparent ? Colors.blue : Colors.white,
-              fontWeight: 'bold',
-            }}
-          />
-          &nbsp;
-          &nbsp;
-          &nbsp;
-          <Button
-            title="donner"
+            title="Faire un don"
             style={{
               backgroundColor: Colors.orange,
               color: Colors.white,

@@ -3,9 +3,9 @@ const Routes = {
 		url: "/",
 		name: "Accueil",
 	},
-	about: {
-		url: "/qui-sommes-nous",
-		name: "Qui sommes nous?",
+	manifest: {
+		url: "/mouvement",
+		name: "Notre Mouvement",
 	},
 	fight: {
 		url: "/combats",
@@ -16,12 +16,8 @@ const Routes = {
 		name: "Nos Dirigeants",
 	},
 	chart: {
-		url: "/organigramme",
-		name: "Notre Organigramme",
-	},
-	manifest: {
-		url: "/manifeste",
-		name: "Notre Manifeste",
+		url: "/organisation",
+		name: "Notre Organisation",
 	},
 	news: {
 		url: "/actualites",

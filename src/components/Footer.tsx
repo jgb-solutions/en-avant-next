@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaEnvelope, FaPhone, FaMapMarker, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaMapMarker, FaTwitter, FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
 import {
   Container,
   Row,
@@ -9,6 +9,38 @@ import {
 
 import Colors from 'utils/colors'
 import TransparentNavBar from './TransparentNavBar'
+
+const socialNetworks = [
+  {
+    name: 'Facebook',
+    url: 'https://www.facebook.com/enavant.ht',
+    icon: <FaFacebookF />,
+    backgroundColor: Colors.facebook,
+    color: Colors.white,
+  },
+  {
+    name: 'Twitter',
+    url: 'https://twitter.com/EnAvantHT',
+    icon: <FaTwitter />,
+    backgroundColor: Colors.twitter,
+    color: Colors.white,
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/enavant.ht/',
+    icon: <FaInstagram />,
+    backgroundColor: Colors.instagram,
+    color: Colors.white,
+  },
+  {
+    name: 'YouTube',
+    url: 'https://www.facebook.com/enavant.ht',
+    icon: <FaYoutube />,
+    backgroundColor: Colors.youtube,
+    color: Colors.white,
+  },
+
+]
 
 export default function Footer() {
   return (
@@ -29,45 +61,33 @@ export default function Footer() {
               color: Colors.darkerGray,
               marginBottom: 45
             }}>
-              “ D'aucuns pensent que le déclin continu de notre pays est inévitable
+              “D'aucuns pensent que le déclin continu de notre pays est inévitable
                 et que le pire est à venir. Les fondateurs du mouvement <strong>« EN AVANT »</strong> osent
-                prétendre autrement. En effet, une prise en charge de la politique par un
-                leadership collectif et visionnaire peut conduire Haïti sur la voie du
-                progrès et du développement”.
+                prétendre autrement.”
               </p>
 
-            <div>
-              <span style={{
-                fontSize: 11,
-                backgroundColor: Colors.facebook,
-                color: Colors.white,
-                padding: 12,
-                borderRadius: '50%'
-              }}>
-                <FaFacebookF />
-              </span>
-                &nbsp;
-                &nbsp;
-                <span style={{
-                fontSize: 11,
-                backgroundColor: Colors.twitter,
-                color: Colors.white,
-                padding: 12,
-                borderRadius: '50%'
-              }}>
-                <FaTwitter />
-              </span>
-                &nbsp;
-                &nbsp;
-                <span style={{
-                fontSize: 11,
-                backgroundColor: Colors.instagram,
-                color: Colors.white,
-                padding: 12,
-                borderRadius: '50%'
-              }}>
-                <FaInstagram />
-              </span>
+            <div style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "60%"
+            }}>
+              {socialNetworks.map((sn, i) => (
+                <a href={sn.url} target="_blank" rel="noopener" key={i}>
+                  <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 11,
+                    backgroundColor: sn.backgroundColor,
+                    color: sn.color,
+                    width: 32,
+                    height: 32,
+                    borderRadius: '50%'
+                  }}>
+                    {sn.icon}
+                  </div>
+                </a>
+              ))}
             </div>
           </Col>
           <Col md={8}>
@@ -76,8 +96,9 @@ export default function Footer() {
                 <h5 style={{
                   color: Colors.white,
                   fontSize: 12,
-                  lineHeight: 1.3
-                }}>NOTRE MOUVEMENT <br /> EN PROVINCE</h5>
+                  lineHeight: 1.3,
+                  textTransform: 'uppercase'
+                }}>Nos représentants  <br /> EN PROVINCE</h5>
                 <ul style={{
                   listStyle: "none",
                   padding: 0,
@@ -101,7 +122,7 @@ export default function Footer() {
                   fontSize: 12,
                   lineHeight: 1.3,
                   textTransform: "uppercase"
-                }}>NOTRE MOUVEMENT A L’ÉTRANGER (la DIASPORA)</h5>
+                }}>Nos représentants en diaspora <br /> (branches extérieures )</h5>
                 <ul style={{
                   listStyle: "none",
                   padding: 0,
@@ -134,9 +155,12 @@ export default function Footer() {
                   fontSize: 11,
                   lineHeight: 2
                 }}>
-                  <li><FaMapMarker /> Location</li>
-                  <li><FaPhone /> (XXX) xxxx xxx</li>
-                  <li><FaEnvelope /> info@enavant.ht</li>
+                  <li><FaMapMarker /> &nbsp;44, impasse lescot, Laboule 22</li>
+                  <li><FaPhone /> &nbsp;(509) 4621 2121</li>
+                  <li style={{
+                    display: "flex",
+                    alignItems: "center"
+                  }}><FaEnvelope /> &nbsp; contact@enavant.ht</li>
                 </ul>
               </Col>
             </Row>

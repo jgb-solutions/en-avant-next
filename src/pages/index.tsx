@@ -15,6 +15,7 @@ import {
 } from 'react-bootstrap'
 import Colors from 'utils/colors'
 import TitleWithSubText from 'components/TitleWithSubText'
+import Donate from 'components/Donate'
 
 export default function Index() {
   return (
@@ -42,40 +43,8 @@ export default function Index() {
               color: 'white',
               textTransform: "uppercase",
             }}>Mouvement pour changer <br />Haïti ensemble</h1>
-            <div style={{ marginBottom: 220 }}>
-              <Button style={{
-                borderRadius: 20,
-                backgroundColor: "#f46425",
-                color: 'white',
-                textTransform: "uppercase",
-                paddingLeft: 15,
-                paddingRight: 15,
-              }}>Rejoignez le mouvement!</Button>
-            </div>
 
-            <div>
-              <Button style={{
-                borderRadius: 20,
-                backgroundColor: Colors.white,
-                color: Colors.blue,
-                textTransform: "uppercase",
-                paddingLeft: 24,
-                paddingRight: 24,
-              }}>Adherer</Button>
-
-              &nbsp;
-              &nbsp;
-              &nbsp;
-
-              <Button style={{
-                borderRadius: 20,
-                backgroundColor: Colors.orange,
-                color: 'white',
-                textTransform: "uppercase",
-                paddingLeft: 24,
-                paddingRight: 24,
-              }}>donner</Button>
-            </div>
+            <Donate style={{ marginTop: 200 }} />
           </div>
         </Container>
       </section>
@@ -106,7 +75,11 @@ export default function Index() {
                 color: Colors.gray,
                 fontSize: 12,
                 marginBottom: 30
-              }}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              }}>
+                “D'aucuns pensent que le déclin continu de notre pays est inévitable
+                et que le pire est à venir. Les fondateurs du mouvement <strong>« EN AVANT »</strong> osent
+                prétendre autrement.”
+              </p>
 
               <div>
                 <Button style={{
@@ -142,12 +115,7 @@ export default function Index() {
             </Col>
           </Row>
 
-          <TitleWithSubText
-            title="Actualités"
-            subText={`Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-              sed do eiusmod tempor <br /> incididunt ut labore et dolore magna aliqua.
-              Ut enim ad.`}
-          />
+          <TitleWithSubText title="Actualités" />
 
           <Row>
             {[1, 2, 3].map((number) => (
@@ -178,31 +146,9 @@ export default function Index() {
                 textTransform: "uppercase",
               }}>Nous comptons sur votre <br /> <span style={{ color: Colors.orange }}>soutien</span></h2>
 
-              <p style={{ color: Colors.gray }}>Faites un pour renforcer votre action sur le terrain</p>
+              <p style={{ color: Colors.gray }}>Faites un don pour renforcer notre action sur le terrain.</p>
 
-              <div>
-                <Button style={{
-                  borderRadius: 20,
-                  backgroundColor: Colors.blue,
-                  color: Colors.white,
-                  textTransform: "uppercase",
-                  paddingLeft: 24,
-                  paddingRight: 24,
-                }}>Adherer</Button>
-
-              &nbsp;
-              &nbsp;
-              &nbsp;
-
-              <Button style={{
-                  borderRadius: 20,
-                  backgroundColor: Colors.orange,
-                  color: 'white',
-                  textTransform: "uppercase",
-                  paddingLeft: 24,
-                  paddingRight: 24,
-                }}>donner</Button>
-              </div>
+              <Donate />
             </Col>
             <Col md={7} style={{}}>
               <Row>
