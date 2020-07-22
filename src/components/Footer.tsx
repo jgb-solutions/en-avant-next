@@ -1,14 +1,31 @@
 import React from 'react'
 import { FaEnvelope, FaPhone, FaMapMarker, FaTwitter, FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
-import {
-  Container,
-  Row,
-  Col,
-  Image
-} from 'react-bootstrap'
+import Grid from '@material-ui/core/Grid'
+import { makeStyles } from "@material-ui/core/styles"
 
 import Colors from 'utils/colors'
 import TransparentNavBar from './TransparentNavBar'
+import Container from './Container'
+
+export const useStyles = makeStyles({
+  // '@global': {
+  //   '*::-webkit-scrollbar': {
+  //     width: '0.4em',
+  //     height: '0.4em'
+  //   },
+  //   '*::-webkit-scrollbar-track': {
+  //     '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
+  //   },
+  //   '*::-webkit-scrollbar-thumb': {
+  //     // backgroundColor: 'rgba(0,0,0,.4)',
+  //     outline: '1px solid slategrey'
+  //   },
+  //   body: {
+  //     // backgroundColor: '#e9ebee'
+  //     backgroundColor: Colors.contentGrey
+  //   }
+  // },
+})
 
 const socialNetworks = [
   {
@@ -43,6 +60,8 @@ const socialNetworks = [
 ]
 
 export default function Footer() {
+  const styles = useStyles()
+
   return (
     <section className="section-container" style={{
       backgroundColor: Colors.darkerBlue,
@@ -54,8 +73,8 @@ export default function Footer() {
           marginBottom: 15
         }} />
 
-        <Row>
-          <Col md={4}>
+        <Grid container spacing={3}>
+          <Grid item md={4}>
             <p style={{
               fontSize: 10,
               color: Colors.darkerGray,
@@ -89,10 +108,10 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </Col>
-          <Col md={8}>
-            <Row>
-              <Col md={4}>
+          </Grid>
+          <Grid item md={8}>
+            <Grid container spacing={3}>
+              <Grid item md={4} xs={12}>
                 <h5 style={{
                   color: Colors.white,
                   fontSize: 12,
@@ -115,8 +134,8 @@ export default function Footer() {
                   <li>sud-est</li>
                   <li>grande-anse</li>
                 </ul>
-              </Col>
-              <Col md={4}>
+              </Grid>
+              <Grid item md={4} xs={12}>
                 <h5 style={{
                   color: Colors.white,
                   fontSize: 12,
@@ -139,8 +158,8 @@ export default function Footer() {
                   <li>sud-est</li>
                   <li>grande-anse</li>
                 </ul>
-              </Col>
-              <Col md={4}>
+              </Grid>
+              <Grid item md={4} xs={12}>
                 <h5 style={{
                   color: Colors.white,
                   fontSize: 12,
@@ -162,10 +181,10 @@ export default function Footer() {
                     alignItems: "center"
                   }}><FaEnvelope /> &nbsp; contact@enavant.ht</li>
                 </ul>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </Container>
     </section>
   )

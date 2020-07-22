@@ -1,4 +1,4 @@
-import { Container, Row, Col, Image } from 'react-bootstrap'
+import Grid from '@material-ui/core/Grid'
 
 import SEO from 'components/SEO'
 import Colors from 'utils/colors'
@@ -6,7 +6,7 @@ import Footer from 'components/Footer'
 import TitleWithSubText from 'components/TitleWithSubText'
 import NavBar from 'components/NavBar'
 import Logo from 'components/Logo'
-import Button from 'components/Button'
+import Container from 'components/Container'
 
 const combats = [
   {
@@ -165,35 +165,34 @@ export default function Combats() {
         paddingTop: 20,
         display: "flex",
         alignItems: "center"
-
       }}>
-        <Container>
-          <Row>
-            <Col md={5}>
+        <Container style={{ flex: 1 }}>
+          <Grid container spacing={3}>
+            <Grid item md={5}>
               <Logo
                 transparent
                 style={{
                   width: 250
                 }}
               />
-            </Col>
+            </Grid>
 
-            <Col md={7}>
+            <Grid item md={7}>
               <h1 style={{
                 fontSize: 40,
                 fontWeight: 'bold',
                 color: 'white',
                 textTransform: "uppercase",
               }}>Mouvement pour changer <br />Haïti ensemble</h1>
-            </Col>
-          </Row>
+            </Grid>
+          </Grid>
         </Container>
       </section>
 
       <section className="section-container" style={{
         paddingBottom: 30
       }}>
-        <Container style={{}}>
+        <Container>
           <TitleWithSubText
             title={title}
             subText={`
@@ -202,16 +201,16 @@ export default function Combats() {
             `}
           />
 
-          <Row>
+          <Grid container spacing={3}>
             {combats.map(({ header, text }, index) => (
-              <Col md={4} key={index}>
+              <Grid item md={6} sm={12} key={index}>
                 <TextBlock
                   header={header}
                   text={text}
                 />
-              </Col>
+              </Grid>
             ))}
-          </Row>
+          </Grid>
         </Container>
       </section>
       <Footer />

@@ -1,21 +1,16 @@
 import Button from 'react-bootstrap/Button'
-import { FaPaperPlane, FaRegCalendarAlt } from 'react-icons/fa'
+import { FaPaperPlane } from 'react-icons/fa'
+import Grid from '@material-ui/core/Grid'
+import { Image, Carousel } from 'react-bootstrap'
 
 import SEO from 'components/SEO'
-import { APP_NAME } from 'utils/constants'
 import TransparentNavBar from 'components/TransparentNavBar'
 import Footer from 'components/Footer'
 import ArticleCard from 'components/ArticleCard'
-import {
-  Container,
-  Row,
-  Col,
-  Image,
-  Carousel
-} from 'react-bootstrap'
 import Colors from 'utils/colors'
 import TitleWithSubText from 'components/TitleWithSubText'
 import Donate from 'components/Donate'
+import Container from 'components/Container'
 
 export default function Index() {
   return (
@@ -53,10 +48,10 @@ export default function Index() {
         paddingBottom: 30
       }}>
         <Container style={{ marginTop: -150 }}>
-          <Row noGutters style={{
+          <Grid container style={{
             boxShadow: "0px 5px 7px 0px rgba(0,0,0,0.35)"
           }}>
-            <Col md={6} style={{
+            <Grid item md={6} style={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -93,10 +88,8 @@ export default function Index() {
                   paddingBottom: 5,
                 }}>plus</Button>
               </div>
-            </Col>
-            <Col md={6} style={{
-              // overflow: "hidden"
-            }} >
+            </Grid>
+            <Grid md={6}>
               <Carousel interval={3000}>
                 {[1, 2, 3, 4, 6].map((number) => (
                   <Carousel.Item key={number}>
@@ -112,19 +105,18 @@ export default function Index() {
                   </Carousel.Item>
                 ))}
               </Carousel>
-            </Col>
-          </Row>
+            </Grid>
+          </Grid>
 
           <TitleWithSubText title="Actualités" />
 
-          <Row>
+          <Grid container spacing={3}>
             {[1, 2, 3].map((number) => (
-              <Col md={4} key={number}>
-
+              <Grid item md={4} key={number}>
                 <ArticleCard />
-              </Col>
+              </Grid>
             ))}
-          </Row>
+          </Grid>
         </Container>
       </section>
       <section className="section-container">
@@ -137,8 +129,8 @@ export default function Index() {
         paddingBottom: 150
       }}>
         <Container>
-          <Row>
-            <Col md={5} style={{}}>
+          <Grid container>
+            <Grid item md={5} style={{}}>
               <h2 style={{
                 fontSize: 25,
                 fontWeight: 'bold',
@@ -149,10 +141,10 @@ export default function Index() {
               <p style={{ color: Colors.gray }}>Faites un don pour renforcer notre action sur le terrain.</p>
 
               <Donate />
-            </Col>
-            <Col md={7} style={{}}>
-              <Row>
-                <Col sm={6} style={{ marginBottom: 60 }}>
+            </Grid>
+            <Grid item md={7} style={{}}>
+              <Grid container>
+                <Grid item sm={6} style={{ marginBottom: 60 }}>
                   <h4 style={{
                     color: Colors.orange,
                     marginBottom: 20
@@ -176,8 +168,8 @@ export default function Index() {
                   }}>
                     Lorem ipsum dolor sit amet, conset adou adipisicing elit, sed do eiusm temporaryl incididunt ugt labore.
                   </p>
-                </Col>
-                <Col sm={6} >
+                </Grid>
+                <Grid item sm={6} >
                   <h4 style={{
                     color: Colors.orange,
                     marginBottom: 20
@@ -201,8 +193,8 @@ export default function Index() {
                   }}>
                     Lorem ipsum dolor sit amet, conset adou adipisicing elit, sed do eiusm temporaryl incididunt ugt labore.
                   </p>
-                </Col>
-                <Col sm={6} >
+                </Grid>
+                <Grid item sm={6} >
                   <h4 style={{
                     color: Colors.orange,
                     marginBottom: 20
@@ -226,8 +218,8 @@ export default function Index() {
                   }}>
                     Lorem ipsum dolor sit amet, conset adou adipisicing elit, sed do eiusm temporaryl incididunt ugt labore.
                   </p>
-                </Col>
-                <Col sm={6} >
+                </Grid>
+                <Grid item sm={6} >
                   <h4 style={{
                     color: Colors.orange,
                     marginBottom: 20
@@ -251,11 +243,10 @@ export default function Index() {
                   }}>
                     Lorem ipsum dolor sit amet, conset adou adipisicing elit, sed do eiusm temporaryl incididunt ugt labore.
                   </p>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         </Container>
       </section>
       <Footer />

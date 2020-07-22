@@ -1,16 +1,16 @@
-import { Container, Row, Col, Image } from 'react-bootstrap'
+import Grid from '@material-ui/core/Grid'
 
 import SEO from 'components/SEO'
 import Colors from 'utils/colors'
-import Footer from 'components/Footer'
-import TitleWithSubText from 'components/TitleWithSubText'
-import NavBar from 'components/NavBar'
 import Logo from 'components/Logo'
-import Button from 'components/Button'
+import NavBar from 'components/NavBar'
+import Footer from 'components/Footer'
+import Container from 'components/Container'
+import TitleWithSubText from 'components/TitleWithSubText'
 
-const title = "Notre Manifeste"
+const title = "Notre Mouvement"
 
-export default function Manifeste() {
+export default function Mouvement() {
   return (
     <>
       <SEO title={title} />
@@ -39,26 +39,26 @@ export default function Manifeste() {
         alignItems: "center"
 
       }}>
-        <Container>
-          <Row>
-            <Col md={5}>
+        <Container style={{ flex: 1 }}>
+          <Grid container>
+            <Grid item md={5}>
               <Logo
                 transparent
                 style={{
                   width: 250
                 }}
               />
-            </Col>
+            </Grid>
 
-            <Col md={7}>
+            <Grid item md={7}>
               <h1 style={{
                 fontSize: 40,
                 fontWeight: 'bold',
                 color: 'white',
                 textTransform: "uppercase",
               }}>Mouvement pour changer <br />Haïti ensemble</h1>
-            </Col>
-          </Row>
+            </Grid>
+          </Grid>
         </Container>
       </section>
 
