@@ -69,9 +69,9 @@ const VerticalBorder = ({ color, height, width, style }: VerticalBorderProps) =>
   }} />
 )
 
-const title = "Notre Organigramme"
+const title = "Notre Organisation"
 
-export default function Organigramme() {
+export default function Organisation() {
   return (
     <>
       <SEO title={title} />
