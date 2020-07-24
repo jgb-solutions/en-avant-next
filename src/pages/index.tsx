@@ -11,8 +11,15 @@ import Colors from 'utils/colors'
 import TitleWithSubText from 'components/TitleWithSubText'
 import Donate from 'components/Donate'
 import Container from 'components/Container'
+import { wpapi } from 'utils/wpapi'
+import PostInterface from 'interfaces/PostInterface'
 
-export default function Index() {
+interface Props {
+  posts: PostInterface[]
+}
+
+export default function Index({ posts }: Props) {
+
   return (
     <>
       <SEO />
@@ -89,7 +96,7 @@ export default function Index() {
                 }}>plus</Button>
               </div>
             </Grid>
-            <Grid md={6}>
+            <Grid item md={6}>
               <Carousel interval={3000}>
                 {[1, 2, 3, 4, 6].map((number) => (
                   <Carousel.Item key={number}>
@@ -111,9 +118,9 @@ export default function Index() {
           <TitleWithSubText title="Actualités" />
 
           <Grid container spacing={3}>
-            {[1, 2, 3].map((number) => (
-              <Grid item md={4} key={number}>
-                <ArticleCard />
+            {posts.map((post) => (
+              <Grid item sm={6} md={4} key={post.id}>
+                <ArticleCard post={post} />
               </Grid>
             ))}
           </Grid>
@@ -253,3 +260,26 @@ export default function Index() {
     </>
   )
 }
+
+export async function getStaticProps() {
+  const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
+
+  return {
+    props: {
+      posts: posts.map(mapPostFromResponse)
+    },
+    unstable_revalidate: 60
+  }
+}
+
+
+export const mapPostFromResponse = (post: any) => ({
+  id: post.id,
+  slug: post.slug,
+  title: post.title.rendered,
+  image_url: post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url,
+  excerpt: post.excerpt.rendered,
+  content: post.content.rendered,
+  link: post.link,
+  date: post.date
+})

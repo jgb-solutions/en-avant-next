@@ -56,9 +56,9 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
                 {Routes[key].name}
               </Nav.Link>
             ))}
-            <Nav.Link href="#" style={{
+            {/* <Nav.Link href="#" style={{
               color: transparent ? Colors.white : Colors.orange
-            }}><FaSearch /></Nav.Link>
+            }}><FaSearch /></Nav.Link> */}
             <Nav.Link href="#" style={{
               color: transparent ? Colors.white : Colors.orange
             }}><FaUserAlt /></Nav.Link>
