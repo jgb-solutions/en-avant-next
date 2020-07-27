@@ -1,7 +1,6 @@
-import Button from 'react-bootstrap/Button'
 import { FaPaperPlane } from 'react-icons/fa'
 import Grid from '@material-ui/core/Grid'
-import { Image, Carousel } from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap'
 
 import SEO from 'components/SEO'
 import TransparentNavBar from 'components/TransparentNavBar'
@@ -13,6 +12,10 @@ import Donate from 'components/Donate'
 import Container from 'components/Container'
 import { wpapi } from 'utils/wpapi'
 import PostInterface from 'interfaces/PostInterface'
+import Button from 'components/Button'
+import Link from 'next/link'
+import Routes from 'utils/routers'
+import { dirigeants } from './dirigeants'
 
 interface Props {
   posts: PostInterface[]
@@ -84,26 +87,28 @@ export default function Index({ posts }: Props) {
               </p>
 
               <div>
-                <Button style={{
-                  borderRadius: 20,
-                  backgroundColor: Colors.orange,
-                  color: 'white',
-                  textTransform: "uppercase",
-                  paddingLeft: 40,
-                  paddingRight: 40,
-                  paddingTop: 5,
-                  paddingBottom: 5,
-                }}>plus</Button>
+                <Button
+                  title="plus"
+                  style={{
+                    borderRadius: 20,
+                    backgroundColor: Colors.orange,
+                    color: 'white',
+                    textTransform: "uppercase",
+                    paddingLeft: 40,
+                    paddingRight: 40,
+                    paddingTop: 5,
+                    paddingBottom: 5,
+                  }} />
               </div>
             </Grid>
             <Grid item md={6}>
               <Carousel interval={3000}>
-                {[1, 2, 3, 4, 6].map((number) => (
-                  <Carousel.Item key={number}>
+                {dirigeants.map((d, index) => (
+                  <Carousel.Item key={index}>
                     <img
                       className="d-block w-100"
-                      src={`/assets/images/home-slides/${number}.jpg`}
-                    // alt="First slide"
+                      src={`/assets/images/dirigeants/${d.image}`}
+                      alt={d.name}
                     />
                     {/* <Carousel.Caption>
                       <h3>First slide label</h3>
@@ -115,22 +120,28 @@ export default function Index({ posts }: Props) {
             </Grid>
           </Grid>
 
-          <TitleWithSubText title="Actualités" />
+          {posts.length > 0 && (
+            <>
+              <TitleWithSubText title="Actualités" />
 
-          <Grid container spacing={3}>
-            {posts.map((post) => (
-              <Grid item sm={6} md={4} key={post.id}>
-                <ArticleCard post={post} />
+              <Grid container spacing={3}>
+                {posts.map((post) => (
+                  <Grid item sm={6} md={4} key={post.id}>
+                    <ArticleCard post={post} />
+                  </Grid>
+                ))}
               </Grid>
-            ))}
-          </Grid>
+            </>
+          )}
         </Container>
       </section>
+
       <section className="section-container">
-        <Image src="/assets/images/hands.png"
+        <img src="/assets/images/hands.png"
           style={{ width: "100%" }}
-          fluid />
+        />
       </section>
+
       <section className="section-container" style={{
         paddingTop: 150,
         paddingBottom: 150
@@ -150,107 +161,38 @@ export default function Index({ posts }: Props) {
               <Donate />
             </Grid>
             <Grid item md={7} style={{}}>
-              <Grid container>
-                <Grid item sm={6} style={{ marginBottom: 60 }}>
-                  <h4 style={{
-                    color: Colors.orange,
-                    marginBottom: 20
-                  }}>
-                    <span style={{
-                      boxShadow: "0px 0px 5px 5px rgba(223,52,71,0.15)",
-                      borderRadius: '50%',
-                      padding: 8,
-                      fontSize: 12,
-                      fontWeight: 'bold',
-                      marginRight: 12,
-                    }}>
-                      <FaPaperPlane style={{}} />
-                    </span>
-                    <span style={{
+              <Grid container spacing={3}>
+                {[Routes.movement, Routes.leaders, Routes.fight, Routes.chart].map(p => (
+                  <Grid item sm={6} style={{ marginBottom: 24 }}>
+                    <Link href={p.url} passHref>
+                      <a style={{ textDecoration: "none", color: "black" }}>
+                        <h4 style={{
+                          color: Colors.orange,
+                          marginBottom: 20
+                        }}>
+                          <span style={{
+                            boxShadow: "0px 0px 5px 5px rgba(223,52,71,0.15)",
+                            borderRadius: '50%',
+                            padding: 8,
+                            fontSize: 12,
+                            fontWeight: 'bold',
+                            marginRight: 12,
+                          }}>
+                            <FaPaperPlane style={{}} />
+                          </span>
+                          <span style={{
 
-                    }}>Notre Manifeste</span>
-                  </h4>
-                  <p style={{
-                    fontSize: 12
-                  }}>
-                    Lorem ipsum dolor sit amet, conset adou adipisicing elit, sed do eiusm temporaryl incididunt ugt labore.
-                  </p>
-                </Grid>
-                <Grid item sm={6} >
-                  <h4 style={{
-                    color: Colors.orange,
-                    marginBottom: 20
-                  }}>
-                    <span style={{
-                      boxShadow: "0px 0px 5px 5px rgba(223,52,71,0.15)",
-                      borderRadius: '50%',
-                      padding: 8,
-                      fontSize: 12,
-                      fontWeight: 'bold',
-                      marginRight: 12,
-                    }}>
-                      <FaPaperPlane style={{}} />
-                    </span>
-                    <span style={{
-
-                    }}>Nos Digigeants</span>
-                  </h4>
-                  <p style={{
-                    fontSize: 12
-                  }}>
-                    Lorem ipsum dolor sit amet, conset adou adipisicing elit, sed do eiusm temporaryl incididunt ugt labore.
-                  </p>
-                </Grid>
-                <Grid item sm={6} >
-                  <h4 style={{
-                    color: Colors.orange,
-                    marginBottom: 20
-                  }}>
-                    <span style={{
-                      boxShadow: "0px 0px 5px 5px rgba(223,52,71,0.15)",
-                      borderRadius: '50%',
-                      padding: 8,
-                      fontSize: 12,
-                      fontWeight: 'bold',
-                      marginRight: 12,
-                    }}>
-                      <FaPaperPlane style={{}} />
-                    </span>
-                    <span style={{
-
-                    }}>Nos Combats</span>
-                  </h4>
-                  <p style={{
-                    fontSize: 12
-                  }}>
-                    Lorem ipsum dolor sit amet, conset adou adipisicing elit, sed do eiusm temporaryl incididunt ugt labore.
-                  </p>
-                </Grid>
-                <Grid item sm={6} >
-                  <h4 style={{
-                    color: Colors.orange,
-                    marginBottom: 20
-                  }}>
-                    <span style={{
-                      boxShadow: "0px 0px 5px 5px rgba(223,52,71,0.15)",
-                      borderRadius: '50%',
-                      padding: 8,
-                      fontSize: 12,
-                      fontWeight: 'bold',
-                      marginRight: 12,
-                    }}>
-                      <FaPaperPlane style={{}} />
-                    </span>
-                    <span style={{
-
-                    }}>Notre Organigramme</span>
-                  </h4>
-                  <p style={{
-                    fontSize: 12
-                  }}>
-                    Lorem ipsum dolor sit amet, conset adou adipisicing elit, sed do eiusm temporaryl incididunt ugt labore.
-                  </p>
-                </Grid>
+                          }}>{p.name}</span>
+                        </h4>
+                        <p style={{
+                          fontSize: 12
+                        }}>
+                          {p.intro}
+                        </p>
+                      </a>
+                    </Link>
+                  </Grid>
+                ))}
               </Grid>
             </Grid>
           </Grid>

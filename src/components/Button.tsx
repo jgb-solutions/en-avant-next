@@ -1,9 +1,4 @@
 import React, { CSSProperties } from 'react'
-import {
-  Button as ButtonBase,
-} from 'react-bootstrap'
-
-import Colors from 'utils/colors'
 
 interface Props {
   title: string,
@@ -13,16 +8,15 @@ interface Props {
 
 export default function Button({ title, style, onClick }: Props) {
   return (
-    <ButtonBase style={{
+    <button style={{
       fontSize: 11,
       borderRadius: 20,
       textTransform: "uppercase",
-      paddingLeft: 24,
-      paddingRight: 24,
+      padding: "12px 24px",
       border: 0,
+      outline: "none",
       ...style
     }}
-      onClick={onClick}>{title}</ButtonBase>
-
+      onClick={onClick}>{title}</button>
   )
 }

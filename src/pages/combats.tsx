@@ -158,7 +158,7 @@ export default function Combats() {
         </Container>
       </section>
       <section className="section-container" style={{
-        backgroundImage: 'url(' + "/assets/images/organigramme-bg.png" + ')',
+        backgroundImage: 'url(' + "/assets/images/organisation-bg.png" + ')',
         backgroundSize: "cover",
         backgroundPosition: "center center",
         minHeight: 220,

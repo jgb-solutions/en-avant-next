@@ -1,4 +1,4 @@
-import { Container, Row, Col, Image } from 'react-bootstrap'
+import Grid from '@material-ui/core/Grid'
 
 import SEO from 'components/SEO'
 import Colors from 'utils/colors'
@@ -8,6 +8,7 @@ import NavBar from 'components/NavBar'
 import Logo from 'components/Logo'
 import Button from 'components/Button'
 import { CSSProperties } from 'react'
+import Container from 'components/Container'
 
 const responsables = [
   `Un responsable chargé <br /> des relations avec la diaspora`,
@@ -91,7 +92,7 @@ export default function Organisation() {
         </Container>
       </section>
       <section className="section-container" style={{
-        backgroundImage: 'url(' + "/assets/images/organigramme-bg.png" + ')',
+        backgroundImage: 'url(' + "/assets/images/organisation-bg.png" + ')',
         backgroundSize: "cover",
         backgroundPosition: "center center",
         minHeight: 220,
@@ -101,25 +102,25 @@ export default function Organisation() {
 
       }}>
         <Container>
-          <Row>
-            <Col md={5}>
+          <Grid container>
+            <Grid item md={5}>
               <Logo
                 transparent
                 style={{
                   width: 250
                 }}
               />
-            </Col>
+            </Grid>
 
-            <Col md={7}>
+            <Grid item md={7}>
               <h1 style={{
                 fontSize: 40,
                 fontWeight: 'bold',
                 color: 'white',
                 textTransform: "uppercase",
               }}>Mouvement pour changer <br />Haïti ensemble</h1>
-            </Col>
-          </Row>
+            </Grid>
+          </Grid>
         </Container>
       </section>
 
@@ -234,9 +235,9 @@ export default function Organisation() {
           }}>
             <VerticalBorder height={50} />
           </div>
-          <Row>
+          <Grid container>
             {responsables.map((text, key) => (
-              <Col key={key} md={4} style={{ marginBottom: 60 }}>
+              <Grid item key={key} md={4} style={{ marginBottom: 60 }}>
                 <div style={{
                   display: "flex",
                   alignItems: "center",
@@ -275,9 +276,9 @@ export default function Organisation() {
                   }} dangerouslySetInnerHTML={{ __html: text }}
                   />
                 </div>
-              </Col>
+              </Grid>
             ))}
-          </Row>
+          </Grid>
         </Container>
       </section>
       <Footer />

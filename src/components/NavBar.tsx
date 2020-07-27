@@ -1,14 +1,6 @@
 import React, { CSSProperties } from 'react'
-import { FaSearch, FaUserAlt } from 'react-icons/fa'
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Image
-} from 'react-bootstrap'
-
+import { FaUserAlt } from 'react-icons/fa'
+import { Navbar, Nav, } from 'react-bootstrap'
 import { useRouter } from 'next/router'
 
 import Colors from 'utils/colors'
@@ -41,10 +33,9 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
       )}
       <nav className="navbar navbar-expand-lg" style={style}>
         <Navbar.Brand href={Routes.home.url}>
-          <Image src={`/assets/images/logo-${transparent ? 'white' : 'blue'}.png`}
-            style={{
-              width: 130
-            }} />
+          <img src={`/assets/images/logo-${transparent ? 'white' : 'blue'}.png`}
+            style={{ width: 130 }}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

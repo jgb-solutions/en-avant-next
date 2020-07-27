@@ -1,6 +1,4 @@
 import React, { CSSProperties } from 'react'
-import Button from 'react-bootstrap/Button'
-
 
 import Colors from 'utils/colors'
 
@@ -12,15 +10,16 @@ interface Props {
 
 export default function Donate({ title, style, onClick }: Props) {
   return (
-    <Button onClick={onClick} style={{
+    <button onClick={onClick} style={{
       borderRadius: 20,
       backgroundColor: Colors.orange,
       color: 'white',
       textTransform: "uppercase",
-      paddingLeft: 24,
-      paddingRight: 24,
+      padding: "12px 24px",
+      outline: "none",
+      fontWeight: "bold",
       ...style
-    }}>{title || "Faire un don"}</Button>
+    }}>{title || "Faire un don"}</button>
 
   )
 }

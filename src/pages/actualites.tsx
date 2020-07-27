@@ -19,7 +19,7 @@ interface Props {
   posts: PostInterface[]
 }
 
-export default function Manifeste({ posts }: Props) {
+export default function Actualites({ posts }: Props) {
   return (
     <>
       <SEO title={title} />
