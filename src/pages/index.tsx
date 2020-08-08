@@ -163,7 +163,7 @@ export default function Index({ posts }: Props) {
             <Grid item md={7} style={{}}>
               <Grid container spacing={3}>
                 {[Routes.movement, Routes.leaders, Routes.fight, Routes.chart].map(p => (
-                  <Grid item sm={6} style={{ marginBottom: 24 }}>
+                  <Grid item sm={6} style={{ marginBottom: 24 }} key={p.url}>
                     <Link href={p.url} passHref>
                       <a style={{ textDecoration: "none", color: "black" }}>
                         <h4 style={{
@@ -204,11 +204,12 @@ export default function Index({ posts }: Props) {
 }
 
 export async function getStaticProps() {
-  const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
+  // const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
 
   return {
     props: {
-      posts: posts.map(mapPostFromResponse)
+      // posts: posts.map(mapPostFromResponse)
+      posts: []
     },
     unstable_revalidate: 60
   }
