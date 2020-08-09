@@ -8,6 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 
 // import theme from '../src/theme'
 import { APP_NAME } from '../utils/constants'
+import { AppContext, AppProviderData } from 'store/app-context'
 import 'styles/react-transitions.css'
 import "styles/styles.css"
 
@@ -32,7 +33,9 @@ export default function MyApp(props: AppProps) {
 			{/* <ThemeProvider> */}
 			{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 			<CssBaseline />
-			<Component {...pageProps} />
+			<AppContext.Provider value={AppProviderData}>
+				<Component {...pageProps} />
+			</AppContext.Provider>
 			{/* </ThemeProvider> */}
 		</>
 	)

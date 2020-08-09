@@ -50,7 +50,7 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
             {/* <Nav.Link href="#" style={{
               color: transparent ? Colors.white : Colors.orange
             }}><FaSearch /></Nav.Link> */}
-            <Nav.Link href="#" style={{
+            <Nav.Link href="/login" style={{
               color: transparent ? Colors.white : Colors.orange
             }}><FaUserAlt /></Nav.Link>
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">

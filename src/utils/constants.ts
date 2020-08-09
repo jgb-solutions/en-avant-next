@@ -8,5 +8,5 @@ export const TWITTER_HANDLE = `en_avant_ht`
 export const DOMAIN = process.env.REACT_APP_DOMAIN || `https://infotoutan.com`
 export const API_URL =
 	process.env.NODE_ENV === "development"
-		? "http://web.infotoutan.loc/api/news"
-		: "https://web.infotoutan.com/api/news"
+		? "http://web.enavant.loc/api"
+		: "https://web.enavant.ht/api"
