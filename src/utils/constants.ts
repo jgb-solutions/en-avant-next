@@ -9,4 +9,4 @@ export const DOMAIN = process.env.REACT_APP_DOMAIN || `https://infotoutan.com`
 export const API_URL =
 	process.env.NODE_ENV === "development"
 		? "http://web.enavant.loc/api"
-		: "https://web.enavant.ht/api"
+		: "https://web2.enavant.ht/api"
