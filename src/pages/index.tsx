@@ -204,12 +204,11 @@ export default function Index({ posts }: Props) {
 }
 
 export async function getStaticProps() {
-  // const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
+  const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
 
   return {
     props: {
-      // posts: posts.map(mapPostFromResponse)
-      posts: []
+      posts: posts.map(mapPostFromResponse)
     },
     unstable_revalidate: 60
   }

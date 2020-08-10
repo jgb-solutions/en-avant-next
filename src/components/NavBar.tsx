@@ -1,11 +1,14 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useContext } from 'react'
 import { FaUserAlt } from 'react-icons/fa'
-import { Navbar, Nav, } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, } from 'react-bootstrap'
 import { useRouter } from 'next/router'
 
 import Colors from 'utils/colors'
 import Button from './Button'
 import Routes from 'utils/routers'
+import { AppContext } from "store/app-context"
+import useHttpClient from "hooks/useHttpClient"
+
 
 interface Props {
   style?: CSSProperties,
@@ -15,6 +18,12 @@ interface Props {
 }
 
 export default function NavBar({ style, showButtons, containerStyle, transparent }: Props) {
+  const { auth, actions } = useContext(AppContext)
+  const router = useRouter()
+  const { client } = useHttpClient()
+
+  const routes: any = Routes
+
   return (
     <div style={containerStyle}>
       {showButtons && (
@@ -40,29 +49,53 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {Object.keys(Routes).map(key => (
-              <Nav.Link href={Routes[key].url} key={key} style={{
-                color: transparent ? Colors.white : Colors.orange
-              }}>
-                {Routes[key].name}
-              </Nav.Link>
-            ))}
+            {Object.keys(routes).map(key => {
+              const { url, name } = routes[key]
+
+              return (
+                <Nav.Link href={url} key={key} style={{
+                  color: transparent ? Colors.white : Colors.orange
+                }}>
+                  {name}
+                </Nav.Link>
+              )
+            })}
             {/* <Nav.Link href="#" style={{
               color: transparent ? Colors.white : Colors.orange
             }}><FaSearch /></Nav.Link> */}
-            <Nav.Link href="/login" style={{
-              color: transparent ? Colors.white : Colors.orange
-            }}><FaUserAlt /></Nav.Link>
-            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown> */}
+            {auth.isLoggedIn ? (
+              <>
+                <NavDropdown title={auth.data?.email} id="basic-nav-dropdown" style={{
+                  color: `${transparent ? Colors.white : Colors.orange} !important`
+                }}>
+                  <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={() => actions.doLogout(() => {
+                    client.defaults.headers['Authorization'] = `Bearer ${auth.token}`
+
+                    client.post('/logout')
+                      .then(() => {
+                        router.replace("/")
+                      })
+                      .catch(err => console.log(err))
+                  })}>
+                    Déconnexion
+                </NavDropdown.Item>
+                </NavDropdown>
+                <style jsx>{`
+                  #basic-nav-dropdown > a {
+                    color: ${transparent ? Colors.white : Colors.orange} !important;
+                  }
+                `}</style>
+              </>
+            ) : (
+                <Nav.Link href="/login" style={{
+                  color: transparent ? Colors.white : Colors.orange
+                }}><FaUserAlt /></Nav.Link>
+              )}
           </Nav>
         </Navbar.Collapse>
       </nav>
-    </div>
+    </div >
   )
 }

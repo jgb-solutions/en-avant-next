@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { AppProps } from 'next/app'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
@@ -8,12 +8,60 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 
 // import theme from '../src/theme'
 import { APP_NAME } from '../utils/constants'
-import { AppContext, AppProviderData } from 'store/app-context'
+import { AppContext, AppProviderData, UserInterface } from 'store/app-context'
 import 'styles/react-transitions.css'
 import "styles/styles.css"
 
 export default function MyApp(props: AppProps) {
+	const [appState, setAppState] = useState({ ...AppProviderData })
 	const { Component, pageProps } = props
+
+	useEffect(() => {
+		if (typeof localStorage !== 'undefined') {
+			const { userData, token } = JSON.parse(localStorage.getItem('authData') || "{}")
+
+			setAppState(prevState => ({
+				...prevState, auth: {
+					isLoggedIn: !!token,
+					data: userData,
+					token
+				}
+			}))
+		}
+	}, [])
+
+	const doLogin = (data: {
+		userData: UserInterface
+		token: string
+	}, callback: () => void) => {
+		const { userData, token } = data
+
+		if (typeof localStorage !== 'undefined') {
+			localStorage.setItem('authData', JSON.stringify(data))
+		}
+
+		setAppState(prevState => ({
+			...prevState, auth: {
+				isLoggedIn: true,
+				data: userData,
+				token
+			}
+		}))
+
+		callback()
+	}
+
+	const doLogout = (callback: () => void) => {
+		localStorage.removeItem('authData')
+
+		setAppState(prevState => ({
+			...prevState, auth: {
+				isLoggedIn: false,
+			}
+		}))
+
+		callback()
+	}
 
 	React.useEffect(() => {
 		// Remove the server-side injected CSS.
@@ -33,7 +81,12 @@ export default function MyApp(props: AppProps) {
 			{/* <ThemeProvider> */}
 			{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 			<CssBaseline />
-			<AppContext.Provider value={AppProviderData}>
+			<AppContext.Provider value={{
+				...appState, actions: {
+					doLogin,
+					doLogout
+				}
+			}}>
 				<Component {...pageProps} />
 			</AppContext.Provider>
 			{/* </ThemeProvider> */}

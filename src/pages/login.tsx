@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { useRouter } from "next/router"
 import { useForm } from 'react-hook-form'
 import { Grid, TextField } from "@material-ui/core"
@@ -32,21 +32,33 @@ export default function Login() {
   const router = useRouter()
   const styles = useStyles()
   const { client } = useHttpClient()
-  const { auth } = useContext(AppContext)
+  const { auth, actions } = useContext(AppContext)
   const { register, errors, handleSubmit } = useForm<Credentials>({
     mode: 'onBlur'
   })
   const [loginError, setLoginError] = useState("")
 
-  const login = async (credentials: Credentials) => {
+  const handleLogin = async (credentials: Credentials) => {
     try {
-      await client.post('/sanctum/token', credentials)
+      setLoginError("")
+
+      const { data } = await client.post('/sanctum/token', {
+        ...credentials,
+        device_name: "spa-client"
+      })
+      // Do the actual login
+      actions.doLogin(data, () => {
+        router.push('/')
+      })
     } catch (err) {
       console.log(err)
+      setLoginError("Email ou Mot de Passe invalide.")
     }
   }
 
-  if (auth.isLoggedIn) return router.replace("/")
+  useEffect(() => {
+    if (auth.isLoggedIn) router.replace("/")
+  }, [auth])
 
   return (
     <>
@@ -65,7 +77,7 @@ export default function Login() {
           </Link>
           {/* <h1 style={{ fontSize: 12 }}>To continue, log in to MP3 Pam.</h1> */}
 
-          <form onSubmit={handleSubmit(login)} noValidate>
+          <form onSubmit={handleSubmit(handleLogin)} noValidate>
             {loginError && <h3 className={styles.errorTitle} dangerouslySetInnerHTML={{ __html: loginError }} />}
             <Grid container style={{ maxWidth: 450 }}>
               <Grid item xs={12}>

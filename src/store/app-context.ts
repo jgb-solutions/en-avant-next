@@ -16,6 +16,7 @@ export interface AuthInterface {
 
 export interface AppProvider {
 	auth: AuthInterface
+	actions?: any
 }
 
 export const AppProviderData: AppProvider = {

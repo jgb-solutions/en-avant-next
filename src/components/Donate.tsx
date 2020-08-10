@@ -1,25 +1,31 @@
 import React, { CSSProperties } from 'react'
 
 import Colors from 'utils/colors'
+import { useRouter } from 'next/router'
+import Button from './Button'
 
 interface Props {
   title?: string,
   style?: CSSProperties,
-  onClick?: () => any
 }
 
-export default function Donate({ title, style, onClick }: Props) {
-  return (
-    <button onClick={onClick} style={{
-      borderRadius: 20,
-      backgroundColor: Colors.orange,
-      color: 'white',
-      textTransform: "uppercase",
-      padding: "12px 24px",
-      outline: "none",
-      fontWeight: "bold",
-      ...style
-    }}>{title || "Faire un don"}</button>
+export default function Donate({ title, style }: Props) {
+  const router = useRouter()
 
+  const handleClick = () => {
+    router.push('/donate')
+  }
+
+  return (
+    <Button
+      onClick={() => handleClick()}
+      title={title || "Faire un don"}
+      style={{
+        backgroundColor: Colors.orange,
+        color: Colors.white,
+        fontWeight: 'bold',
+        ...style
+      }}
+    />
   )
 }

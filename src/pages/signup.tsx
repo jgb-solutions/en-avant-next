@@ -39,11 +39,10 @@ export default function Signup() {
     mode: 'onBlur'
   })
   const [loginError, setLoginError] = useState("")
-  const currentUser = auth.data
 
   const Signup = async (data: SignupData) => { }
 
-  if (auth.isLoggedIn) return router.replace("/")
+  if (auth.isLoggedIn) router.replace("/")
 
   return (
     <>
