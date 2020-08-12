@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { useRouter } from "next/router"
 import { useForm } from 'react-hook-form'
 import { Grid, TextField } from "@material-ui/core"
@@ -63,7 +63,9 @@ export default function Signup() {
     }
   }
 
-  if (auth.isLoggedIn) router.replace("/")
+  useEffect(() => {
+    if (auth.isLoggedIn) router.replace("/")
+  }, [auth])
 
   return (
     <>
