@@ -22,14 +22,16 @@ export default function Profile() {
   const { auth } = useContext(AppContext)
 
   useEffect(() => {
-    if (!auth.isLoggedIn) router.replace("/login")
-  }, [auth.isLoggedIn])
+    if (auth) {
+      if (!auth.isLoggedIn) router.replace("/login")
+    }
+  }, [auth])
 
   return (
     <>
       <SEO
         title={title}
-        url={`/profile`}
+        url={`/profil`}
       />
 
       <section className="section-container" style={{

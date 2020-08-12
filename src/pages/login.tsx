@@ -59,7 +59,9 @@ export default function Login() {
   }
 
   useEffect(() => {
-    if (auth.isLoggedIn) router.replace("/")
+    if (auth) {
+      if (auth.isLoggedIn) router.replace("/")
+    }
   }, [auth])
 
   return (

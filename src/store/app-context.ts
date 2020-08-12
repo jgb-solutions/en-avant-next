@@ -15,14 +15,13 @@ export interface AuthInterface {
 }
 
 export interface AppProvider {
-	auth: AuthInterface
+	auth?: AuthInterface | null
 	actions?: any
 }
 
 export const AppProviderData: AppProvider = {
-	auth: {
-		isLoggedIn: true,
-	},
+	auth: null,
+	actions: null,
 }
 
 export const AppContext = React.createContext(AppProviderData)

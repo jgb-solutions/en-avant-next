@@ -8,12 +8,13 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 
 // import theme from '../src/theme'
 import { APP_NAME } from '../utils/constants'
-import { AppContext, AppProviderData, UserInterface } from 'store/app-context'
+import { AppContext, UserInterface, AppProvider, AppProviderData } from 'store/app-context'
 import 'styles/react-transitions.css'
 import "styles/styles.css"
 
 export default function MyApp(props: AppProps) {
-	const [appState, setAppState] = useState({ ...AppProviderData })
+	const [appState, setAppState] = useState<AppProvider>(AppProviderData)
+
 	const { Component, pageProps } = props
 
 	useEffect(() => {

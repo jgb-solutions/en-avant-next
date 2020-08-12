@@ -45,7 +45,6 @@ export default function Signup() {
   const [signupError, setSignupError] = useState("")
 
   const handleSignup = async (signupData: SignupData) => {
-    console.log(signupData)
     try {
       setSignupError("")
 
@@ -58,13 +57,15 @@ export default function Signup() {
         router.push('/')
       })
     } catch (err) {
-      console.log(err.response)
-      setSignupError(`Unable to create your account. Please try again. ${err.response.data.message}`)
+      // console.log(err.response)
+      setSignupError(`Une error s'est produite. Essayez à nouveau.`)
     }
   }
 
   useEffect(() => {
-    if (auth.isLoggedIn) router.replace("/")
+    if (auth) {
+      if (auth.isLoggedIn) router.replace("/")
+    }
   }, [auth])
 
   return (

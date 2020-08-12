@@ -195,7 +195,6 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     const { slug } = params
 
     const posts = await wpapi.posts().slug(slug).embed().get()
-    console.log('post', posts)
     return {
       props: { post: mapPostFromResponse(posts[0]) },
       unstable_revalidate: 60

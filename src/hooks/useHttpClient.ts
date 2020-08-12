@@ -11,7 +11,7 @@ export default function useHttpClient() {
 		return axios.create({
 			baseURL: API_URL,
 			headers: {
-				Authorization: `Bearer ${auth.token || ""}`,
+				Authorization: `Bearer ${auth?.token || ""}`,
 				"X-Requested-With": "XMLHttpRequest",
 				Accept: "application/json",
 			},
