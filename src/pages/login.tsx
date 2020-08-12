@@ -19,7 +19,9 @@ import useHttpClient from "hooks/useHttpClient"
 
 const useStyles = makeStyles({
   errorTitle: {
-    color: colors.red
+    color: colors.red,
+    fontSize: 13,
+    marginTop: 15
   }
 })
 
@@ -52,7 +54,7 @@ export default function Login() {
       })
     } catch (err) {
       console.log(err)
-      setLoginError("Email ou Mot de Passe invalide.")
+      setLoginError(`Email ou Mot de Passe invalide.`)
     }
   }
 

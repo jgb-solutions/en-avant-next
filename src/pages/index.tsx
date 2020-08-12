@@ -29,7 +29,7 @@ export default function Index({ posts }: Props) {
       <section className="section-container" style={{
         backgroundImage: 'url(' + "/assets/images/home-header.jpg" + ')',
         backgroundSize: "cover",
-        backgroundPosition: "center center",
+        backgroundPosition: "top center",
         minHeight: 500,
         paddingTop: 20
 
@@ -103,7 +103,7 @@ export default function Index({ posts }: Props) {
             </Grid>
             <Grid item md={6}>
               <Carousel interval={3000}>
-                {dirigeants.map((d, index) => (
+                {dirigeants.filter(d => !d.image.startsWith("silhouette")).map((d, index) => (
                   <Carousel.Item key={index}>
                     <img
                       className="d-block w-100"

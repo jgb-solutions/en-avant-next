@@ -65,10 +65,11 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
             }}><FaSearch /></Nav.Link> */}
             {auth.isLoggedIn ? (
               <>
-                <NavDropdown title={auth.data?.email} id="basic-nav-dropdown" style={{
+                <NavDropdown title={auth.data?.first_name} id="basic-nav-dropdown" style={{
                   color: `${transparent ? Colors.white : Colors.orange} !important`
                 }}>
                   <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="/don">Faire un Don</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={() => actions.doLogout(() => {
                     client.defaults.headers['Authorization'] = `Bearer ${auth.token}`

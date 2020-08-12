@@ -15,7 +15,7 @@ import TitleWithSubText from 'components/TitleWithSubText'
 import Footer from 'components/Footer'
 import { AppContext } from "store/app-context"
 
-const title = "Mon Profil"
+const title = "Faire un Don"
 
 export default function Profile() {
   const router = useRouter()
@@ -29,7 +29,6 @@ export default function Profile() {
     <>
       <SEO
         title={title}
-        url={`/profile`}
       />
 
       <section className="section-container" style={{

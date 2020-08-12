@@ -15,16 +15,19 @@ import SEO from "components/SEO"
 import { AppContext } from "store/app-context"
 import Container from "components/Container"
 import Link from "next/link"
+import useHttpClient from "hooks/useHttpClient"
 
 const useStyles = makeStyles({
   errorTitle: {
-    color: colors.red
+    color: colors.red,
+    fontSize: 13,
+    marginTop: 15
   }
 })
 
 export interface SignupData {
-  firstName: string
-  lastName: string
+  first_name: string
+  last_name: string
   email: string
   password: string
   phone: string
@@ -34,13 +37,31 @@ export interface SignupData {
 export default function Signup() {
   const router = useRouter()
   const styles = useStyles()
-  const { auth } = useContext(AppContext)
+  const { auth, actions } = useContext(AppContext)
+  const { client } = useHttpClient()
   const { register, errors, handleSubmit } = useForm<SignupData>({
     mode: 'onBlur'
   })
-  const [loginError, setLoginError] = useState("")
+  const [signupError, setSignupError] = useState("")
 
-  const Signup = async (data: SignupData) => { }
+  const handleSignup = async (signupData: SignupData) => {
+    console.log(signupData)
+    try {
+      setSignupError("")
+
+      const { data } = await client.post('/auth/signup', {
+        ...signupData,
+        device_name: "spa-client"
+      })
+      // Do the actual login
+      actions.doLogin(data, () => {
+        router.push('/')
+      })
+    } catch (err) {
+      console.log(err.response)
+      setSignupError(`Unable to create your account. Please try again. ${err.response.data.message}`)
+    }
+  }
 
   if (auth.isLoggedIn) router.replace("/")
 
@@ -61,8 +82,8 @@ export default function Signup() {
           </Link>
           {/* <h1 style={{ fontSize: 12 }}>To continue, log in to MP3 Pam.</h1> */}
 
-          <form onSubmit={handleSubmit(Signup)} noValidate>
-            {loginError && <h3 className={styles.errorTitle} dangerouslySetInnerHTML={{ __html: loginError }} />}
+          <form onSubmit={handleSubmit(handleSignup)} noValidate>
+            {signupError && <h3 className={styles.errorTitle} dangerouslySetInnerHTML={{ __html: signupError }} />}
             <Grid container style={{ maxWidth: 400 }}>
               <Grid item xs={12}>
                 <TextField
@@ -70,16 +91,16 @@ export default function Signup() {
                   inputRef={register({
                     required: "Le prénom est requis",
                   })}
-                  name="firstName"
-                  id="firstName"
+                  name="first_name"
+                  id="first_name"
                   label="Votre Prénom"
                   type="text"
                   margin="normal"
-                  error={!!errors.firstName}
-                  helperText={errors.firstName && (
+                  error={!!errors.first_name}
+                  helperText={errors.first_name && (
                     <TextIcon
                       icon={<MdError />}
-                      text={errors.firstName.message}
+                      text={errors.first_name.message}
                     />
                   )}
                 />
@@ -90,16 +111,16 @@ export default function Signup() {
                   inputRef={register({
                     required: "Le Nom est requis",
                   })}
-                  name="lastName"
-                  id="lastName"
+                  name="last_name"
+                  id="last_name"
                   label="Votre Nom"
                   type="text"
                   margin="normal"
-                  error={!!errors.lastName}
-                  helperText={errors.lastName && (
+                  error={!!errors.last_name}
+                  helperText={errors.last_name && (
                     <TextIcon
                       icon={<MdError />}
-                      text={errors.lastName.message}
+                      text={errors.last_name.message}
                     />
                   )}
                 />
