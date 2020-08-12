@@ -21,7 +21,7 @@ export interface AppProvider {
 
 export const AppProviderData: AppProvider = {
 	auth: {
-		isLoggedIn: false,
+		isLoggedIn: true,
 	},
 }
 
