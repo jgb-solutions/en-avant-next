@@ -14,7 +14,7 @@ type Props = {
 }
 
 export default function SEO({ title, url, description, type, image, imageWidth, imageHeight }: Props) {
-  const titleContent = `${APP_NAME} - ${title || "Authentique et Dynamique !!!"}`
+  const titleContent = `${APP_NAME} - ${title || "MOUVEMENT POUR CHANGER HAÏTI ENSEMBLE"}`
   const descriptionContent = description || `
       ${APP_NAME} est une plateforme Fondée par de jeunes Haïtiens en 2016,
       dont l'objectif est d'informer ses abonnés en tout le temps,
@@ -23,7 +23,7 @@ export default function SEO({ title, url, description, type, image, imageWidth, 
       HIT se veut être un outil util pour ses lecteurs pour qui,
       l'information  est d'une importance  capitale dans leur quotidien.
   `
-  const imageContent = image || `https://files.infotoutan.com/images/03kpJg2M2zsaY3GmdRUn50OKQfua2p84ETrg2L3V.jpeg`
+  const imageContent = image || `https://en-avant-next.vercel.app/assets/images/home-header.jpg`
 
   return (
     <>
