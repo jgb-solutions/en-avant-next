@@ -21,11 +21,11 @@ export default function Profile() {
   const router = useRouter()
   const { auth } = useContext(AppContext)
 
-  useEffect(() => {
-    if (auth) {
-      if (!auth.isLoggedIn) router.replace("/login")
-    }
-  }, [auth])
+  // useEffect(() => {
+  //   if (auth) {
+  //     if (!auth.isLoggedIn) router.replace("/login")
+  //   }
+  // }, [auth])
 
   return (
     <>
@@ -56,8 +56,99 @@ export default function Profile() {
               <TitleWithSubText title={title} containerStyle={{ marginTop: 30 }} />
             </Grid>
           </Grid>
-        </Container>
-      </section>
+          <Grid container>
+            <Grid item xs={12} sm={4} style={{ marginBottom: 30 }}>
+              <h3>Donner 5 dollars</h3>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="24JA4KQH7BBCC" />
+                <input type="hidden" name="item_name" value='Supporter le MOUVEMENT "EN AVANT" POUR CHANGER HAiTI ENSEMBLE' />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="hidden" name="amount" value="5" />
+                <input
+                  type="image" src="https://www.paypalobjects.com/fr_XC/i/btn/btn_donateCC_LG.gif"
+                  style={{ border: 0 }}
+                  name="submit"
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Bouton Faites un don avec PayPal"
+                />
+                <img alt="" style={{ border: 0 }} src="https://www.paypal.com/fr_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+            </Grid>
+            <Grid item xs={12} sm={4} style={{ marginBottom: 30 }}>
+              <h3>Donner 10 dollars</h3>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="24JA4KQH7BBCC" />
+                <input type="hidden" name="item_name" value='Supporter le MOUVEMENT "EN AVANT" POUR CHANGER HAiTI ENSEMBLE' />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="hidden" name="amount" value="10" />
+                <input
+                  type="image" src="https://www.paypalobjects.com/fr_XC/i/btn/btn_donateCC_LG.gif"
+                  style={{ border: 0 }}
+                  name="submit"
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Bouton Faites un don avec PayPal"
+                />
+                <img alt="" style={{ border: 0 }} src="https://www.paypal.com/fr_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+            </Grid>
+            <Grid item xs={12} sm={4} style={{ marginBottom: 30 }}>
+              <h3>Donner 20 dollars</h3>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="24JA4KQH7BBCC" />
+                <input type="hidden" name="item_name" value='Supporter le MOUVEMENT "EN AVANT" POUR CHANGER HAiTI ENSEMBLE' />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="hidden" name="amount" value="20" />
+                <input
+                  type="image" src="https://www.paypalobjects.com/fr_XC/i/btn/btn_donateCC_LG.gif"
+                  style={{ border: 0 }}
+                  name="submit"
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Bouton Faites un don avec PayPal"
+                />
+                <img alt="" style={{ border: 0 }} src="https://www.paypal.com/fr_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+            </Grid>
+            <Grid item xs={12} sm={4} style={{ marginBottom: 30 }}>
+              <h3>Donner 50 dollars</h3>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="24JA4KQH7BBCC" />
+                <input type="hidden" name="item_name" value='Supporter le MOUVEMENT "EN AVANT" POUR CHANGER HAiTI ENSEMBLE' />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="hidden" name="amount" value="50" />
+                <input
+                  type="image" src="https://www.paypalobjects.com/fr_XC/i/btn/btn_donateCC_LG.gif"
+                  style={{ border: 0 }}
+                  name="submit"
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Bouton Faites un don avec PayPal"
+                />
+                <img alt="" style={{ border: 0 }} src="https://www.paypal.com/fr_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+            </Grid>
+            <Grid item xs={12} sm={4} style={{ marginBottom: 30 }}>
+              <h3>Montant Volontaire</h3>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_donations" />
+                <input type="hidden" name="business" value="24JA4KQH7BBCC" />
+                <input type="hidden" name="item_name" value='Supporter le MOUVEMENT "EN AVANT" POUR CHANGER HAiTI ENSEMBLE' />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input
+                  type="image" src="https://www.paypalobjects.com/fr_XC/i/btn/btn_donateCC_LG.gif"
+                  style={{ border: 0 }}
+                  name="submit"
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Bouton Faites un don avec PayPal"
+                />
+                <img alt="" style={{ border: 0 }} src="https://www.paypal.com/fr_US/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+            </Grid>
+          </Grid>
+        </Container >
+      </section >
 
       <section className="section-container" style={{
         backgroundImage: 'url(' + "/assets/images/about-header-bg.png" + ')',

@@ -8,6 +8,7 @@ import Button from './Button'
 import Routes from 'utils/routers'
 import { AppContext } from "store/app-context"
 import useHttpClient from "hooks/useHttpClient"
+import Donate from './Donate'
 
 
 interface Props {
@@ -30,17 +31,11 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
         <div style={{
           textAlign: 'right'
         }}>
-          <Button
-            title="Faire un don"
-            style={{
-              backgroundColor: Colors.orange,
-              color: Colors.white,
-              fontWeight: 'bold',
-            }}
-          />
+          <Donate />
         </div>
       )}
-      <nav className="navbar navbar-expand-lg" style={style}>
+      {/* <nav className="navbar navbar-expand-sm" style={style}> */}
+      <Navbar expand="md" style={style}>
         <Navbar.Brand href={Routes.home.url}>
           <img src={`/assets/images/logo-${transparent ? 'white' : 'blue'}.png`}
             style={{ width: 130 }}
@@ -96,7 +91,8 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
               )}
           </Nav>
         </Navbar.Collapse>
-      </nav>
+      </Navbar>
+      {/* </nav> */}
     </div >
   )
 }

@@ -50,7 +50,10 @@ export default function Login() {
       })
       // Do the actual login
       actions.doLogin(data, () => {
-        router.push('/')
+        const { from } = router.query
+        const route = from ? `${from}` : '/'
+
+        router.push(route)
       })
     } catch (err) {
       console.log(err)

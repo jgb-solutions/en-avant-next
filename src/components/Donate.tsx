@@ -13,7 +13,7 @@ export default function Donate({ title, style }: Props) {
   const router = useRouter()
 
   const handleClick = () => {
-    router.push('/donate')
+    router.push('/don')
   }
 
   return (

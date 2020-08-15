@@ -23,7 +23,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (auth) {
-      if (!auth.isLoggedIn) router.replace("/login")
+      if (!auth.isLoggedIn) router.replace("/login?from=/profil")
     }
   }, [auth])
 
