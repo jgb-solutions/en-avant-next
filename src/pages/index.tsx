@@ -10,12 +10,12 @@ import Colors from 'utils/colors'
 import TitleWithSubText from 'components/TitleWithSubText'
 import Donate from 'components/Donate'
 import Container from 'components/Container'
-import { wpapi } from 'utils/wpapi'
+import { wpapi } from 'services/wpapi'
 import PostInterface from 'interfaces/PostInterface'
 import Button from 'components/Button'
 import Link from 'next/link'
 import Routes from 'utils/routers'
-import { dirigeants } from './dirigeants'
+import { dirigeantsArray } from './dirigeants'
 
 interface Props {
   posts: PostInterface[]
@@ -103,7 +103,7 @@ export default function Index({ posts }: Props) {
             </Grid>
             <Grid item md={6}>
               <Carousel interval={3000}>
-                {dirigeants.filter(d => !d.image.startsWith("silhouette")).map((d, index) => (
+                {dirigeantsArray.filter(d => !d.image.startsWith("silhouette")).map((d, index) => (
                   <Carousel.Item key={index}>
                     <img
                       className="d-block w-100"

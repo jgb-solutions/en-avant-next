@@ -16,6 +16,7 @@ import { AppContext } from "store/app-context"
 import Container from "components/Container"
 import Link from "next/link"
 import useHttpClient from "hooks/useHttpClient"
+import { Auth } from "services/firebase"
 
 const useStyles = makeStyles({
   errorTitle: {
@@ -41,20 +42,17 @@ export default function Login() {
   const [loginError, setLoginError] = useState("")
 
   const handleLogin = async (credentials: Credentials) => {
+    const { email, password } = credentials
+
     try {
       setLoginError("")
 
-      const { data } = await client.post('/sanctum/token', {
-        ...credentials,
-        device_name: "spa-client"
-      })
+      await Auth.signInWithEmailAndPassword(email, password)
       // Do the actual login
-      actions.doLogin(data, () => {
-        const { from } = router.query
-        const route = from ? `${from}` : '/'
+      const { from } = router.query
+      const route = from ? `${from}` : '/'
 
-        router.push(route)
-      })
+      router.push(route)
     } catch (err) {
       console.log(err)
       setLoginError(`Email ou Mot de Passe invalide.`)

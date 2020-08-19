@@ -16,6 +16,7 @@ import { AppContext } from "store/app-context"
 import Container from "components/Container"
 import Link from "next/link"
 import useHttpClient from "hooks/useHttpClient"
+import { Auth } from "services/firebase"
 
 const useStyles = makeStyles({
   errorTitle: {
@@ -26,8 +27,8 @@ const useStyles = makeStyles({
 })
 
 export interface SignupData {
-  first_name: string
-  last_name: string
+  firstName: string
+  lastName: string
   email: string
   password: string
   phone: string
@@ -45,15 +46,14 @@ export default function Signup() {
   const [signupError, setSignupError] = useState("")
 
   const handleSignup = async (signupData: SignupData) => {
+    const { email, password } = signupData
     try {
       setSignupError("")
 
-      const { data } = await client.post('/auth/signup', {
-        ...signupData,
-        device_name: "spa-client"
-      })
+      await Auth.createUserWithEmailAndPassword(email, password)
+
       // Do the actual login
-      actions.doLogin(data, () => {
+      actions.doSignup(signupData, () => {
         const { from } = router.query
         const route = from ? `${from}` : '/'
 
@@ -97,16 +97,16 @@ export default function Signup() {
                   inputRef={register({
                     required: "Le prénom est requis",
                   })}
-                  name="first_name"
-                  id="first_name"
+                  name="firstName"
+                  id="firstName"
                   label="Votre Prénom"
                   type="text"
                   margin="normal"
-                  error={!!errors.first_name}
-                  helperText={errors.first_name && (
+                  error={!!errors.firstName}
+                  helperText={errors.firstName && (
                     <TextIcon
                       icon={<MdError />}
-                      text={errors.first_name.message}
+                      text={errors.firstName.message}
                     />
                   )}
                 />
@@ -117,16 +117,16 @@ export default function Signup() {
                   inputRef={register({
                     required: "Le Nom est requis",
                   })}
-                  name="last_name"
-                  id="last_name"
+                  name="lastName"
+                  id="lastName"
                   label="Votre Nom"
                   type="text"
                   margin="normal"
-                  error={!!errors.last_name}
-                  helperText={errors.last_name && (
+                  error={!!errors.lastName}
+                  helperText={errors.lastName && (
                     <TextIcon
                       icon={<MdError />}
-                      text={errors.last_name.message}
+                      text={errors.lastName.message}
                     />
                   )}
                 />

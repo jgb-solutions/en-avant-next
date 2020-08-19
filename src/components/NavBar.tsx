@@ -60,7 +60,7 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
             }}><FaSearch /></Nav.Link> */}
             {auth?.isLoggedIn ? (
               <>
-                <NavDropdown title={auth.data?.first_name} id="basic-nav-dropdown" style={{
+                <NavDropdown title={auth.data?.firstName} id="basic-nav-dropdown" style={{
                   color: `${transparent ? Colors.white : Colors.orange} !important`
                 }}>
                   <NavDropdown.Item href="/profil">Profile</NavDropdown.Item>

@@ -18,7 +18,7 @@ import Container from 'components/Container'
 
 const title = "Nos Dirigeants"
 
-export const dirigeants = [
+export const dirigeantsArray = [
   {
     name: "Jerry Tardieu",
     image: "jerry.jpeg",
@@ -420,7 +420,7 @@ export default function Dirigeants() {
           />
 
           <Grid container spacing={3}>
-            {dirigeants.map((dirigeant, index) => (
+            {dirigeantsArray.map((dirigeant, index) => (
               <Grid item md={4} sm={12} key={index}>
                 <div style={{ cursor: "pointer" }} onClick={(e) => handleOpenDialog(dirigeant)}>
                   <img

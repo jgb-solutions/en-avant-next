@@ -22,8 +22,9 @@ export default function Profile() {
   const { auth } = useContext(AppContext)
 
   useEffect(() => {
+    console.log(auth)
     if (auth) {
-      if (!auth.isLoggedIn) router.replace("/login?from=/profil")
+      // if (!auth.isLoggedIn) router.replace("/login?from=/profil")
     }
   }, [auth])
 

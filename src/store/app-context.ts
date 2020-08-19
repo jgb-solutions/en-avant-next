@@ -1,8 +1,8 @@
 import React from "react"
 
 export interface UserInterface {
-	first_name: string
-	last_name: string
+	firstName: string
+	lastName: string
 	email: string
 	phone: string
 	country: string

@@ -25,7 +25,7 @@ import colors from "utils/colors"
 import ArticleCard from "components/ArticleCard"
 import { API_URL, TWITTER_HANDLE, APP_NAME } from "utils/constants"
 import PostInterface from 'interfaces/PostInterface'
-import { wpapi } from 'utils/wpapi'
+import { wpapi } from 'services/wpapi'
 import { mapPostFromResponse } from 'pages'
 import Container from 'components/Container'
 import NavBar from 'components/NavBar'
