@@ -9,7 +9,7 @@ import Logo from 'components/Logo'
 import Button from 'components/Button'
 import ArticleCard from 'components/ArticleCard'
 import { mapPostFromResponse } from 'pages'
-import { wpapi } from 'utils/wpapi'
+import { wpapi } from 'services/wpapi'
 import PostInterface from 'interfaces/PostInterface'
 import Container from 'components/Container'
 
