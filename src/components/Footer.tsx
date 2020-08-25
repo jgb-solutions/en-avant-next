@@ -1,31 +1,19 @@
 import React from 'react'
-import { FaEnvelope, FaPhone, FaMapMarker, FaTwitter, FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
+import {
+  FaEnvelope,
+  FaPhone,
+  FaMapMarker,
+  FaTwitter,
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube
+} from 'react-icons/fa'
 import Grid from '@material-ui/core/Grid'
-import { makeStyles } from "@material-ui/core/styles"
 
 import Colors from 'utils/colors'
 import TransparentNavBar from './TransparentNavBar'
 import Container from './Container'
-
-export const useStyles = makeStyles({
-  // '@global': {
-  //   '*::-webkit-scrollbar': {
-  //     width: '0.4em',
-  //     height: '0.4em'
-  //   },
-  //   '*::-webkit-scrollbar-track': {
-  //     '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
-  //   },
-  //   '*::-webkit-scrollbar-thumb': {
-  //     // backgroundColor: 'rgba(0,0,0,.4)',
-  //     outline: '1px solid slategrey'
-  //   },
-  //   body: {
-  //     // backgroundColor: '#e9ebee'
-  //     backgroundColor: Colors.contentGrey
-  //   }
-  // },
-})
+import { useRouter } from 'next/router'
 
 const socialNetworks = [
   {
@@ -60,7 +48,7 @@ const socialNetworks = [
 ]
 
 export default function Footer() {
-  const styles = useStyles()
+  const router = useRouter()
 
   return (
     <section className="section-container" style={{
@@ -74,13 +62,13 @@ export default function Footer() {
         }} />
 
         <Grid container spacing={3}>
-          <Grid item md={4}>
+          <Grid item md={9}>
             <p style={{
               fontSize: 10,
               color: Colors.darkerGray,
               marginBottom: 45
             }}>
-              “D'aucuns pensent que le déclin continu de notre pays est inévitable
+              “D'aucuns pensent que le déclin continu de notre pays est inévitable <br />
                 et que le pire est à venir. Les fondateurs du mouvement <strong>« EN AVANT »</strong> osent
                 prétendre autrement.”
               </p>
@@ -88,7 +76,7 @@ export default function Footer() {
             <div style={{
               display: "flex",
               justifyContent: "space-between",
-              width: "60%"
+              width: 160
             }}>
               {socialNetworks.map((sn, i) => (
                 <a href={sn.url} target="_blank" rel="noopener" key={i}>
@@ -109,9 +97,8 @@ export default function Footer() {
               ))}
             </div>
           </Grid>
-          <Grid item md={8}>
-            <Grid container spacing={3}>
-              <Grid item md={4} xs={12}>
+          <Grid item md={3} xs={12}>
+            {/* <Grid item md={4} xs={12}>
                 <h5 style={{
                   color: Colors.white,
                   fontSize: 12,
@@ -134,8 +121,8 @@ export default function Footer() {
                   <li>sud-est</li>
                   <li>grande-anse</li>
                 </ul>
-              </Grid>
-              <Grid item md={4} xs={12}>
+              </Grid> */}
+            {/* <Grid item md={4} xs={12}>
                 <h5 style={{
                   color: Colors.white,
                   fontSize: 12,
@@ -158,34 +145,34 @@ export default function Footer() {
                   <li>sud-est</li>
                   <li>grande-anse</li>
                 </ul>
-              </Grid>
-              <Grid item md={4} xs={12}>
-                <h5 style={{
-                  color: Colors.white,
-                  fontSize: 12,
-                  lineHeight: 1.3,
-                  textTransform: "uppercase"
-                }}>Contact</h5>
-                <ul style={{
-                  listStyle: "none",
-                  padding: 0,
-                  color: Colors.evenDarkerGray,
-                  textTransform: 'uppercase',
-                  fontSize: 11,
-                  lineHeight: 2
-                }}>
-                  <li><FaMapMarker /> &nbsp;44, impasse lescot, Laboule 22</li>
-                  <li><FaPhone /> &nbsp;(509) 4621 2121</li>
-                  <li style={{
-                    display: "flex",
-                    alignItems: "center"
-                  }}><FaEnvelope /> &nbsp; contact@enavant.ht</li>
-                </ul>
-              </Grid>
-            </Grid>
+              </Grid> */}
+            <h5 style={{
+              color: Colors.orange,
+              fontWeight: "bold",
+              fontSize: 16,
+              lineHeight: 1.3,
+              textTransform: "uppercase",
+              cursor: "pointer",
+            }}
+              onClick={() => router.push('/contact')}>Contact</h5>
+            <ul style={{
+              listStyle: "none",
+              padding: 0,
+              color: Colors.evenDarkerGray,
+              textTransform: 'uppercase',
+              fontSize: 11,
+              lineHeight: 2
+            }}>
+              <li><FaMapMarker /> &nbsp;44, impasse lescot, Laboule 22</li>
+              <li><FaPhone /> &nbsp;(509) 4621 2121</li>
+              <li style={{
+                display: "flex",
+                alignItems: "center"
+              }}><FaEnvelope /> &nbsp; contact@enavant.ht</li>
+            </ul>
           </Grid>
         </Grid>
       </Container>
-    </section>
+    </section >
   )
 }

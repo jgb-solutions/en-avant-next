@@ -30,6 +30,11 @@ const Routes = {
 		url: "/actualites",
 		name: "Actualités",
 	},
+
+	contact: {
+		url: "/contact",
+		name: "Contact",
+	},
 }
 
 export default Routes
