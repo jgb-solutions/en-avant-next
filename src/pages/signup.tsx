@@ -17,7 +17,7 @@ import Container from "components/Container"
 import Link from "next/link"
 import useHttpClient from "hooks/useHttpClient"
 
-const useStyles = makeStyles({
+export const useSignupStyles = makeStyles({
   errorTitle: {
     color: colors.red,
     fontSize: 13,
@@ -36,7 +36,7 @@ export interface SignupData {
 
 export default function Signup() {
   const router = useRouter()
-  const styles = useStyles()
+  const styles = useSignupStyles()
   const { auth, actions } = useContext(AppContext)
   const { client } = useHttpClient()
   const { register, errors, handleSubmit } = useForm<SignupData>({

@@ -18,6 +18,7 @@ import Container from 'components/Container'
 import { useForm } from 'react-hook-form'
 import { emailRegex } from 'utils/validators'
 import TextIcon from 'components/TextIcon'
+import { useSignupStyles } from './signup'
 
 const title = "Contact"
 
@@ -25,11 +26,11 @@ export interface ContactData {
   fullName: string
   email?: string
   phone?: string
-  country?: string
   message: string
 }
 
 export default function Contact() {
+  const styles = useSignupStyles()
   const { register, errors, handleSubmit } = useForm<ContactData>({
     mode: 'onBlur'
   })
