@@ -86,8 +86,6 @@ export default function Contact() {
 
               <Grid container spacing={3} style={{
                 backgroundColor: Colors.white,
-                borderTopLeftRadius: 20,
-                borderTopRightRadius: 20,
               }}>
                 <Grid item xs={12} sm={12} md={6} style={{ padding: 40 }}>
                   <TitleWithSubText
