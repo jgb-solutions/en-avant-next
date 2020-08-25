@@ -108,6 +108,6 @@ export async function getStaticProps() {
     props: {
       posts: posts.map(mapPostFromResponse)
     },
-    unstable_revalidate: 60
+    revalidate: 60
   }
 }
