@@ -5,12 +5,10 @@ import { Carousel } from 'react-bootstrap'
 import SEO from 'components/SEO'
 import TransparentNavBar from 'components/TransparentNavBar'
 import Footer from 'components/Footer'
-import ArticleCard from 'components/ArticleCard'
 import Colors from 'utils/colors'
-import TitleWithSubText from 'components/TitleWithSubText'
 import Donate from 'components/Donate'
 import Container from 'components/Container'
-import { wpapi } from 'utils/wpapi'
+// import { wpapi } from 'utils/wpapi'
 import PostInterface from 'interfaces/PostInterface'
 import Button from 'components/Button'
 import Link from 'next/link'
@@ -103,7 +101,7 @@ export default function Index({ posts }: Props) {
             </Grid>
             <Grid item md={6}>
               <Carousel interval={3000}>
-                {dirigeants.filter(d => !d.image.startsWith("silhouette")).map((d, index) => (
+                {dirigeants.filter(d => d.featured).map((d, index) => (
                   <Carousel.Item key={index}>
                     <img
                       className="d-block w-100"
@@ -120,7 +118,7 @@ export default function Index({ posts }: Props) {
             </Grid>
           </Grid>
 
-          {posts.length > 0 && (
+          {/* {posts.length > 0 && (
             <>
               <TitleWithSubText title="Actualités" />
 
@@ -132,7 +130,7 @@ export default function Index({ posts }: Props) {
                 ))}
               </Grid>
             </>
-          )}
+          )} */}
         </Container>
       </section>
 
@@ -204,14 +202,16 @@ export default function Index({ posts }: Props) {
 }
 
 export async function getStaticProps() {
-  const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
+  // const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
 
-  return {
-    props: {
-      posts: posts.map(mapPostFromResponse)
-    },
-    revalidate: 60
-  }
+  // return {
+  //   props: {
+  //     posts: posts.map(mapPostFromResponse)
+  //   },
+  //   revalidate: 60
+  // }
+
+  return { props: { posts: [] } }
 }
 
 

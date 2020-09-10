@@ -3,7 +3,7 @@ import React, { CSSProperties } from 'react'
 interface Props {
   title: string,
   style?: CSSProperties,
-  onClick?: () => any
+  onClick?: (event?: any) => any
 }
 
 export default function Button({ title, style, onClick }: Props) {

@@ -16,6 +16,7 @@ const Colors = {
 	instagram: "#c32aa3",
 	whatsapp: "#25d366",
 	telegram: "#0088cc",
+	green: "#00ff00",
 }
 
 export default Colors

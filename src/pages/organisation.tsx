@@ -11,17 +11,29 @@ import { CSSProperties } from 'react'
 import Container from 'components/Container'
 
 const responsables = [
-  `Un responsable chargé <br /> des relations avec la diaspora`,
-  `Un responsable <br /> de la gestion des projets`,
-  `Un conseiller en image <br /> et réputation`,
-  `Un responsable aux affaires <br /> administratives et financières`,
-  ` Un responsable <br /> aux affaires Juridiques`,
-  `un responsable des <br /> affaires féminines`,
-  `Un responsable à la communication <br /> et aux relations publiques`,
-  `Un responsable <br /> aux affaires politiques`,
-  `Un Responsable jeunesse`,
-  `Un responsable à la <br /> planification stratégique`,
-  `Un responsable chargé <br /> de la stratégie numérique`,
+  `Coordonnateur National  <br /> JERRY TARDIEU`,
+  `Coordonnateur-adjoint  affaires féminines & social <br /> NANCY VILCÉ`,
+  `Coordonnateur-adjoint chargé de mobilisation <br /> MIKERLANGE REGISTRE`,
+  `Coordonnateur-adjoint chargé branches extérieur <br /> SAINT-JEAN JOSEPH`,
+  `Coordonnateur-adjoint aux aff admin financières <br /> HERALD MORISSEAU`,
+  `Coordonnateur-adjoint aux rel publiques <br /> GEORGES DUPERVAL`,
+  `Coordonnateur-adjoint Chargée communication <br /> ROOSEVELT VERDIEU`,
+  `Coordonnateur-adj chargé strat numérique <br /> STEPHANE VINCENT`,
+  `Coordonnateur-adjoint chargé jeunesse <br /> RYSDAEL DUVERSAINT`,
+  `Coordonnateur-adjoint chargé culture <br /> ALLENBY AUGUSTIN`,
+  `Coordon-adjoint chargé relations internationales <br /> ING PATRICK FIGARO`,
+  `Coordo-adjoint chargé sections communales <br /> FRITZBERT SILENCIEUX`,
+  `coordonateur adjoint chargé relations avec univ <br /> EMOL JEUNE`,
+  `Coordonateur-adjoint chargé insertion sociale <br /> GLADYS JOSEPH`,
+  `Coordo-adjoint chargé rel avec école <br /> DARAH SINVILLE`,
+  `Coordonnateur-adjoint chargé projets sociaux <br /> DR JOHANNE GEFFRARD`,
+  `Membre <br />Coordonnateur-adjoint aux affaires politiques`,
+  `Membre <br /> Sterens Hyppolite`,
+  `Membre <br /> Pierre Ludghini`,
+  `Membre <br /> Guett St Thomas`,
+  `Membre <br /> Judmyr Similien`,
+  `Membre <br /> Luckner Clermont`,
+  `Membre <br /> Jefferson Merisier`,
 ]
 interface PersonWithTextProps {
   title?: string,
@@ -145,7 +157,7 @@ export default function Organisation() {
             title="Les organes dirigeants du mouvement"
           />
 
-          <div style={{
+          {/* <div style={{
             width: "80%",
             margin: "0 auto",
             border: `1px solid ${Colors.orange}`,
@@ -187,7 +199,7 @@ export default function Organisation() {
                 </h4>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <p style={{
             textAlign: "center",
@@ -207,7 +219,7 @@ export default function Organisation() {
               color: Colors.darkerBlueText
             }}
           />
-
+          {/*
           <div style={{ marginBottom: 30 }}>
             <PersonWithText
               title="Un coordonnateur Général"
@@ -223,7 +235,7 @@ export default function Organisation() {
             <PersonWithText
               title="Un coordonnateur Général adjoint"
             />
-          </div>
+          </div> */}
 
           <div style={{
             width: "90%",

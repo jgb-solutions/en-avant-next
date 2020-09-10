@@ -39,7 +39,7 @@ const socialNetworks = [
   },
   {
     name: 'YouTube',
-    url: 'https://www.facebook.com/enavant.ht',
+    url: '#',
     icon: <FaYoutube />,
     backgroundColor: Colors.youtube,
     color: Colors.white,

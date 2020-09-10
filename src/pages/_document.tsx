@@ -91,16 +91,16 @@ export default class MyDocument extends Document {
           {process.env.NODE_ENV === 'production' && (
             <>
               {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-              {/* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161910284-1"></script>
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175821218-1"></script>
               <script dangerouslySetInnerHTML={{
                 __html: `
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
 
-                  gtag('config', 'UA-161910284-1');
+                  gtag('config', 'UA-175821218-1');
                 `
-              }} /> */}
+              }} />
             </>
           )}
         </body>

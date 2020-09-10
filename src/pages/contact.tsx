@@ -23,7 +23,7 @@ import { useSignupStyles } from './signup'
 const title = "Contact"
 
 export interface ContactData {
-  fullName: string
+  name: string
   email?: string
   phone?: string
   message: string
@@ -31,22 +31,25 @@ export interface ContactData {
 
 export default function Contact() {
   const styles = useSignupStyles()
-  const { register, errors, handleSubmit } = useForm<ContactData>({
+  const { register, errors, handleSubmit, reset } = useForm<ContactData>({
     mode: 'onBlur'
   })
-  const [signupError, setSignupError] = useState("")
+  const [contactError, setContactError] = useState("")
+  const [messageSent, setMessageSent] = useState(false)
 
-  const handleSignup = async (contactData: ContactData) => {
+  const handleSendEmail = async (contactData: ContactData) => {
     try {
-      setSignupError("")
+      setContactError("")
 
-      await fetch('/api/contact', {
+      await fetch('/api/send-mail', {
         method: "POST",
         body: JSON.stringify(contactData),
       })
+
+      setMessageSent(true)
     } catch (err) {
       // console.log(err.response)
-      setSignupError(`Une error s'est produite. Essayez à nouveau.`)
+      setContactError(`Une error s'est produite. Essayez à nouveau.`)
     }
   }
 
@@ -113,101 +116,127 @@ export default function Contact() {
                     }}><FaEnvelope color={Colors.orange} /> &nbsp; contact@enavant.ht</li>
                   </ul>
                 </Grid>
-                <Grid item xs={12} sm={12} md={6} style={{ padding: 40 }}>
-                  <form onSubmit={handleSubmit(handleSignup)} noValidate>
-                    {signupError && <h3 className={styles.errorTitle} dangerouslySetInnerHTML={{ __html: signupError }} />}
-                    <Grid container style={{ maxWidth: 400 }}>
-                      <Grid item xs={12}>
-                        <TextField
-                          style={{ width: '100%' }}
-                          inputRef={register({
-                            required: "Lenom complet est requis",
-                          })}
-                          name="fullName"
-                          id="fullName"
-                          label="Votre Nom Complet"
-                          type="text"
-                          margin="normal"
-                          error={!!errors.fullName}
-                          helperText={errors.fullName && (
-                            <TextIcon
-                              icon={<MdError />}
-                              text={errors.fullName.message}
-                            />
-                          )}
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <TextField
-                          style={{ width: '100%' }}
-                          inputRef={register({
-                            pattern: {
-                              value: emailRegex,
-                              message: "L'email n'est pas valide"
-                            }
-                          })}
-                          name="email"
-                          id="email"
-                          label="Votre Email"
-                          type="email"
-                          margin="normal"
-                          error={!!errors.email}
-                          helperText={errors.email && (
-                            <TextIcon
-                              icon={<MdError />}
-                              text={errors.email.message}
-                            />
-                          )}
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <TextField
-                          style={{ width: '100%' }}
-                          inputRef={register()}
-                          name="phone"
-                          id="phone"
-                          label="Votre Numéro de Téléphone"
-                          type="phone"
-                          margin="normal"
-                          error={!!errors.phone}
-                          helperText={errors.phone && (
-                            <TextIcon
-                              icon={<MdError />}
-                              text={errors.phone.message}
-                            />
-                          )}
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <TextField
-                          style={{ width: '100%' }}
-                          inputRef={register({
-                            required: "Le message est requis"
-                          })}
-                          name="message"
-                          id="message"
-                          label="Votre Message Pour Nous"
-                          margin="normal"
-                          multiline
-                          error={!!errors.message}
-                          helperText={errors.message && (
-                            <TextIcon
-                              icon={<MdError />}
-                              text={errors.message.message}
-                            />)}
-                        />
-                      </Grid>
-                    </Grid>
 
-                    <Button style={{
-                      background: Colors.orange,
-                      color: Colors.white,
-                      textTransform: 'uppercase',
-                      fontWeight: 'bold',
-                      marginTop: 12,
-                      marginBottom: 24
-                    }} title="Envoyer" />
-                  </form>
+                <Grid item xs={12} sm={12} md={6} style={{ padding: 40 }}>
+                  <>
+                    {messageSent && (
+                      <>
+                        <TitleWithSubText
+                          containerStyle={{
+                            margin: 0,
+                            paddingTop: 30,
+                            textAlign: "left"
+                          }}
+                          // titleStyle={{ color: Colors.green }}
+                          title="Message reçu !"
+                        />
+                        <Button title="Send message again!" style={{
+                          background: Colors.orange,
+                          color: Colors.white,
+                          fontWeight: 'bold'
+                        }} onClick={() => {
+                          setMessageSent(false)
+                          reset()
+                        }} />
+                      </>
+                    )}
+                    {!messageSent && (
+                      <form onSubmit={handleSubmit(handleSendEmail)} noValidate>
+                        {!!contactError && <h3 className={styles.errorTitle} dangerouslySetInnerHTML={{ __html: contactError }} />}
+                        <Grid container style={{ maxWidth: 400 }}>
+                          <Grid item xs={12}>
+                            <TextField
+                              style={{ width: '100%' }}
+                              inputRef={register({
+                                required: "Lenom complet est requis",
+                              })}
+                              name="name"
+                              id="name"
+                              label="Votre Nom Complet"
+                              type="text"
+                              margin="normal"
+                              error={!!errors.name}
+                              helperText={errors.name && (
+                                <TextIcon
+                                  icon={<MdError />}
+                                  text={errors.name.message}
+                                />
+                              )}
+                            />
+                          </Grid>
+                          <Grid item xs={12}>
+                            <TextField
+                              style={{ width: '100%' }}
+                              inputRef={register({
+                                pattern: {
+                                  value: emailRegex,
+                                  message: "L'email n'est pas valide"
+                                }
+                              })}
+                              name="email"
+                              id="email"
+                              label="Votre Email"
+                              type="email"
+                              margin="normal"
+                              error={!!errors.email}
+                              helperText={errors.email && (
+                                <TextIcon
+                                  icon={<MdError />}
+                                  text={errors.email.message}
+                                />
+                              )}
+                            />
+                          </Grid>
+                          <Grid item xs={12}>
+                            <TextField
+                              style={{ width: '100%' }}
+                              inputRef={register()}
+                              name="phone"
+                              id="phone"
+                              label="Votre Numéro de Téléphone"
+                              type="phone"
+                              margin="normal"
+                              error={!!errors.phone}
+                              helperText={errors.phone && (
+                                <TextIcon
+                                  icon={<MdError />}
+                                  text={errors.phone.message}
+                                />
+                              )}
+                            />
+                          </Grid>
+                          <Grid item xs={12}>
+                            <TextField
+                              style={{ width: '100%' }}
+                              inputRef={register({
+                                required: "Le message est requis"
+                              })}
+                              name="message"
+                              id="message"
+                              label="Votre Message Pour Nous"
+                              margin="normal"
+                              multiline
+                              error={!!errors.message}
+                              helperText={errors.message && (
+                                <TextIcon
+                                  icon={<MdError />}
+                                  text={errors.message.message}
+                                />)}
+                            />
+                          </Grid>
+                        </Grid>
+
+                        <Button style={{
+                          background: Colors.orange,
+                          color: Colors.white,
+                          textTransform: 'uppercase',
+                          fontWeight: 'bold',
+                          marginTop: 12,
+                          marginBottom: 24
+                        }} title="Envoyer" />
+                      </form>
+                    )}
+                  </>
                 </Grid>
               </Grid>
             </Grid>

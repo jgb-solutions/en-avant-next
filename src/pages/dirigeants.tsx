@@ -20,6 +20,7 @@ const title = "Nos Dirigeants"
 
 export const dirigeants = [
   {
+    featured: true,
     name: "Jerry Tardieu",
     image: "jerry.jpeg",
     role: "Coordonnateur Général",
@@ -29,6 +30,7 @@ export const dirigeants = [
     `
   },
   {
+    featured: true,
     name: "NANCY VILCÉ",
     image: "nancy.jpeg",
     role: "Coordonnateur-adjoint chargé des projets sociaux",
@@ -39,6 +41,7 @@ export const dirigeants = [
     `
   },
   {
+    featured: true,
     name: "STEPHANE VINCENT",
     image: "stephane.jpeg",
     role: "Coordonnateur-adjoint chargé de la stratégie numérique",
@@ -92,6 +95,7 @@ export const dirigeants = [
     `
   },
   {
+    featured: true,
     name: "MIKERLANGE REGISTRE",
     image: "mikerlange.jpg",
     role: "Coordonnateur Général-adjoint",
