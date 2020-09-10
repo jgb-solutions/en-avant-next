@@ -130,7 +130,7 @@ export default function Contact() {
                           // titleStyle={{ color: Colors.green }}
                           title="Message reçu !"
                         />
-                        <Button title="Send message again!" style={{
+                        <Button title="Envoyer nouveau message !" style={{
                           background: Colors.orange,
                           color: Colors.white,
                           fontWeight: 'bold'
