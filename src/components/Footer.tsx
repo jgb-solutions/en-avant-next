@@ -39,7 +39,7 @@ const socialNetworks = [
   },
   {
     name: 'YouTube',
-    url: '#',
+    url: 'https://www.youtube.com/channel/UCgsArHa-fpm06w4c-5bVkvw',
     icon: <FaYoutube />,
     backgroundColor: Colors.youtube,
     color: Colors.white,
