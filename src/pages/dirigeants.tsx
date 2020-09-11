@@ -126,6 +126,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'province',
     name: "PATRICK ETIENNE",
     image: "etienne.jpg",
     role: "Coordonnateur départemental pour le NORD-EST",
@@ -135,6 +136,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'province',
     name: "RYSDAEL DUVERSAINT",
     image: "silhouette.jpg",
     role: "Coordonnateur départemental pour le ARTIBONITE",
@@ -153,6 +155,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'province',
     name: "RODNEY SAINTIL",
     image: "rodney.jpeg",
     role: "Un coordonnateur départemental pour le SUD-EST",
@@ -160,6 +163,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'diaspora',
     name: "MARC-ANTOINE LEVEILLÉ",
     image: "marc-antoine.jpeg",
     role: "Un coordonnateur pour la branche extérieure des USA",
@@ -169,6 +173,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'diaspora',
     name: "FLORENAL JOSEPH",
     image: "florenal.jpeg",
     role: "COORDONATEUR BRANCHE EXTERIEUR NEW YORK",
@@ -180,6 +185,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'diaspora',
     name: "FRED LAGRANDEUR",
     image: "silhouette.jpg",
     role: "Un coordonnateur pour la branche extérieure du CANADA",
@@ -190,6 +196,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'diaspora',
     name: "EMMANNUELINE DUPERVAL",
     image: "silhouette.jpg",
     role: "COORDONATEUR BRANCHE EXTERIEUR PARIS",
@@ -199,6 +206,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'diaspora',
     name: "SAINT-JEAN JOSEPH",
     image: "saint-jean.jpeg",
     role: "Coordonnateur-adjoint chargé des branches exterieures",
@@ -215,6 +223,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'province',
     name: "FRITZBERT SILENCIEUX",
     image: "fritzbert.jpeg",
     role: "Coordonateur-adjoint chargé des sections  communales",
@@ -259,6 +268,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'province',
     name: "SONCEAU GAMAEL",
     image: "silhouette.jpg",
     role: "Coordonnateur départemental pour le NORD",

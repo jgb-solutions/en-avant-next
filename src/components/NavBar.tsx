@@ -86,13 +86,27 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
             {Object.keys(routes).map(key => {
               const { url, name } = routes[key]
 
-              return (
-                <Nav.Link href={url} key={key} style={{
-                  color: transparent ? Colors.white : Colors.orange
-                }}>
-                  {name}
-                </Nav.Link>
-              )
+              return url === '/dirigeants' ? (
+                <>
+                  <NavDropdown title={name} id={name}>
+                    <NavDropdown.Item href={url}>{name}</NavDropdown.Item>
+                    {/* <NavDropdown.Divider /> */}
+                    <NavDropdown.Item href="/dirigeants-province">
+                      Nos représentants en province
+                    </NavDropdown.Item>
+                    {/* <NavDropdown.Divider /> */}
+                    <NavDropdown.Item href="/dirigeants-diaspora">
+                      Nos représentants en diaspora
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </>
+              ) : (
+                  <Nav.Link href={url} key={key} style={{
+                    color: transparent ? Colors.white : Colors.orange
+                  }}>
+                    {name}
+                  </Nav.Link>
+                )
             })}
             {/* <Nav.Link href="#" style={{
               color: transparent ? Colors.white : Colors.orange
@@ -115,13 +129,8 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
                       .catch(err => console.log(err))
                   })}>
                     Déconnexion
-                </NavDropdown.Item>
+                  </NavDropdown.Item>
                 </NavDropdown>
-                <style jsx>{`
-                  #basic-nav-dropdown > a {
-                    color: ${transparent ? Colors.white : Colors.orange} !important;
-                  }
-                `}</style>
               </>
             ) : (
                 <Nav.Link href="/login" style={{
