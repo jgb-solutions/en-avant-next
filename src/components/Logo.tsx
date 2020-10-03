@@ -1,9 +1,6 @@
 import React, { CSSProperties } from 'react'
 import Link from 'next/link'
-
 import Image from "react-bootstrap/Image"
-
-import { APP_NAME, DOMAIN } from '../utils/constants'
 
 interface Props {
   containerStyle?: CSSProperties

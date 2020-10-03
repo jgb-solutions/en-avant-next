@@ -1,6 +1,5 @@
 import { FaPaperPlane } from 'react-icons/fa'
 import Grid from '@material-ui/core/Grid'
-import { Carousel } from 'react-bootstrap'
 import { makeStyles } from "@material-ui/core/styles"
 
 import SEO from 'components/SEO'
@@ -13,8 +12,6 @@ import Container from 'components/Container'
 import Button from 'components/Button'
 import Link from 'next/link'
 import Routes from 'utils/routers'
-import { dirigeants } from './dirigeants'
-
 
 export const useStyles = makeStyles(theme => ({
   container: {
@@ -114,22 +111,31 @@ export default function Index() {
                   }} />
               </div>
             </Grid>
-            <Grid item md={6}>
-              <Carousel interval={3000}>
-                {dirigeants.filter(d => d.featured).map((d, index) => (
-                  <Carousel.Item key={index}>
-                    <img
-                      className="d-block w-100"
-                      src={`/assets/images/dirigeants/${d.image}`}
-                      alt={d.name}
-                    />
-                    {/* <Carousel.Caption>
-                      <h3>First slide label</h3>
-                      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption> */}
-                  </Carousel.Item>
-                ))}
-              </Carousel>
+            <Grid item md={6} xs={12}>
+              <div style={{
+                position: 'relative',
+                paddingBottom: '56.25%',
+                paddingTop: 30,
+                height: 0,
+                overflow: 'hidden',
+              }
+              }>
+                <iframe
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%'
+                  }}
+                  width="853"
+                  height="480"
+                  src={`https://www.youtube.com/embed/DyB86KKDdCI?autoplay=1`}
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay"
+                />
+              </div>
             </Grid>
           </Grid>
 
@@ -171,7 +177,7 @@ export default function Index() {
 
               <p style={{ color: Colors.gray }}>Faites un don pour renforcer notre action sur le terrain.</p>
 
-              <Donate />
+              <Donate style={{ marginBottom: 24 }} />
             </Grid>
             <Grid item md={7} style={{}}>
               <Grid container spacing={3}>
