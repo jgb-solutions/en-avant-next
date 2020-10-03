@@ -7,10 +7,13 @@ import NavBar from 'components/NavBar'
 import Footer from 'components/Footer'
 import Container from 'components/Container'
 import TitleWithSubText from 'components/TitleWithSubText'
+import { useStyles } from 'pages'
 
 const title = "Notre Mouvement"
 
 export default function Mouvement() {
+  const styles = useStyles()
+
   return (
     <>
       <SEO title={title} />
@@ -51,12 +54,7 @@ export default function Mouvement() {
             </Grid>
 
             <Grid item md={7}>
-              <h1 style={{
-                fontSize: 40,
-                fontWeight: 'bold',
-                color: 'white',
-                textTransform: "uppercase",
-              }}>Mouvement pour changer <br />Haïti ensemble</h1>
+              <h1 className={styles.firstTitle}>Mouvement pour changer <br />Haïti ensemble</h1>
             </Grid>
           </Grid>
         </Container>

@@ -1,31 +1,45 @@
 import { FaPaperPlane } from 'react-icons/fa'
 import Grid from '@material-ui/core/Grid'
 import { Carousel } from 'react-bootstrap'
+import { makeStyles } from "@material-ui/core/styles"
 
 import SEO from 'components/SEO'
 import TransparentNavBar from 'components/TransparentNavBar'
 import Footer from 'components/Footer'
 import Colors from 'utils/colors'
 import Donate from 'components/Donate'
+import Join from 'components/Join'
 import Container from 'components/Container'
-// import { wpapi } from 'utils/wpapi'
-import PostInterface from 'interfaces/PostInterface'
 import Button from 'components/Button'
 import Link from 'next/link'
 import Routes from 'utils/routers'
 import { dirigeants } from './dirigeants'
 
-interface Props {
-  posts: PostInterface[]
-}
 
-export default function Index({ posts }: Props) {
+export const useStyles = makeStyles(theme => ({
+  container: {
+    marginTop: -150,
+  },
+  firstTitle: {
+    fontSize: 55,
+    fontWeight: 'bold',
+    color: 'white',
+    textTransform: "uppercase",
+    textAlign: "justify",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: 75,
+    }
+  }
+}))
+
+export default function Index() {
+  const styles = useStyles()
 
   return (
     <>
       <SEO />
       <section className="section-container" style={{
-        backgroundImage: 'url(' + "/assets/images/home-header.jpg" + ')',
+        backgroundImage: 'url(' + "/assets/images/home-header-2.jpg" + ')',
         backgroundSize: "cover",
         backgroundPosition: "top center",
         minHeight: 500,
@@ -40,14 +54,13 @@ export default function Index({ posts }: Props) {
             paddingTop: 50,
             paddingBottom: 200
           }}>
-            <h1 style={{
-              fontSize: 50,
-              fontWeight: 'bold',
-              color: 'white',
-              textTransform: "uppercase",
-            }}>Mouvement pour changer <br />Haïti ensemble</h1>
+            <h1 className={styles.firstTitle}>Mouvement pour changer  Haïti ensemble</h1>
+            <div style={{ marginTop: 200 }}>
+              <Donate />
+              &nbsp;
+              <Join />
+            </div>
 
-            <Donate style={{ marginTop: 200 }} />
           </div>
         </Container>
       </section>
@@ -55,7 +68,7 @@ export default function Index({ posts }: Props) {
       <section className="section-container" style={{
         paddingBottom: 30
       }}>
-        <Container style={{ marginTop: -150 }}>
+        <Container className={styles.container}>
           <Grid container style={{
             boxShadow: "0px 5px 7px 0px rgba(0,0,0,0.35)"
           }}>
@@ -65,6 +78,8 @@ export default function Index({ posts }: Props) {
               justifyContent: "center",
               paddingLeft: 40,
               paddingRight: 40,
+              paddingTop: 24,
+              paddingBottom: 24,
               background: Colors.white
             }}>
               <h2 style={{
@@ -201,27 +216,27 @@ export default function Index({ posts }: Props) {
   )
 }
 
-export async function getStaticProps() {
-  // const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
+// export async function getStaticProps() {
+// const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
 
-  // return {
-  //   props: {
-  //     posts: posts.map(mapPostFromResponse)
-  //   },
-  //   revalidate: 60
-  // }
+// return {
+//   props: {
+//     posts: posts.map(mapPostFromResponse)
+//   },
+//   revalidate: 60
+// }
 
-  return { props: { posts: [] } }
-}
+//   return { props: { posts: [] } }
+// }
 
 
-export const mapPostFromResponse = (post: any) => ({
-  id: post.id,
-  slug: post.slug,
-  title: post.title.rendered,
-  image_url: post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url,
-  excerpt: post.excerpt.rendered,
-  content: post.content.rendered,
-  link: post.link,
-  date: post.date
-})
+// export const mapPostFromResponse = (post: any) => ({
+//   id: post.id,
+//   slug: post.slug,
+//   title: post.title.rendered,
+//   image_url: post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url,
+//   excerpt: post.excerpt.rendered,
+//   content: post.content.rendered,
+//   link: post.link,
+//   date: post.date
+// })

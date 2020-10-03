@@ -12,15 +12,17 @@ export const useStyles = makeStyles({
 
 export default function Container({
   children,
-  style
+  style,
+  className
 }: {
   children: React.ReactNode,
-  style?: CSSProperties
+  style?: CSSProperties,
+  className?: string
 }) {
   const styles = useStyles()
 
   return (
-    <div className={`${styles.container}`} style={style}>
+    <div className={`${styles.container} ${className}`} style={style}>
       {children}
     </div>
   )

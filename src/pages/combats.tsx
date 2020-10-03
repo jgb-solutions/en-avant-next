@@ -1,4 +1,5 @@
 import Grid from '@material-ui/core/Grid'
+import makeStyles from "@material-ui/core/styles/makeStyles"
 
 import SEO from 'components/SEO'
 import Colors from 'utils/colors'
@@ -7,6 +8,7 @@ import TitleWithSubText from 'components/TitleWithSubText'
 import NavBar from 'components/NavBar'
 import Logo from 'components/Logo'
 import Container from 'components/Container'
+import { useStyles } from 'pages'
 
 const combats = [
   {
@@ -216,6 +218,8 @@ const TextBlock = ({ header, text }: TextBlockProps) => (
 const title = "Nos Combats"
 
 export default function Combats() {
+  const styles = useStyles()
+
   return (
     <>
       <SEO title={title} />
@@ -255,12 +259,7 @@ export default function Combats() {
             </Grid>
 
             <Grid item md={7}>
-              <h1 style={{
-                fontSize: 40,
-                fontWeight: 'bold',
-                color: 'white',
-                textTransform: "uppercase",
-              }}>Mouvement pour changer <br />Haïti ensemble</h1>
+              <h1 className={styles.firstTitle}>Mouvement pour changer Haïti ensemble</h1>
             </Grid>
           </Grid>
         </Container>

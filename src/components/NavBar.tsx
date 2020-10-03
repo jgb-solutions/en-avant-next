@@ -1,5 +1,4 @@
-import React, { CSSProperties, useContext, useState } from 'react'
-import { FaUserAlt } from 'react-icons/fa'
+import React, { CSSProperties, useState } from 'react'
 import { Navbar, Nav, NavDropdown, } from 'react-bootstrap'
 import { useRouter } from 'next/router'
 import Menu from '@material-ui/core/Menu'
@@ -8,10 +7,9 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Colors from 'utils/colors'
 import Button from './Button'
 import Routes from 'utils/routers'
-import { AppContext } from "store/app-context"
-import useHttpClient from "hooks/useHttpClient"
 import Donate from './Donate'
 import { translateUrl } from 'utils/translate'
+import Join from './Join'
 
 
 interface Props {
@@ -22,9 +20,7 @@ interface Props {
 }
 
 export default function NavBar({ style, showButtons, containerStyle, transparent }: Props) {
-  const { auth, actions } = useContext(AppContext)
   const router = useRouter()
-  const { client } = useHttpClient()
   const [menuOpen, setMenuOpen] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
   const routes: any = Routes
@@ -70,7 +66,11 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
         </Menu>
 
         {showButtons && (
-          <Donate />
+          <>
+            <Donate />
+            &nbsp;
+            <Join />
+          </>
         )}
       </div>
       {/* <nav className="navbar navbar-expand-sm" style={style}> */}
@@ -108,39 +108,9 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
                   </Nav.Link>
                 )
             })}
-            {/* <Nav.Link href="#" style={{
-              color: transparent ? Colors.white : Colors.orange
-            }}><FaSearch /></Nav.Link> */}
-            {auth?.isLoggedIn ? (
-              <>
-                <NavDropdown title={auth.data?.first_name} id="basic-nav-dropdown" style={{
-                  color: `${transparent ? Colors.white : Colors.orange} !important`
-                }}>
-                  {/* <NavDropdown.Item href="/profil">Profile</NavDropdown.Item> */}
-                  <NavDropdown.Item href="/don">Faire un Don</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={() => actions.doLogout(() => {
-                    client.defaults.headers['Authorization'] = `Bearer ${auth.token}`
-
-                    client.post('/logout')
-                      .then(() => {
-                        router.replace("/")
-                      })
-                      .catch(err => console.log(err))
-                  })}>
-                    Déconnexion
-                  </NavDropdown.Item>
-                </NavDropdown>
-              </>
-            ) : (
-                <Nav.Link href="/login" style={{
-                  color: transparent ? Colors.white : Colors.orange
-                }}><FaUserAlt /></Nav.Link>
-              )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      {/* </nav> */}
-    </div >
+    </div>
   )
 }

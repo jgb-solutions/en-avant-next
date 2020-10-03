@@ -28,7 +28,7 @@ export default function SEO({ title, url, description, type, image, imageWidth, 
 
       Un mouvement centriste axé sur le progrès et la justice sociale Le mouvement En avant veut rassembler les citoyennes et citoyens quel que soit leur affinité idéologique (de gauche ou de droite). Autant de marché que possible mais autant d’état que nécessaire. LE MOUVEMENT prône le progrès par la création des richesses et la justice sociale. La pauvreté est la conséquence de nos choix et de nos politiques publiques qui créent des fossés immenses entre les pauvres et les riches. Nous devons réduire ce fossé en créant un maximum de richesses, que l’État se doit de redistribuer pour améliorer les conditions de vie de la majorité de la population. Le Mouvement en en AVANT est promoteur de justice sociale, du respect des droits humains, de l’intégration de la
   `
-  const imageContent = image || `https://en-avant-next.vercel.app/assets/images/home-header.jpg`
+  const imageContent = image || `https://en-avant-next.vercel.app/assets/images/home-header-2.jpg`
 
   return (
     <>

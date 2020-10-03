@@ -154,7 +154,7 @@ export default function Footer() {
               textTransform: "uppercase",
               cursor: "pointer",
             }}
-              onClick={() => router.push('/contact')}>Contact</h5>
+              onClick={() => router.push('/adherer')}>Adhérer</h5>
             <ul style={{
               listStyle: "none",
               padding: 0,

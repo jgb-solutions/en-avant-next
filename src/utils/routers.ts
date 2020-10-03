@@ -32,8 +32,8 @@ const Routes = {
 	// },
 
 	contact: {
-		url: "/contact",
-		name: "Contact",
+		url: "/adherer",
+		name: "Adhérer",
 	},
 }
 

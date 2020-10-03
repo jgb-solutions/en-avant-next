@@ -6,12 +6,11 @@ import Footer from 'components/Footer'
 import TitleWithSubText from 'components/TitleWithSubText'
 import NavBar from 'components/NavBar'
 import Logo from 'components/Logo'
-import Button from 'components/Button'
 import { CSSProperties } from 'react'
 import Container from 'components/Container'
+import { useStyles } from 'pages'
 
 const responsables = [
-  `Coordonnateur National  <br /> JERRY TARDIEU`,
   `Coordonnateur-adjoint  affaires féminines & social <br /> NANCY VILCÉ`,
   `Coordonnateur-adjoint chargé de mobilisation <br /> MIKERLANGE REGISTRE`,
   `Coordonnateur-adjoint chargé branches extérieur <br /> SAINT-JEAN JOSEPH`,
@@ -37,11 +36,12 @@ const responsables = [
 ]
 interface PersonWithTextProps {
   title?: string,
+  subTitle?: string,
   titleStyle?: CSSProperties,
   containerStyle?: CSSProperties
 }
 
-const PersonWithText = ({ title, titleStyle, containerStyle }: PersonWithTextProps) => (
+const PersonWithText = ({ title, subTitle, titleStyle, containerStyle }: PersonWithTextProps) => (
   <div style={{
     textAlign: "center",
     ...containerStyle
@@ -50,7 +50,7 @@ const PersonWithText = ({ title, titleStyle, containerStyle }: PersonWithTextPro
     <img
       src="/assets/images/person.png"
       style={{
-        width: 40,
+        width: 100,
         display: "inline-block",
         marginBottom: 15
       }}
@@ -62,6 +62,13 @@ const PersonWithText = ({ title, titleStyle, containerStyle }: PersonWithTextPro
       textTransform: "uppercase",
       ...titleStyle
     }}>{title}</h4>
+    <h5 style={{
+      fontSize: 16,
+      fontWeight: "bold",
+      color: Colors.orange,
+      textTransform: "uppercase",
+      ...titleStyle
+    }}>{subTitle}</h5>
   </div>
 )
 
@@ -85,6 +92,7 @@ const VerticalBorder = ({ color, height, width, style }: VerticalBorderProps) =>
 const title = "Notre Organisation"
 
 export default function Organisation() {
+  const styles = useStyles()
   return (
     <>
       <SEO title={title} />
@@ -125,12 +133,7 @@ export default function Organisation() {
             </Grid>
 
             <Grid item md={7}>
-              <h1 style={{
-                fontSize: 40,
-                fontWeight: 'bold',
-                color: 'white',
-                textTransform: "uppercase",
-              }}>Mouvement pour changer <br />Haïti ensemble</h1>
+              <h1 className={styles.firstTitle}>Mouvement pour changer Haïti ensemble</h1>
             </Grid>
           </Grid>
         </Container>
@@ -219,23 +222,24 @@ export default function Organisation() {
               color: Colors.darkerBlueText
             }}
           />
-          {/*
-          <div style={{ marginBottom: 30 }}>
-            <PersonWithText
-              title="Un coordonnateur Général"
-              titleStyle={{}}
-            />
 
-            <VerticalBorder
-              style={{
-                marginBottom: 10
-              }}
-            />
+          {/* <div style={{ marginBottom: 30 }}> */}
+          <PersonWithText
+            title="Coordonnateur National"
+            subTitle="Jerry Tardieu"
+            titleStyle={{}}
+          />
 
-            <PersonWithText
+          <VerticalBorder
+            style={{
+              marginBottom: 0
+            }}
+          />
+
+          {/* <PersonWithText
               title="Un coordonnateur Général adjoint"
-            />
-          </div> */}
+            /> */}
+          {/* </div> */}
 
           <div style={{
             width: "90%",

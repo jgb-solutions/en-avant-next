@@ -20,12 +20,14 @@ import { emailRegex } from 'utils/validators'
 import TextIcon from 'components/TextIcon'
 import { useSignupStyles } from './signup'
 
-const title = "Contact"
+const title = "Adhérer"
 
 export interface ContactData {
   name: string
   email?: string
   phone?: string
+  address?: string
+  age?: string
   message: string
 }
 
@@ -205,6 +207,45 @@ export default function Contact() {
                               )}
                             />
                           </Grid>
+
+                          <Grid item xs={12}>
+                            <TextField
+                              style={{ width: '100%' }}
+                              inputRef={register()}
+                              name="address"
+                              id="address"
+                              label="Votre Addresse"
+                              type="text"
+                              margin="normal"
+                              error={!!errors.address}
+                              helperText={errors.address && (
+                                <TextIcon
+                                  icon={<MdError />}
+                                  text={errors.address.message}
+                                />
+                              )}
+                            />
+                          </Grid>
+
+                          <Grid item xs={12}>
+                            <TextField
+                              style={{ width: '100%' }}
+                              inputRef={register()}
+                              name="age"
+                              id="age"
+                              label="Votre Âge"
+                              type="number"
+                              margin="normal"
+                              error={!!errors.age}
+                              helperText={errors.age && (
+                                <TextIcon
+                                  icon={<MdError />}
+                                  text={errors.age.message}
+                                />
+                              )}
+                            />
+                          </Grid>
+
                           <Grid item xs={12}>
                             <TextField
                               style={{ width: '100%' }}
@@ -213,7 +254,7 @@ export default function Contact() {
                               })}
                               name="message"
                               id="message"
-                              label="Votre Message Pour Nous"
+                              label="Pourquoi vous voulez nous rejoindre"
                               margin="normal"
                               multiline
                               error={!!errors.message}

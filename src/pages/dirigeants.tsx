@@ -6,6 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogActions from '@material-ui/core/DialogActions'
 import Button from '@material-ui/core/Button'
+import { makeStyles } from "@material-ui/core/styles"
 
 import SEO from 'components/SEO'
 import Colors from 'utils/colors'
@@ -15,6 +16,8 @@ import TransparentNavBar from 'components/TransparentNavBar'
 import TitleWithSubText from 'components/TitleWithSubText'
 import Donate from 'components/Donate'
 import Container from 'components/Container'
+import { useStyles } from 'pages'
+import Join from 'components/Join'
 
 const title = "Nos Dirigeants"
 
@@ -373,6 +376,7 @@ export default function Dirigeants() {
   const [openDialog, setOpenDialog] = useState(false)
   const [dialogTitle, setDialogTitle] = useState('')
   const [dialogText, setDialogText] = useState('')
+  const styles = useStyles()
 
   const handleOpenDialog = ({ name, bio }: { name: string, bio: string }) => {
     if (!bio.trim().length) return
@@ -391,7 +395,7 @@ export default function Dirigeants() {
       <SEO title={title} />
 
       <section className="section-container" style={{
-        backgroundImage: 'url(' + "/assets/images/dirigeants-header-bg.png" + ')',
+        backgroundImage: 'url(' + "/assets/images/home-header-2.jpg" + ')',
         backgroundSize: "cover",
         backgroundPosition: "center center",
         minHeight: 500,
@@ -411,13 +415,12 @@ export default function Dirigeants() {
             paddingTop: 50,
             paddingBottom: 20
           }}>
-            <h1 style={{
-              fontSize: 50,
-              fontWeight: 'bold',
-              color: 'white',
-              textTransform: "uppercase",
-            }}>Mouvement pour changer <br />Haïti ensemble</h1>
-            <Donate style={{ marginTop: 200 }} />
+            <h1 className={styles.firstTitle}>Mouvement pour changer <br />Haïti ensemble</h1>
+            <div style={{ marginTop: 200 }}>
+              <Donate />
+              &nbsp;
+              <Join />
+            </div>
           </div>
         </Container>
       </section>

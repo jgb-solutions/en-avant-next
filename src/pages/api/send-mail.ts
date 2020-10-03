@@ -7,6 +7,8 @@ export interface ContactFormData {
 	name: string
 	email?: string
 	phone?: string
+	address?: string
+	age?: string
 	message: string
 }
 
@@ -32,11 +34,20 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 	res.end("Only POST requests are supported.")
 }
 
-const sendEmail = async ({ name, email, phone, message }: ContactFormData) => {
+const sendEmail = async ({
+	name,
+	email,
+	phone,
+	message,
+	address,
+	age,
+}: ContactFormData) => {
 	const emailMessage = `
     ${name} a écrit: \n
     ${message} \n
-    ${phone ? "Tel: " + phone : ""}
+    ${phone ? "Tel: " + phone : ""} \n
+    ${address ? "Tel: " + address : ""} \n
+    ${age ? "Tel: " + age : ""} \n
   `
 	const transport = nodemailer.createTransport({
 		host: "smtp.hostinger.com",
