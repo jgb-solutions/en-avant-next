@@ -191,7 +191,7 @@ const TextBlock = ({ header, text }: TextBlockProps) => (
     {header && (
       <>
         <h4 style={{
-          fontSize: 14,
+          fontSize: 18,
           fontWeight: 'bold',
           color: Colors.veryDarkBlueText,
           textTransform: "uppercase"
@@ -205,7 +205,7 @@ const TextBlock = ({ header, text }: TextBlockProps) => (
     )}
     {text && (
       <div style={{
-        fontSize: 12,
+        fontSize: 16,
         color: Colors.gray,
         textAlign: "justify"
       }}
