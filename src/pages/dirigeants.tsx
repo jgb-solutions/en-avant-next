@@ -6,7 +6,6 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogActions from '@material-ui/core/DialogActions'
 import Button from '@material-ui/core/Button'
-import { makeStyles } from "@material-ui/core/styles"
 
 import SEO from 'components/SEO'
 import Colors from 'utils/colors'
@@ -36,7 +35,7 @@ export const dirigeants = [
     featured: true,
     name: "NANCY VILCÉ",
     image: "nancy.jpeg",
-    role: "Coordonnateur-adjoint chargé des projets sociaux",
+    role: "COORDONATRICE-ADJOINTE AFFAIRES FÉMININES & SOCIAL",
     bio: `
     <p>Nancy Vilcé est une leader de la commune de Pétion-ville et une animatrice sociale très connue des milieux défavorisés de la capitale. De 2004 à 2014, elle a été administratrice d’une importante organisation militant dans le social et l’humanitaire : la APROSIFA qui est venue en aide à des milliers de pauvres vivant dans des conditions abjectes.</p>
     <p>Elue membre du Conseil d’Administration Section Communale CASEC de première montagne noire de 2005 à 2015, elle est une militante politique engagée, dynamique, populaire, respectée pour son combat pour la reconnaissance des droits de la femme, la justice sociale et l’économie solidaire. Elle est Présidente de l’Association des femmes dévouées de Thomassin (AFADETH) qui regroupe près de 3000 femmes d’origine paysannes de la commune de Thomassin. Nancy Vilcé est également membre de l’association des notables de Thomassin, une puissante fédération regroupant les personnalités les plus influentes de cette section communale (pasteurs, prêtres, professeurs, syndicalistes, enseignants, animateurs sociaux, agriculteurs, commerçants et autres cadres de l’état).</p>
@@ -71,7 +70,7 @@ export const dirigeants = [
     `
   },
   {
-    name: "RYSDAEL DUVERSAINT",
+    name: "RYSDAëL DUVERSAINT",
     image: "silhouette.jpg",
     role: "Coordonnateur-adjoint chargé de la jeunesse",
     bio: `
@@ -87,21 +86,21 @@ export const dirigeants = [
     bio: `
     `
   },
-  {
-    name: "ROOSEVELT VERDIEU",
-    image: "silhouette.jpg",
-    role: "Coordonnateur-adjoint Chargée de la communication",
-    bio: `
-      <p>Roosevelt Verdieu ROSIER est une des meilleures têtes pensantes de la communauté haïtienne expatriée en Amérique du Nord. Militant passionné et citoyen engagé dans les grandes batailles de la jeunesse haïtienne après 1986 pour la démocratie, la décentralisation et la justice sociale, Rosier est un des plus fins connaisseurs de la scène politique haïtienne actuelle et des acteurs qui y évoluent.</p>
-      <p>Originaire du Borgne où il est né un 28 juin 1974, ce brillant Juriste et diplomate de formation est un farouche défenseur des mouvements populaires, de la paysannerie, de l’intégration des masses et de la jeunesse estudiantine dans le processus de développement d’Haïti. Ses combats politiques ont toujours été marqués du sceau de la lutte contre l’exclusion et la pauvreté, l'autonomie de l’Université, Le respect de l’autodétermination des peuples et de la souveraineté nationale et populaire, L’inclusion sociale, La défense des droits humains des migrants, la défense sans restriction de la souveraineté de tout ordre : politique, économique, sociale, culturelle, territoriale, alimentaire, énergétique. Présentement, il se bat ardemment avec beaucoup de secteurs dans le Département du Nord et de la diaspora pour la reconquête de la fierté christophienne.</p>
-      <p>Il a fait ses études classiques au Collège Notre Dame du Perpétuel Secours au Cap-Haïtien et a appris le droit à la Faculté de droit et de Sciences Économique de l’Université d'État d'Haiti, Port-au-Prince et à l'Université de Montréal (UdeM) au Canada. C’est à l’ Académie Nationale Diplomatique et Consulaire (ANDC) qu’il a fait ses études en diplomatie. Rosier a laissé son empreinte indélébile et un souvenir intarissable dans les institutions et mouvements où il a milité avec ferveur, conviction et engagement dont le Baton jenès la, L'Organisation pour l'Unité et l'Intégration (OUI), la Nouvelle Option pour le Renouveau et le Développement (NORD), l'Association Inter-scolaire pour la Défense de l'Environnement ( AIDE) et le Mouvement des Jeunes Étudiants/Universitaires (MOJEUNE).</p>
-    `
-  },
+  // {
+  //   name: "ROOSEVELT VERDIEU",
+  //   image: "silhouette.jpg",
+  //   role: "Coordonnateur-adjoint Chargée de la communication",
+  //   bio: `
+  //     <p>Roosevelt Verdieu ROSIER est une des meilleures têtes pensantes de la communauté haïtienne expatriée en Amérique du Nord. Militant passionné et citoyen engagé dans les grandes batailles de la jeunesse haïtienne après 1986 pour la démocratie, la décentralisation et la justice sociale, Rosier est un des plus fins connaisseurs de la scène politique haïtienne actuelle et des acteurs qui y évoluent.</p>
+  //     <p>Originaire du Borgne où il est né un 28 juin 1974, ce brillant Juriste et diplomate de formation est un farouche défenseur des mouvements populaires, de la paysannerie, de l’intégration des masses et de la jeunesse estudiantine dans le processus de développement d’Haïti. Ses combats politiques ont toujours été marqués du sceau de la lutte contre l’exclusion et la pauvreté, l'autonomie de l’Université, Le respect de l’autodétermination des peuples et de la souveraineté nationale et populaire, L’inclusion sociale, La défense des droits humains des migrants, la défense sans restriction de la souveraineté de tout ordre : politique, économique, sociale, culturelle, territoriale, alimentaire, énergétique. Présentement, il se bat ardemment avec beaucoup de secteurs dans le Département du Nord et de la diaspora pour la reconquête de la fierté christophienne.</p>
+  //     <p>Il a fait ses études classiques au Collège Notre Dame du Perpétuel Secours au Cap-Haïtien et a appris le droit à la Faculté de droit et de Sciences Économique de l’Université d'État d'Haiti, Port-au-Prince et à l'Université de Montréal (UdeM) au Canada. C’est à l’ Académie Nationale Diplomatique et Consulaire (ANDC) qu’il a fait ses études en diplomatie. Rosier a laissé son empreinte indélébile et un souvenir intarissable dans les institutions et mouvements où il a milité avec ferveur, conviction et engagement dont le Baton jenès la, L'Organisation pour l'Unité et l'Intégration (OUI), la Nouvelle Option pour le Renouveau et le Développement (NORD), l'Association Inter-scolaire pour la Défense de l'Environnement ( AIDE) et le Mouvement des Jeunes Étudiants/Universitaires (MOJEUNE).</p>
+  //   `
+  // },
   {
     featured: true,
     name: "MIKERLANGE REGISTRE",
     image: "mikerlange.jpg",
-    role: "Coordonnateur Général-adjoint",
+    role: "COORDONNATEUR-ADJOINT CHARGÉ DU SECRÉTARIAT-GÉNÉRAL",
     bio: `
       <p>Etudiant, animateur social et leader universitaire</p>
       <p>Mikerlange est Coordonnateur Général de la Coalition de la Jeunesse Haïtienne (CJH), une des plus importantes organisations étudiantes d’Haïti. Né le 3 mai 1995 à Carrefour, ce jeune ety dynamique leader universitaire est une figure connue du milieu académique. Brillant étudiant finissant en Administration (INAGHEI) et en Droit (FDSE), il est également très intéressé par le social et la militance politique pour que triomphe les idéaux de progrès et de justice social. En pleine crise du COVID, il a fait partie de nombreuses délégations d’étudiants volontaires qui se sont déplacé en province pour participer à des campagnes de sensibilisation de la population.</p>
@@ -150,7 +149,8 @@ export const dirigeants = [
     `
   },
   {
-    name: "PASTEUR HOLLY",
+    location: 'province',
+    name: "PASTEUR HOLLY FLORESTAL",
     image: "holly.jpeg",
     role: "COORDONATEUR DEPARTEMENTAL OUEST",
     bio: `
@@ -212,7 +212,7 @@ export const dirigeants = [
     location: 'diaspora',
     name: "SAINT-JEAN JOSEPH",
     image: "saint-jean.jpeg",
-    role: "Coordonnateur-adjoint chargé des branches exterieures",
+    role: "COORDONNATEUR-ADJOINT CHARGÉ DES BRANCHES EXTÉRIEURES",
     bio: `
       <p>Saint-Jean JOSEPH est un éminent Juriste en Droit du Travail et de la Protection Sociale Appliquée. Ingénieur et Consultant Informatique chez Capgemini (Délégué Syndical CFTC), il fait partie des personnalités haïtiennes les plus respectées au sein de la communauté haïtienne de France. Né en 1958 à Dessalines, il a fait ses études primaires à l’école Martin OGINE de Saint Marc, et ses études secondaires au Lycée Sténio Vincent de Saint Marc et au Collège Arountino PETIT CELIN. Ensuite il part en France pour poursuivre ses Etudes Universitaires. Militant Associatif actif au sein de la communauté haïtienne de France, il s’addonne egakeent a des etudes etr decroche un diplôme universitaire en Science du Langage et Communication (DEUG) à l’Université de Paris VIII, et en 1990 une licence Micro-Informatique Appliquée aux Sciences Humaines (MIASH) de l’Université de Paris VIII. Depuis 1999, il travaille en qualité d’Ingénieur Informatique. chez Capgemini, une Multinationale de plus de 270 Milles collaborateurs et un leader mondial en conseil, transformation numérique, et services technologiques et d’ingénierie. Il y consacre la grande majorité de son temps aux activités syndicales pour la défense et la protection des salariés au sein de la Société. Il participe au nom de son syndicat aux négociations des Accords Collectifs de l’entreprise (Santé et Qualité de vie au travail, les accords sur les salaires, etc..).</p>
       <p>Saint-Jean Joseph est Président de l’Association Franco Haïtienne pour le Développement de l’Artibonite (AFHDA). Homme aux compétences multiples, il porte plusieurs chapeaux à la fois. Il est en même temps Membre de l’Association Solidarités CHIV Haïti, membre de l’Observatoire du Conseil Représentatif de la Communauté Haïtienne de France. Saint-Jean Joseph incarne l’intégration réussie en France d’un jeune et talentueux intellectuel et penseur haïtien qui est resté autant attaché à son pays, son département (Artibonite) qu’a sa terre d’accueil.</p>
@@ -221,7 +221,7 @@ export const dirigeants = [
   {
     name: "HERALD MORISSEAU",
     image: "herald.jpg",
-    role: "Coordonnateur-adjoint aux affaires administratives et financières",
+    role: "COORDONNATEUR-ADJOINT AUX AFFAIRES ADMINISTRATIVES ET FINANCIÈRES",
     bio: `
     `
   },
@@ -229,7 +229,7 @@ export const dirigeants = [
     location: 'province',
     name: "FRITZBERT SILENCIEUX",
     image: "fritzbert.jpeg",
-    role: "Coordonateur-adjoint chargé des sections  communales",
+    role: "COORDO-ADJOINT CHARGÉ AGRICULTURE ET PAYSANNERIE",
     bio: `
     `
   },
@@ -243,21 +243,28 @@ export const dirigeants = [
   {
     name: "DR JOHANNE GEFFRARD",
     image: "joanne.jpg",
-    role: "Coordonnatrice-adjoint aux affaires féminines",
+    role: "COORDONATRICE-ADJOINTE CHARGÉ DES PROJETS SOCIAUX",
+    bio: `
+    `
+  },
+  {
+    name: "ANNE-SARHA LOZAMAR",
+    image: "silhouette.jpg",
+    role: "COORDONATRICE-ADJOINTE EN CHARGE DES RELATIONS AVEC LA PRESSE",
     bio: `
     `
   },
   {
     name: "GLADYS JOSEPH",
     image: "silhouette.jpg",
-    role: "Coordonnateur-adjoint chargée de L'insertion sociale",
+    role: "Coordonnateur-adjoint chargé de L'insertion sociale",
     bio: `
     `
   },
   {
-    name: "DARA SINVILLE",
+    name: "DARAH SINVILLE",
     image: "silhouette.jpg",
-    role: "Coordonateur-adjoint chargée des relations avec les écoles",
+    role: "COORDONATRICE-ADJOINTE CHARGÉ DES RELATIONS AVEC LES ÉCOLES PRIVÉS ET PUBLIQUES",
     bio: `
     `
   },
@@ -287,15 +294,15 @@ export const dirigeants = [
       <p>Il a entamé sa brillante carrière d'enseignant en 2000 et dispose d’un vaste réseau de connaissance au niveau du système éducatif national. Personnalité aux multiples talents, Jefferson Merisier a également fait un passage remarqué dans le secteur de la presse notamment à INTERNEWS comme journaliste-reporter et enquêteur. Il a contribué au succès de l’émission "enfòmasyon nou dwe konnen!"</p>
     `
   },
-  {
-    name: "Allenby Augustin",
-    image: "alenby.jpg",
-    role: "Coordonateur-Adjoint en charges des questions culturelles",
-    bio: `
-    <p>Citoyen engagé, chercheur et Spécialiste en management d'organisations culturelles.<p>
-    <p>Allenby Augustin est détenteur d’une maitrise en Management des Organisations Culturelles à l'université Paris-Dauphine. Il est Secrétaire Général de Akoustik Prod, une association culturelle très connue et respectée dans le milieu des arts et de la culture en Haiti. Ce spécialiste en management culturel a dédié sa vie à la promotion et la valorisation de la culture haïtienne tant en Haïti qu’a l’étranger. Né en 1983, il a grandi à Port-au-Prince et développé au cours des ans une passion pour les choses de l’esprit, du savoir et de la culture. En 2013, sous sa direction, Akoustik Prod lance à l’occasion des Journées du Patrimoine, le projet « Atis nan kay la ». Cet ambitieux projet offrait aux visiteurs étonnés et émerveillés un parcours artistique unique dans des maisons Gingerbread transformées en lieux d’accueil pour la performance de bandes à pied, la tenue d’expositions, de concerts, la déclamation de poésie. Le rêve d’Allenby Augustin est de faire inscrire la culture comme un élément fondamental d’une politique touristique visant à remettre Haïti sur la carte du tourisme mondial. Outre son intérêt marqué pour la culture, Allenby Augustin est également très engagé dans de nombreuses causes sociales et humanitaires. En 2016, il a développé dans les quartiers populaires de Port-au-Prince le projet "Nou Pran Lari a" un mouvement artistique et social, valorisant le travail des artistes et artisans des quartiers populaires.</p>
-    `
-  },
+  // {
+  //   name: "Allenby Augustin",
+  //   image: "alenby.jpg",
+  //   role: "Coordonateur-Adjoint en charges des questions culturelles",
+  //   bio: `
+  //   <p>Citoyen engagé, chercheur et Spécialiste en management d'organisations culturelles.<p>
+  //   <p>Allenby Augustin est détenteur d’une maitrise en Management des Organisations Culturelles à l'université Paris-Dauphine. Il est Secrétaire Général de Akoustik Prod, une association culturelle très connue et respectée dans le milieu des arts et de la culture en Haiti. Ce spécialiste en management culturel a dédié sa vie à la promotion et la valorisation de la culture haïtienne tant en Haïti qu’a l’étranger. Né en 1983, il a grandi à Port-au-Prince et développé au cours des ans une passion pour les choses de l’esprit, du savoir et de la culture. En 2013, sous sa direction, Akoustik Prod lance à l’occasion des Journées du Patrimoine, le projet « Atis nan kay la ». Cet ambitieux projet offrait aux visiteurs étonnés et émerveillés un parcours artistique unique dans des maisons Gingerbread transformées en lieux d’accueil pour la performance de bandes à pied, la tenue d’expositions, de concerts, la déclamation de poésie. Le rêve d’Allenby Augustin est de faire inscrire la culture comme un élément fondamental d’une politique touristique visant à remettre Haïti sur la carte du tourisme mondial. Outre son intérêt marqué pour la culture, Allenby Augustin est également très engagé dans de nombreuses causes sociales et humanitaires. En 2016, il a développé dans les quartiers populaires de Port-au-Prince le projet "Nou Pran Lari a" un mouvement artistique et social, valorisant le travail des artistes et artisans des quartiers populaires.</p>
+  //   `
+  // },
   {
     name: "Kharmeliaud Moise",
     image: "silhouette.jpg",
@@ -350,6 +357,7 @@ export const dirigeants = [
     `
   },
   {
+    location: 'diaspora',
     name: "Dennery “Alain“ Ménélas",
     image: "silhouette.jpg",
     role: "",
@@ -437,7 +445,7 @@ export default function Dirigeants() {
           />
 
           <Grid container spacing={3}>
-            {dirigeants.map((dirigeant, index) => (
+            {dirigeants.filter(d => d.image !== 'silhouette.jpg').map((dirigeant, index) => (
               <Grid item md={4} sm={12} key={index}>
                 <div style={{ cursor: "pointer" }} onClick={(e) => handleOpenDialog(dirigeant)}>
                   <img

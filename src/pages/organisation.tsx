@@ -10,30 +10,63 @@ import { CSSProperties } from 'react'
 import Container from 'components/Container'
 import { useStyles } from 'pages'
 
-const responsables = [
-  `Coordonnateur-adjoint  affaires féminines & social <br /> NANCY VILCÉ`,
-  `Coordonnateur-adjoint chargé de mobilisation <br /> MIKERLANGE REGISTRE`,
-  `Coordonnateur-adjoint chargé branches extérieur <br /> SAINT-JEAN JOSEPH`,
-  `Coordonnateur-adjoint aux aff admin financières <br /> HERALD MORISSEAU`,
-  `Coordonnateur-adjoint aux rel publiques <br /> GEORGES DUPERVAL`,
-  `Coordonnateur-adjoint Chargée communication <br /> ROOSEVELT VERDIEU`,
-  `Coordonnateur-adj chargé strat numérique <br /> STEPHANE VINCENT`,
-  `Coordonnateur-adjoint chargé jeunesse <br /> RYSDAEL DUVERSAINT`,
-  `Coordonnateur-adjoint chargé culture <br /> ALLENBY AUGUSTIN`,
-  `Coordon-adjoint chargé relations internationales <br /> ING PATRICK FIGARO`,
-  `Coordo-adjoint chargé sections communales <br /> FRITZBERT SILENCIEUX`,
-  `coordonateur adjoint chargé relations avec univ <br /> EMOL JEUNE`,
-  `Coordonateur-adjoint chargé insertion sociale <br /> GLADYS JOSEPH`,
-  `Coordo-adjoint chargé rel avec école <br /> DARAH SINVILLE`,
-  `Coordonnateur-adjoint chargé projets sociaux <br /> DR JOHANNE GEFFRARD`,
-  `Membre <br />Coordonnateur-adjoint aux affaires politiques`,
-  `Membre <br /> Sterens Hyppolite`,
-  `Membre <br /> Pierre Ludghini`,
-  `Membre <br /> Guett St Thomas`,
-  `Membre <br /> Judmyr Similien`,
-  `Membre <br /> Luckner Clermont`,
-  `Membre <br /> Jefferson Merisier`,
+const coordNationale = [
+  `COORDONATRICE-ADJOINTE AFFAIRES FÉMININES & SOCIAL |  NANCY VILCÉ`,
+  `COORDONNATEUR-ADJOINT CHARGÉ DU SECRÉTARIAT-GÉNÉRAL |  MIKERLANGE REGISTRE`,
+  `COORDONNATEUR-ADJOINT CHARGÉ DES BRANCHES EXTÉRIEURES |  SAINT-JEAN JOSEPH`,
+  `COORDONNATEUR-ADJOINT AUX AFFAIRES ADMINISTRATIVES ET FINANCIÈRES |  HERALD MORISSEAU`,
+  `Coordonnateur-adjoint aux relations publiques |  GEORGES DUPERVAL`,
+  `Coordonnateur-adj chargé de la stratégie numérique|  STEPHANE VINCENT`,
+  `Coordonnateur-adjoint chargé jeunesse |  RYSDAËL DUVERSAINT`,
+  `Coordon-adjoint chargé des relations internationales |  ING PATRICK FIGARO`,
+  `COORDO-ADJOINT CHARGÉ AGRICULTURE ET PAYSANNERIE|  FRITZBERT SILENCIEUX`,
+  `COORDONATEUR-ADJOINT CHARGÉ RELATIONS AVEC LES UNIVERSITÉS |  EMOL JEUNE`,
+  `Coordonateur-adjoint chargé insertion sociale |  GLADYS JOSEPH`,
+  `COORDONATRICE-ADJOINTE CHARGÉ DES RELATIONS AVEC LES ÉCOLES PRIVÉS ET PUBLIQUES |  DARAH SINVILLE`,
+  `COORDONATRICE-ADJOINTE CHARGÉ DES PROJETS SOCIAUX |  DR JOHANNE GEFFRARD`,
+  `COORDONATRICE-ADJOINTE EN CHARGE DES RELATIONS AVEC LA PRESS |  ANNE-SARHA LOZAMAR`,
+  `Membre | Coordonnateur-adjoint aux affaires politiques`,
+  `Membre |  Sterens Hyppolite`,
+  `Membre |  STEPHANIE SOPHIE LOUIS`,
+  `Membre |  Pierre Ludghini`,
+  `Membre |  Guett St Thomas`,
+  `Membre |  Luckner Clermont`,
+  `Membre |  Jefferson Merisier`,
+  `Membre |  WOOD HOLDEN DAVID`,
+  `Membre |  DANOVE DIEUFORT`,
+  `Membre |  KINSLEY JEAN`,
+  `Membre |  KENLEY JEUNE`,
 ]
+
+
+const coordDepartmentale = [
+  `COORDONNATEUR DÉPARTEMENTAL NORD | SONCEAU GAMAEL`,
+  `COORDONNATEUR DÉPARTEMENTAL NORD-EST | DR PATRICK ETIENNE`,
+  ` COORDONNATEUR DÉPARTEMENTAL NORD-OUEST | N/A `,
+  ` COORDONNATEUR DÉPARTEMENTAL ARTIBONITE | RYSDAEL DUVERSAINT `,
+  ` COORDONNATEUR DÉPARTEMENTAL POUR LE CENTRE | N/A `,
+  ` COORDONNATEUR DÉPARTEMENTAL POUR L’OUEST | PAST. HOLLY FLORESTAL  `,
+  ` COORDONNATEUR DÉPARTEMENTAL SUD | MARIE-JOSIE PIERRE `,
+  ` COORDONNATEUR DÉPARTEMENTAL SUD-EST | PETERSON ANTENOR `,
+  ` COORDONNATEUR DÉPARTEMENTAL GRAND’ANSE | N/A `,
+]
+
+const coordBrancheExterieure = [
+  `COORDONNATEUR BRANCHE EXTÉRIEURE MIAMI | MARC ANTOINE LEVEILLE`,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE MONTREAL | FRED LAGRANDEUR `,
+  `  COORDONNATEUR BRANCHE EXTÉRIEURE EUROPE | SAINT-JEAN JOSEPH`,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE NY | FLORENAL JOSEPH `,
+  `  COORDONNATEUR BRANCHE EXTÉRIEURE BOSTON | ALAIN MENELAS`,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE ATLANTA | TALIA JEANTY `,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE WASH DC | CASSANDRA HONORAT `,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE DE SAINT-DOMINGUE | N/A`,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE ANTILLES FRANCAISE | N/A`,
+  ` COORDONNATEUR POUR LA BRANCHE EXTÉRIEURE AMÉRIQUE LATINE | N/A`,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE AFRIQUE | N/A`,
+]
+
+
+
 interface PersonWithTextProps {
   title?: string,
   subTitle?: string,
@@ -160,50 +193,6 @@ export default function Organisation() {
             title="Les organes dirigeants du mouvement"
           />
 
-          {/* <div style={{
-            width: "80%",
-            margin: "0 auto",
-            border: `1px solid ${Colors.orange}`,
-            borderBottom: 0,
-            display: "flex",
-            justifyContent: "center"
-          }}>
-            <VerticalBorder />
-          </div>
-          <div style={{
-            display: "flex",
-            justifyContent: "space-between",
-            padding: "0 55px",
-            marginBottom: 30
-          }}>
-            {[1, 2, 3].map(key => (
-              <div key={key} style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center"
-              }}>
-                <div style={{
-                  width: 100,
-                  height: 100,
-                  borderRadius: 15,
-                  backgroundColor: Colors.darkerBlue,
-                  marginBottom: 20
-                }}
-                />
-
-                <h4 style={{
-                  fontSize: 16,
-                  textTransform: "capitalize",
-                  color: Colors.darkerBlue
-                }}>
-                  La convention <br /> nationale (CN)
-                </h4>
-              </div>
-            ))}
-          </div> */}
-
           <p style={{
             textAlign: "center",
             fontSize: 12,
@@ -215,7 +204,7 @@ export default function Organisation() {
           </p>
 
           <TitleWithSubText
-            title="Le Comité Exécutif National ou CEN est composé de membres <br />élus par la Convention Nationale"
+            title="Coordination Nationale"
             titleStyle={{
               fontSize: 20,
               fontWeight: "bold",
@@ -236,10 +225,78 @@ export default function Organisation() {
             }}
           />
 
-          {/* <PersonWithText
-              title="Un coordonnateur Général adjoint"
-            /> */}
-          {/* </div> */}
+          <div style={{
+            width: "90%",
+            margin: "0 auto",
+            border: `1px solid ${Colors.orange}`,
+            borderBottom: 0,
+            display: "flex",
+            justifyContent: "center"
+          }}>
+            <VerticalBorder height={50} />
+          </div>
+          <Grid container>
+            {coordNationale.map((text, key) => {
+              const [role, name] = text.split('|')
+
+              return (
+                <Grid item key={key} md={4} style={{ marginBottom: 60 }}>
+                  <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                    position: "relative"
+                  }}>
+                    <div style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      height: 100,
+                      width: 100,
+                      backgroundColor: Colors.orange,
+                      borderRadius: "50%",
+                      position: "absolute",
+                      border: `5px solid ${Colors.white}`
+                    }}>
+                      <img
+                        src="/assets/images/person-white.png"
+                        style={{
+                          width: 50,
+                        }}
+                      />
+                    </div>
+                    <div style={{
+                      padding: 15,
+                      backgroundColor: Colors.lightGray,
+                      textTransform: "uppercase",
+                      borderTopRightRadius: 45,
+                      borderBottomRightRadius: 45,
+                      marginLeft: 50,
+                      paddingLeft: 60
+                    }}>
+                      <h3 style={{
+                        fontSize: 12,
+                        color: Colors.darkerBlueText
+                      }}>{role}</h3>
+                      <h4 style={{
+                        fontSize: 13,
+                        color: Colors.orange,
+                        fontWeight: 'bold'
+                      }}>{name}</h4>
+                    </div>
+                  </div>
+                </Grid>
+              )
+            })}
+          </Grid>
+
+          <TitleWithSubText
+            title="Coordination Départementale"
+            titleStyle={{
+              fontSize: 20,
+              fontWeight: "bold",
+              color: Colors.darkerBlueText
+            }}
+          />
 
           <div style={{
             width: "90%",
@@ -252,48 +309,133 @@ export default function Organisation() {
             <VerticalBorder height={50} />
           </div>
           <Grid container>
-            {responsables.map((text, key) => (
-              <Grid item key={key} md={4} style={{ marginBottom: 60 }}>
-                <div style={{
-                  display: "flex",
-                  alignItems: "center",
-                  position: "relative"
-                }}>
+            {coordDepartmentale.map((text, key) => {
+              const [role, name] = text.split('|')
+
+              return (
+                <Grid item key={key} md={4} style={{ marginBottom: 60 }}>
                   <div style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
-                    height: 100,
-                    width: 100,
-                    backgroundColor: Colors.orange,
-                    borderRadius: "50%",
-                    position: "absolute",
-                    border: `5px solid ${Colors.white}`
+                    position: "relative"
                   }}>
-                    <img
-                      src="/assets/images/person-white.png"
-                      style={{
-                        width: 50,
-                      }}
-                    />
+                    <div style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      height: 100,
+                      width: 100,
+                      backgroundColor: Colors.orange,
+                      borderRadius: "50%",
+                      position: "absolute",
+                      border: `5px solid ${Colors.white}`
+                    }}>
+                      <img
+                        src="/assets/images/person-white.png"
+                        style={{
+                          width: 50,
+                        }}
+                      />
+                    </div>
+                    <div style={{
+                      padding: 15,
+                      backgroundColor: Colors.lightGray,
+                      textTransform: "uppercase",
+                      borderTopRightRadius: 45,
+                      borderBottomRightRadius: 45,
+                      marginLeft: 50,
+                      paddingLeft: 60
+                    }}>
+                      <h3 style={{
+                        fontSize: 12,
+                        color: Colors.darkerBlueText
+                      }}>{role}</h3>
+                      <h4 style={{
+                        fontSize: 13,
+                        color: Colors.orange,
+                        fontWeight: 'bold'
+                      }}>{name}</h4>
+                    </div>
                   </div>
+                </Grid>
+              )
+            })}
+          </Grid>
+
+
+
+
+          <TitleWithSubText
+            title="COORDINATION DES BRANCHES EXTÉRIEURES"
+            titleStyle={{
+              fontSize: 20,
+              fontWeight: "bold",
+              color: Colors.darkerBlueText
+            }}
+          />
+
+          <div style={{
+            width: "90%",
+            margin: "0 auto",
+            border: `1px solid ${Colors.orange}`,
+            borderBottom: 0,
+            display: "flex",
+            justifyContent: "center"
+          }}>
+            <VerticalBorder height={50} />
+          </div>
+          <Grid container>
+            {coordBrancheExterieure.map((text, key) => {
+              const [role, name] = text.split('|')
+
+              return (
+                <Grid item key={key} md={4} style={{ marginBottom: 60 }}>
                   <div style={{
-                    flex: 1,
-                    fontSize: 12,
-                    padding: 15,
-                    backgroundColor: Colors.lightGray,
-                    color: Colors.darkerBlueText,
-                    fontWeight: "bold",
-                    textTransform: "uppercase",
-                    borderTopRightRadius: 30,
-                    borderBottomRightRadius: 30,
-                    marginLeft: 50,
-                    paddingLeft: 60
-                  }} dangerouslySetInnerHTML={{ __html: text }}
-                  />
-                </div>
-              </Grid>
-            ))}
+                    display: "flex",
+                    alignItems: "center",
+                    position: "relative"
+                  }}>
+                    <div style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      height: 100,
+                      width: 100,
+                      backgroundColor: Colors.orange,
+                      borderRadius: "50%",
+                      position: "absolute",
+                      border: `5px solid ${Colors.white}`
+                    }}>
+                      <img
+                        src="/assets/images/person-white.png"
+                        style={{
+                          width: 50,
+                        }}
+                      />
+                    </div>
+                    <div style={{
+                      padding: 15,
+                      backgroundColor: Colors.lightGray,
+                      textTransform: "uppercase",
+                      borderTopRightRadius: 45,
+                      borderBottomRightRadius: 45,
+                      marginLeft: 50,
+                      paddingLeft: 60
+                    }}>
+                      <h3 style={{
+                        fontSize: 12,
+                        color: Colors.darkerBlueText
+                      }}>{role}</h3>
+                      <h4 style={{
+                        fontSize: 13,
+                        color: Colors.orange,
+                        fontWeight: 'bold'
+                      }}>{name}</h4>
+                    </div>
+                  </div>
+                </Grid>
+              )
+            })}
           </Grid>
         </Container>
       </section>

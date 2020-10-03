@@ -16,14 +16,16 @@ import TitleWithSubText from 'components/TitleWithSubText'
 import Donate from 'components/Donate'
 import Container from 'components/Container'
 import { dirigeants } from './dirigeants'
+import { useStyles } from 'pages'
 
 const title = "Nos Dirigeants en Province"
 
 
-export default function Dirigeants() {
+export default function DirigeantsProvince() {
   const [openDialog, setOpenDialog] = useState(false)
   const [dialogTitle, setDialogTitle] = useState('')
   const [dialogText, setDialogText] = useState('')
+  const styles = useStyles()
 
   const handleOpenDialog = ({ name, bio }: { name: string, bio: string }) => {
     if (!bio.trim().length) return
@@ -42,7 +44,7 @@ export default function Dirigeants() {
       <SEO title={title} />
 
       <section className="section-container" style={{
-        backgroundImage: 'url(' + "/assets/images/dirigeants-header-bg.png" + ')',
+        backgroundImage: 'url(' + "/assets/images/home-header-2.jpg" + ')',
         backgroundSize: "cover",
         backgroundPosition: "center center",
         minHeight: 500,
@@ -62,12 +64,7 @@ export default function Dirigeants() {
             paddingTop: 50,
             paddingBottom: 20
           }}>
-            <h1 style={{
-              fontSize: 50,
-              fontWeight: 'bold',
-              color: 'white',
-              textTransform: "uppercase",
-            }}>Mouvement pour changer <br />Haïti ensemble</h1>
+            <h1 className={styles.firstTitle}>Mouvement pour changer Haïti ensemble</h1>
             <Donate style={{ marginTop: 200 }} />
           </div>
         </Container>
@@ -85,7 +82,7 @@ export default function Dirigeants() {
           />
 
           <Grid container spacing={3}>
-            {dirigeants.filter(d => d.location === 'province').map((dirigeant, index) => (
+            {dirigeants.filter(d => d.location === 'province' && d.image !== 'silhouette.jpg').map((dirigeant, index) => (
               <Grid item md={4} sm={12} key={index}>
                 <div style={{ cursor: "pointer" }} onClick={(e) => handleOpenDialog(dirigeant)}>
                   <img
