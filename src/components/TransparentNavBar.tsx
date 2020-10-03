@@ -6,7 +6,8 @@ import Colors from 'utils/colors'
 interface Props {
   style?: CSSProperties,
   showButtons?: boolean,
-  containerStyle?: CSSProperties
+  containerStyle?: CSSProperties,
+  footer?: boolean
 }
 
 export default function TransparentNavBar({ style, ...props }: Props) {
