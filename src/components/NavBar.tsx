@@ -17,13 +17,20 @@ interface Props {
   showButtons?: boolean,
   containerStyle?: CSSProperties,
   transparent?: boolean
+  footer?: boolean
 }
 
-export default function NavBar({ style, showButtons, containerStyle, transparent }: Props) {
-  const router = useRouter()
+export default function NavBar({ style, showButtons, containerStyle, transparent, footer }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
   const routes: any = Routes
+  const router = useRouter()
+
+  let logoName = ''
+
+  if (['/', '/dirigeants', '/dirigeants-province', '/dirigeants-diaspora'].includes(router.pathname)) {
+    logoName = 'negatif'
+  }
 
   const handleMenuOpen = (event: any) => {
     setMenuOpen(true)
@@ -76,7 +83,7 @@ export default function NavBar({ style, showButtons, containerStyle, transparent
       {/* <nav className="navbar navbar-expand-sm" style={style}> */}
       <Navbar expand="md" style={style}>
         <Navbar.Brand href={Routes.home.url}>
-          <img src={`/assets/images/logo-${transparent ? 'white' : 'blue'}.png`}
+          <img src={`/assets/images/logo-${logoName && !footer ? logoName : transparent ? 'white' : 'blue'}.png`}
             style={{ width: 130 }}
           />
         </Navbar.Brand>

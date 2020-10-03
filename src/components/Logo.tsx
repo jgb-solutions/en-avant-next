@@ -14,9 +14,7 @@ interface Props {
 export default function Logo({
   containerStyle,
   style,
-  className,
   containerClassName,
-  url,
   transparent
 }: Props) {
   const containerStyles: CSSProperties = {

@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
           <meta name="msapplication-tap-highlight" content="no" />
 
           {/* <link rel="manifest" href="dunplab-manifest-2328.json" /> */}
-          <link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.png" />
+          {/* <link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.png" /> */}
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"

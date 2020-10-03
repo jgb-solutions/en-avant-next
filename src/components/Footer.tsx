@@ -59,7 +59,7 @@ export default function Footer() {
       <Container>
         <TransparentNavBar style={{
           marginBottom: 15
-        }} />
+        }} footer />
 
         <Grid container spacing={3}>
           <Grid item md={9}>
