@@ -230,13 +230,13 @@ export default function Index() {
 // }
 
 
-// export const mapPostFromResponse = (post: any) => ({
-//   id: post.id,
-//   slug: post.slug,
-//   title: post.title.rendered,
-//   image_url: post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url,
-//   excerpt: post.excerpt.rendered,
-//   content: post.content.rendered,
-//   link: post.link,
-//   date: post.date
-// })
+export const mapPostFromResponse = (post: any) => ({
+  id: post.id,
+  slug: post.slug,
+  title: post.title.rendered,
+  image_url: post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_large.source_url,
+  excerpt: post.excerpt.rendered,
+  content: post.content.rendered,
+  link: post.link,
+  date: post.date
+})
