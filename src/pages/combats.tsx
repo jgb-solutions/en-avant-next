@@ -271,6 +271,9 @@ export default function Combats() {
         <Container>
           <TitleWithSubText
             title={title}
+            subTextStyle={{
+              fontSize: 16
+            }}
             subText={`
               <p>Pour transformer Haïti en profondeur, le Mouvement EN AVANT propose un PROJET NATIONAL organisé autour de 22 chantiers, les chantiers de l’avenir.</p>
             `}

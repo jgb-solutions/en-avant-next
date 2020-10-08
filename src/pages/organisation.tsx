@@ -42,13 +42,13 @@ const coordNationale = [
 const coordDepartmentale = [
   `COORDONNATEUR DÉPARTEMENTAL NORD | SONCEAU GAMAEL`,
   `COORDONNATEUR DÉPARTEMENTAL NORD-EST | DR PATRICK ETIENNE`,
-  ` COORDONNATEUR DÉPARTEMENTAL NORD-OUEST | N/A `,
+  ` COORDONNATEUR DÉPARTEMENTAL NORD-OUEST |Membre `,
   ` COORDONNATEUR DÉPARTEMENTAL ARTIBONITE | RYSDAEL DUVERSAINT `,
-  ` COORDONNATEUR DÉPARTEMENTAL POUR LE CENTRE | N/A `,
+  ` COORDONNATEUR DÉPARTEMENTAL POUR LE CENTRE |Membre `,
   ` COORDONNATEUR DÉPARTEMENTAL POUR L’OUEST | PAST. HOLLY FLORESTAL  `,
   ` COORDONNATEUR DÉPARTEMENTAL SUD | MARIE-JOSIE PIERRE `,
   ` COORDONNATEUR DÉPARTEMENTAL SUD-EST | PETERSON ANTENOR `,
-  ` COORDONNATEUR DÉPARTEMENTAL GRAND’ANSE | N/A `,
+  ` COORDONNATEUR DÉPARTEMENTAL GRAND’ANSE |Membre `,
 ]
 
 const coordBrancheExterieure = [
@@ -59,10 +59,10 @@ const coordBrancheExterieure = [
   `  COORDONNATEUR BRANCHE EXTÉRIEURE BOSTON | ALAIN MENELAS`,
   ` COORDONNATEUR BRANCHE EXTÉRIEURE ATLANTA | TALIA JEANTY `,
   ` COORDONNATEUR BRANCHE EXTÉRIEURE WASH DC | CASSANDRA HONORAT `,
-  ` COORDONNATEUR BRANCHE EXTÉRIEURE DE SAINT-DOMINGUE | N/A`,
-  ` COORDONNATEUR BRANCHE EXTÉRIEURE ANTILLES FRANCAISE | N/A`,
-  ` COORDONNATEUR POUR LA BRANCHE EXTÉRIEURE AMÉRIQUE LATINE | N/A`,
-  ` COORDONNATEUR BRANCHE EXTÉRIEURE AFRIQUE | N/A`,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE DE SAINT-DOMINGUE |Membre`,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE ANTILLES FRANCAISE |Membre`,
+  ` COORDONNATEUR POUR LA BRANCHE EXTÉRIEURE AMÉRIQUE LATINE |Membre`,
+  ` COORDONNATEUR BRANCHE EXTÉRIEURE AFRIQUE |Membre`,
 ]
 
 
@@ -155,7 +155,7 @@ export default function Organisation() {
 
       }}>
         <Container>
-          <Grid container>
+          <Grid container spacing={3}>
             <Grid item md={5}>
               <Logo
                 transparent
@@ -235,7 +235,7 @@ export default function Organisation() {
           }}>
             <VerticalBorder height={50} />
           </div>
-          <Grid container>
+          <Grid container spacing={3}>
             {coordNationale.map((text, key) => {
               const [role, name] = text.split('|')
 
@@ -308,7 +308,7 @@ export default function Organisation() {
           }}>
             <VerticalBorder height={50} />
           </div>
-          <Grid container>
+          <Grid container spacing={3}>
             {coordDepartmentale.map((text, key) => {
               const [role, name] = text.split('|')
 
@@ -384,7 +384,7 @@ export default function Organisation() {
           }}>
             <VerticalBorder height={50} />
           </div>
-          <Grid container>
+          <Grid container spacing={3}>
             {coordBrancheExterieure.map((text, key) => {
               const [role, name] = text.split('|')
 

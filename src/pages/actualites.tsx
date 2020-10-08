@@ -102,14 +102,14 @@ export default function Actualites({ posts }: Props) {
 }
 
 export async function getStaticProps() {
-  // const posts = await wpapi.posts().param({ per_page: 12 }).embed().get()
+  const posts = await wpapi.posts().param({ per_page: 50 }).embed().get()
 
-  // return {
-  //   props: {
-  //     posts: posts.map(mapPostFromResponse)
-  //   },
-  //   revalidate: 60
-  // }
+  return {
+    props: {
+      posts: posts.map(mapPostFromResponse)
+    },
+    revalidate: 5
+  }
 
-  return { props: { posts: [] } }
+  // return { props: { posts: [] } }
 }

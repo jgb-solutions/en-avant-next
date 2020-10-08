@@ -26,10 +26,10 @@ const Routes = {
 		name: "Notre Organisation",
 		intro: "Organisation au niveau national.",
 	},
-	// news: {
-	// 	url: "/actualites",
-	// 	name: "Actualités",
-	// },
+	news: {
+		url: "/actualites",
+		name: "Actualités",
+	},
 
 	contact: {
 		url: "/adherer",

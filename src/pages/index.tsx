@@ -12,6 +12,10 @@ import Container from 'components/Container'
 import Button from 'components/Button'
 import Link from 'next/link'
 import Routes from 'utils/routers'
+import { wpapi } from 'utils/wpapi'
+import TitleWithSubText from 'components/TitleWithSubText'
+import ArticleCard from 'components/ArticleCard'
+import PostInterface from 'interfaces/PostInterface'
 
 export const useStyles = makeStyles(theme => ({
   container: {
@@ -29,7 +33,7 @@ export const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function Index() {
+export default function Index({ posts }: { posts: PostInterface[] }) {
   const styles = useStyles()
 
   return (
@@ -130,7 +134,7 @@ export default function Index() {
                   }}
                   width="853"
                   height="480"
-                  src={`https://www.youtube.com/embed/DyB86KKDdCI?autoplay=1`}
+                  src={`https://www.youtube.com/embed/DyB86KKDdCI?autoplay=1&rel=0`}
                   frameBorder="0"
                   allowFullScreen
                   allow="autoplay"
@@ -139,7 +143,7 @@ export default function Index() {
             </Grid>
           </Grid>
 
-          {/* {posts.length > 0 && (
+          {posts.length > 0 && (
             <>
               <TitleWithSubText title="Actualités" />
 
@@ -151,7 +155,7 @@ export default function Index() {
                 ))}
               </Grid>
             </>
-          )} */}
+          )}
         </Container>
       </section>
 
@@ -222,18 +226,18 @@ export default function Index() {
   )
 }
 
-// export async function getStaticProps() {
-// const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
+export async function getStaticProps() {
+  const posts = await wpapi.posts().param({ per_page: 3 }).embed().get()
 
-// return {
-//   props: {
-//     posts: posts.map(mapPostFromResponse)
-//   },
-//   revalidate: 60
-// }
+  return {
+    props: {
+      posts: posts.map(mapPostFromResponse)
+    },
+    revalidate: 10
+  }
 
-//   return { props: { posts: [] } }
-// }
+  // return { props: { posts: [] } }
+}
 
 
 export const mapPostFromResponse = (post: any) => ({
