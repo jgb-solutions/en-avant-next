@@ -43,7 +43,7 @@ export const dirigeants = [
     featured: true,
     name: "STEPHANE VINCENT",
     image: "stephane.jpeg",
-    role: "Entrepreneur, et Spécialiste en gouvernance du numérique",
+    role: "Coordonnateur-adjoint chargé du numérique",
     bio: `
     <p>Originaire de Maniche, Vincent est un jeune technicien haïtien très connu dans le milieu des nouvelles technologies de l’information et de la communication. Né le 20 juin 1993, ce jeune leader a fait toutes ses études à Saint-Louis de Gonzague. En 2014, fraîchement diplômé de New York University en Sciences Politiques et Communication Digitale, il devient le directeur de la section technologie du Consulat Général d’Haïti à NY. Il quittera cette fonction pour assurer celle de Coordonnateur de l’Unité e-Gouvernance de la Primature en tant que chef d’un projet financé par la Banque Interaméricaine de Développement. Il a également été Chargé de Partenariats à Open Gouv Haïti première plateforme de données ouvertes en Haïti. Spécialiste des plateformes numériques en ligne, Stéphane Vincent est considéré comme un « influencer » sur la toile. Il est rédacteur en chef du journal en ligne La République et consultant indépendant en Marketing digital et gestion de réputation. Ce jeune professionnel des NTIC est promis à un bel avenir au sein de la société civile haïtienne où il milite activement au sein de certaines organisations visant à éduquer la jeunesse par des projets citoyens.</p>
     `
@@ -529,7 +529,8 @@ export default function Dirigeants() {
                     <h5 style={{
                       fontSize: 10,
                       color: Colors.gray,
-                      marginBottom: 12
+                      marginBottom: 12,
+                      textTransform: "uppercase",
                     }}>{dirigeant.role}</h5>
                   </div>
                 </div>

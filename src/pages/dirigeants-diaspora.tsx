@@ -111,7 +111,8 @@ export default function Dirigeants() {
                     <h5 style={{
                       fontSize: 10,
                       color: Colors.gray,
-                      marginBottom: 12
+                      marginBottom: 12,
+                      textTransform: "uppercase",
                     }}>{dirigeant.role}</h5>
                   </div>
                 </div>
