@@ -49,14 +49,6 @@ export const dirigeants = [
     `
   },
   {
-    name: "GEORGES DUPERVAL",
-    image: "georges.jpg",
-    role: "Coordonnateur-adjoint aux relations publiques",
-    bio: `
-    <p>Georges Duperval est un entrepreneur profondément engagé dans la vie citoyenne et associative d’Haïti. Cet ancien du Collège Roger Anglade est propriétaire et gestionnaire du complexe IGUANA logé au haut du Canapé Vert. Georges Duperval est détenteur d’une licence en business administration de State College of Old Westbury de New-York (1994) et de Computer Operations Sciences de Grumman Data System Institute de New-York (1988). Il est fondateur de « Baton jenès la » une association œuvrant dans le domaine du social et qui regroupe un nombre important de leaders universitaires, de leaders communautaires et de personnalités influentes dans les secteurs socio-professionnels du département de l’Ouest.</p>
-    `
-  },
-  {
     name: "ING PATRICK FIGARO",
     image: "patrick.jpeg",
     role: "Coordonateur-adjoint chargé des relations internationales",

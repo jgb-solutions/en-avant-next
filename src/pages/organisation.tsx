@@ -15,7 +15,6 @@ const coordNationale = [
   `COORDONNATEUR-ADJOINT CHARGÉ DU SECRÉTARIAT-GÉNÉRAL |  MIKERLANGE REGISTRE`,
   `COORDONNATEUR-ADJOINT CHARGÉ DES BRANCHES EXTÉRIEURES |  SAINT-JEAN JOSEPH`,
   `COORDONNATEUR-ADJOINT AUX AFFAIRES ADMINISTRATIVES ET FINANCIÈRES |  HERALD MORISSEAU`,
-  `Coordonnateur-adjoint aux relations publiques |  GEORGES DUPERVAL`,
   `Coordonnateur-adj chargé de la stratégie numérique|  STEPHANE VINCENT`,
   `Coordonnateur-adjoint chargé jeunesse |  RYSDAËL DUVERSAINT`,
   `Coordon-adjoint chargé des relations internationales |  ING PATRICK FIGARO`,
