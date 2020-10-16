@@ -21,15 +21,15 @@ import Join from 'components/Join'
 const title = "Nos Dirigeants"
 
 export const dirigeants = [
-  {
-    featured: true,
-    name: "Jerry Tardieu",
-    image: "jerry.jpeg",
-    role: "Coordonnateur Général",
-    bio: `
-    <p>Jerry Tardieu est né en Haïti le 13 Juillet 1967. Il a fait toutes ses études primaires et secondaires à Saint-Louis de Gonzague. Il est détenteur d’une Maîtrise en Administration Publique de l’Université de Harvard avec une spécialisation en macroéconomie. Ancien Vice-président de la Chambre de Commerce et d’Industrie d’Haïti, il est un entrepreneur profondément engagé dans la vie économique, sociale, académique et associative de son pays. Il a publié de nombreux ouvrages. En 2015, il se lance en politique et est élu député de Pétion-ville par un score historique, obtenant le plus grand nombre de voix de toutes ces élections à l’échelle nationale.</p>
-    `
-  },
+  // {
+  //   featured: true,
+  //   name: "Jerry Tardieu",
+  //   image: "jerry.jpeg",
+  //   role: "Coordonnateur Général",
+  //   bio: `
+  //   <p>Jerry Tardieu est né en Haïti le 13 Juillet 1967. Il a fait toutes ses études primaires et secondaires à Saint-Louis de Gonzague. Il est détenteur d’une Maîtrise en Administration Publique de l’Université de Harvard avec une spécialisation en macroéconomie. Ancien Vice-président de la Chambre de Commerce et d’Industrie d’Haïti, il est un entrepreneur profondément engagé dans la vie économique, sociale, académique et associative de son pays. Il a publié de nombreux ouvrages. En 2015, il se lance en politique et est élu député de Pétion-ville par un score historique, obtenant le plus grand nombre de voix de toutes ces élections à l’échelle nationale.</p>
+  //   `
+  // },
   {
     featured: true,
     name: "NANCY VILCÉ",
