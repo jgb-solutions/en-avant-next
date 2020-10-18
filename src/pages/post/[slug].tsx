@@ -113,10 +113,10 @@ export default function Post({ post }: { post: PostInterface & { randoms: PostIn
                 }} src={post.image_url}
                 />
                 <CardContent>
-                  <Typography variant="body2" color="textSecondary" component="div">
+                  {/* <Typography variant="body2" color="textSecondary" component="div">
                     {post.date}
                   </Typography>
-                  <br />
+                  <br /> */}
 
                   <Typography component="div">
                     <div dangerouslySetInnerHTML={{ __html: `${post.content}` }} />

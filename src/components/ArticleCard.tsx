@@ -29,12 +29,12 @@ export default function ArticleCard({ post }: { post: PostInterface }) {
           color: Colors.blue,
           marginBottom: 15
         }}>{post.title}</h3>
-        <h4 style={{
+        {/* <h4 style={{
           fontSize: 13,
           color: Colors.gray,
           display: "flex",
           marginBottom: 15
-        }}><FaRegCalendarAlt style={{ marginRight: 5 }} /> {post.date} (25 Juin 2020)</h4>
+        }}><FaRegCalendarAlt style={{ marginRight: 5 }} /> {post.date} (25 Juin 2020)</h4> */}
         <div style={{
           color: Colors.gray,
           fontSize: 12,
