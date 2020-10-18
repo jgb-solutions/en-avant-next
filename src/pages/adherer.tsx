@@ -150,7 +150,7 @@ export default function Contact() {
                             <TextField
                               style={{ width: '100%' }}
                               inputRef={register({
-                                required: "Lenom complet est requis",
+                                required: "Le nom complet est requis",
                               })}
                               name="name"
                               id="name"
